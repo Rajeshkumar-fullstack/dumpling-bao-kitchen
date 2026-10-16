@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dumpling & Bao Kitchen — Handcrafted dumplings, fluffy steamed bao buns, authentic Asian-inspired fillings, and frozen retail packs made fresh daily.">
+  <meta name="keywords" content="dumplings, steamed bao, gyoza, dim sum, frozen dumplings, asian street food, handmade dumplings">
+  <title>Dumpling & Bao Kitchen — Handcrafted Bites. Unforgettable Flavours.</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+  <link rel="alternate icon" type="image/svg+xml" href="assets/icons/dumpling.svg">
+  <link rel="apple-touch-icon" href="assets/icons/logo.svg">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Tailwind CSS Configuration (Disables conflicting collapse utility) -->
+  <script>
+    tailwind = {
+      corePlugins: {
+        visibility: false,
+      }
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Theme, Main, Responsive & Premium Animation CSS -->
+  <link rel="stylesheet" href="assets/css/themes.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/homepage-premium.css">
+
+  <!-- Early Theme Script (Prevent FOUC) -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/rtl.js"></script>
+</head>
+<body>
+
+  <!-- =========================================================================
+       SHARED STICKY NAVBAR
+       ========================================================================= -->
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-custom" id="mainNavbar" aria-label="Main navigation">
+      <div class="container navbar-container">
+        <!-- Brand Logo -->
+        <a class="navbar-brand-custom" href="index.html" aria-label="Dumpling and Bao Kitchen Home">
+          <span class="brand-logo-mark" aria-hidden="true">
+            <img src="assets/icons/logo.svg" alt="Dumpling &amp; Bao Kitchen Logo" width="38" height="38" class="brand-logo-img">
+          </span>
+          <span class="brand-name">Dumpling &amp; Bao <span class="brand-name-kitchen">Kitchen</span></span>
+        </a>
+
+        <!-- Controls: Theme, RTL, Order CTA, and Mobile Hamburger -->
+        <div class="navbar-actions d-flex align-items-center gap-2 order-lg-3">
+          <!-- Theme Toggle -->
+          <button class="btn-ctrl theme-toggle-btn" type="button" aria-label="Toggle dark/light theme" title="Toggle theme">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+
+          <!-- RTL / LTR Direction Toggle -->
+          <button class="btn-ctrl rtl-toggle-btn" type="button" aria-label="Toggle text direction" title="Toggle RTL / LTR">
+            <span class="direction-label fw-bold text-xs">RTL</span>
+          </button>
+
+          <!-- Navbar Shopping Cart Icon & Live Count (Desktop Only) -->
+          <button type="button" class="btn-nav-cart d-none d-lg-inline-flex" aria-label="Shopping Cart, 0 items" id="navbarCartBtn" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" title="Open Shopping Cart">
+            <span class="cart-text">Cart</span>
+            <span class="cart-icon" aria-hidden="true">🛒</span>
+            <span class="cart-count-wrap">(<span class="cart-count" id="navCartCount">0</span>)</span>
+          </button>
+
+          <!-- Quick Action CTA Button (Desktop Only) -->
+          <a href="menu.html" class="btn btn-chili btn-sm d-none d-lg-inline-flex px-3 py-2 ms-1">
+            <span>View Menu</span>
+            <i class="bi bi-arrow-right"></i>
+          </a>
+
+          <!-- Mobile Hamburger Toggler -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarContent" aria-controls="mainNavbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-list fs-3"></i>
+          </button>
+        </div>
+
+        <!-- Navbar Links & Collapsible Content -->
+        <div class="collapse navbar-collapse order-lg-2" id="mainNavbarContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+            <!-- 1. Home Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+              <ul class="dropdown-menu dropdown-menu-custom shadow-lg" aria-labelledby="homeDropdown">
+                <li>
+                  <a class="dropdown-item active" href="index.html">
+                    <div class="d-flex align-items-center gap-2">
+                      <i class="bi bi-shop text-chili fs-5"></i>
+                      <div>
+                        <div class="fw-semibold">Kitchen &amp; Our Story</div>
+                        <div class="small text-muted-custom">Artisan craft &amp; heritage</div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li><hr class="dropdown-divider my-1"></li>
+                <li>
+                  <a class="dropdown-item" href="dumpling-experience.html">
+                    <div class="d-flex align-items-center gap-2">
+                      <i class="bi bi-stars text-chili fs-5"></i>
+                      <div>
+                        <div class="fw-semibold">Dumpling Experience</div>
+                        <div class="small text-muted-custom">Tasting flights &amp; workshops</div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- 2. About -->
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+
+            <!-- 3. Menu -->
+            <li class="nav-item">
+              <a class="nav-link" href="menu.html">Menu</a>
+            </li>
+
+            <!-- 4. Frozen Packs -->
+            <li class="nav-item">
+              <a class="nav-link" href="frozen-packs.html">Frozen Packs</a>
+            </li>
+
+            <!-- 5. Contact -->
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+          <!-- Mobile Drawer CTA Buttons (Down side of menu) -->
+          <div class="d-lg-none mobile-drawer-cta-section">
+            <button type="button" class="btn btn-nav-cart-mobile w-100 py-2.5 d-flex align-items-center justify-content-center gap-2 rounded-pill fw-semibold" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-label="Open Shopping Cart">
+              <span class="fs-5" aria-hidden="true">🛒</span>
+              <span>View Shopping Cart</span>
+              <span class="badge cart-count">0</span>
+            </button>
+            <a href="cart.html" class="btn btn-outline-chili w-100 py-2 d-flex align-items-center justify-content-center gap-2 rounded-pill fw-semibold small">
+              <i class="bi bi-bag-check"></i>
+              <span>Go to Full Cart &amp; Checkout</span>
+            </a>
+            <a href="menu.html" class="btn btn-chili w-100 py-2 d-flex align-items-center justify-content-center gap-2 rounded-pill fw-semibold small">
+              <span>Explore Menu</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- =======================================================================
+         SECTION A: HERO
+         ======================================================================= -->
+    <section class="hero-section hero-home py-5" aria-labelledby="hero-heading">
+      <!-- Atmospheric Ambient Glow Nebulas -->
+      <div class="hero-atmosphere-glow" aria-hidden="true">
+        <div class="hero-glow-orb hero-glow-chili"></div>
+        <div class="hero-glow-orb hero-glow-gold"></div>
+      </div>
+
+      <div class="container position-relative z-1">
+        <div class="row align-items-center g-5">
+          <!-- Text Column -->
+          <div class="col-lg-6 animate-on-scroll">
+            <span class="section-subtitle">
+              <i class="bi bi-stars me-1 text-gold"></i> Artisan Street Food Redefined
+            </span>
+            <h1 id="hero-heading" class="hero-title mb-4">
+              <span class="hero-split-line"><span class="hero-split-inner">Handcrafted Bites</span></span><br class="d-none d-sm-inline">
+              <span class="hero-split-line"><span class="hero-split-inner text-gradient-shimmer">Unforgettable Flavours</span></span>
+            </h1>
+            <p class="fs-5 text-secondary-custom mb-4 leading-relaxed">
+              Every fold tells a story. From delicate, pleated soup dumplings filled with fragrant broth to pillowy, cloud-soft steamed bao packed with slow-braised delicacies, we craft each bite fresh in-house every single day.
+            </p>
+            <div class="d-flex flex-wrap gap-3 pt-2">
+              <a href="menu.html" class="btn-chili btn-magnetic btn-shimmer">
+                <span>Explore Our Menu</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+              <a href="frozen-packs.html" class="btn-outline-chili btn-magnetic btn-shimmer">
+                <i class="bi bi-box2-heart"></i>
+                <span>Discover Frozen Packs</span>
+              </a>
+            </div>
+
+            <!-- Trust / Feature Indicators -->
+            <div class="d-flex flex-wrap gap-4 mt-5 pt-3 border-top border-light-subtle">
+              <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-check-circle-fill text-success fs-5"></i>
+                <span class="small fw-semibold">100% Hand-Pleated Daily</span>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-check-circle-fill text-success fs-5"></i>
+                <span class="small fw-semibold">Natural Ingredients</span>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-check-circle-fill text-success fs-5"></i>
+                <span class="small fw-semibold">Take-Home Ready</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Image Column with 3D Perspective & Clean Responsive Visuals -->
+          <div class="col-lg-6 animate-on-scroll delay-200">
+            <div class="hero-visual-3d" id="heroVisual3D">
+              <div class="hero-visual-inner">
+                <!-- Hero Image Container with Steam Effect -->
+                <div class="hero-image-wrapper">
+                  <!-- Decorative Lightweight Steam Effect -->
+                  <div class="steam-container" aria-hidden="true">
+                    <div class="steam-particle"></div>
+                    <div class="steam-particle"></div>
+                    <div class="steam-particle"></div>
+                    <div class="steam-particle"></div>
+                  </div>
+
+                  <!-- Vibrant, High-Resolution Appetizing Food Photo -->
+                  <img 
+                    src="assets/images/Handcrafted Bites.jpg" 
+                    alt="Freshly steamed dumplings in an authentic bamboo steamer with chili dipping sauce"
+                    width="600" 
+                    height="412"
+                    fetchpriority="high"
+                    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1400&q=85';"
+                  >
+                </div>
+
+                <!-- Clean, non-intrusive feature chips below image (Never overlapping text or photo) -->
+                <div class="hero-image-highlights" aria-label="Kitchen Highlights">
+                  <div class="hero-feature-chip">
+                    <i class="bi bi-star-fill text-gold" style="color: var(--accent-gold);"></i>
+                    <span>18-Fold Pleated Daily</span>
+                  </div>
+                  <div class="hero-feature-chip">
+                    <i class="bi bi-clock-history text-chili" style="color: var(--accent-chili);"></i>
+                    <span>Steamed Fresh in 8 Mins</span>
+                  </div>
+                  <div class="hero-feature-chip">
+                    <i class="bi bi-fire text-chili" style="color: var(--accent-chili);"></i>
+                    <span>Handcrafted Broth &amp; Fillings</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION B: SIGNATURE DUMPLINGS
+         ======================================================================= -->
+    <section class="py-5" style="background-color: var(--bg-secondary);" aria-labelledby="dumplings-heading">
+      <div class="container py-3">
+        <div class="row justify-content-between align-items-end mb-5">
+          <div class="col-lg-7 animate-on-scroll">
+            <span class="section-subtitle">Traditional Craft</span>
+            <h2 id="dumplings-heading" class="section-title mb-2">Our Signature Dumplings</h2>
+            <p class="text-secondary-custom mb-0">Crafted with delicate thin dough wrappers, pleated by hand with 18 folds, and steamed to tender perfection.</p>
+          </div>
+          <div class="col-lg-4 text-lg-end mt-3 mt-lg-0 animate-on-scroll delay-100">
+            <a href="menu.html" class="btn btn-outline-chili">
+              <span>View Full Dumpling Menu</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <!-- Item 1: Vegetable -->
+          <div class="col-sm-6 col-lg-3 animate-on-scroll">
+            <div class="food-card h-100">
+              <div class="food-card-img-wrap">
+                <img 
+                  src="https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=800&q=80" 
+                  alt="Classic Vegetable Dumplings packed with fresh jade greens and chives"
+                  loading="lazy"
+                  width="400"
+                  height="275"
+                  onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=800&q=80';"
+                >
+              </div>
+              <div class="food-card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-veg"><i class="bi bi-flower1"></i> Vegetarian</span>
+                  <span class="food-price">$12.50</span>
+                </div>
+                <h3 class="fs-5 fw-bold mb-1">Classic Vegetable Dumplings</h3>
+                <p class="small text-secondary-custom flex-grow-1 mb-3">Tender Asian greens, fragrant garlic chives, glass noodles, and seasoned silky tofu.</p>
+                <a href="menu.html" class="btn btn-sm btn-outline-chili w-100 mt-auto">
+                  <span>Explore Menu</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Chicken -->
+          <div class="col-sm-6 col-lg-3 animate-on-scroll delay-100">
+            <div class="food-card h-100">
+              <div class="food-card-img-wrap">
+                <img 
+                  src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80" 
+                  alt="Juicy Chicken Dumplings served warm with aromatics"
+                  loading="lazy"
+                  width="400"
+                  height="275"
+                  onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80';"
+                >
+              </div>
+              <div class="food-card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-popular"><i class="bi bi-fire"></i> Best Seller</span>
+                  <span class="food-price">$13.50</span>
+                </div>
+                <h3 class="fs-5 fw-bold mb-1">Juicy Chicken Dumplings</h3>
+                <p class="small text-secondary-custom flex-grow-1 mb-3">Free-range minced chicken folded with fresh ginger, sweet scallions, and toasted sesame oil.</p>
+                <a href="menu.html" class="btn btn-sm btn-outline-chili w-100 mt-auto">
+                  <span>Explore Menu</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: Pork -->
+          <div class="col-sm-6 col-lg-3 animate-on-scroll delay-200">
+            <div class="food-card h-100">
+              <div class="food-card-img-wrap">
+                <img 
+                  src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=800&q=80" 
+                  alt="Spiced Pork Dumplings with Szechuan pepper and red chili oil"
+                  loading="lazy"
+                  width="400"
+                  height="275"
+                  onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=800&q=80';"
+                >
+              </div>
+              <div class="food-card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-spicy"><i class="bi bi-fire"></i> Spicy Kick</span>
+                  <span class="food-price">$14.00</span>
+                </div>
+                <h3 class="fs-5 fw-bold mb-1">Spiced Pork Dumplings</h3>
+                <p class="small text-secondary-custom flex-grow-1 mb-3">Savory pork shoulder infused with five-spice broth, white pepper, and house chili crisp.</p>
+                <a href="menu.html" class="btn btn-sm btn-outline-chili w-100 mt-auto">
+                  <span>Explore Menu</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4: Shrimp & Garlic -->
+          <div class="col-sm-6 col-lg-3 animate-on-scroll delay-300">
+            <div class="food-card h-100">
+              <div class="food-card-img-wrap">
+                <img 
+                  src="https://images.unsplash.com/photo-1576577445504-6af96477db52?auto=format&fit=crop&w=800&q=80" 
+                  alt="Shrimp and Garlic Har Gow dumplings with crystal translucent wrapper"
+                  loading="lazy"
+                  width="400"
+                  height="275"
+                  onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1576577445504-6af96477db52?auto=format&fit=crop&w=800&q=80';"
+                >
+              </div>
+              <div class="food-card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-signature"><i class="bi bi-star-fill"></i> Signature</span>
+                  <span class="food-price">$15.50</span>
+                </div>
+                <h3 class="fs-5 fw-bold mb-1">Shrimp &amp; Garlic Dumplings</h3>
+                <p class="small text-secondary-custom flex-grow-1 mb-3">Succulent whole tiger prawns with bamboo shoots and roasted garlic in crystal skin.</p>
+                <a href="menu.html" class="btn btn-sm btn-outline-chili w-100 mt-auto">
+                  <span>Explore Menu</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION C: STEAMED BAO COLLECTION
+         ======================================================================= -->
+    <section class="py-5" aria-labelledby="bao-heading">
+      <div class="container py-3">
+        <div class="text-center max-w-2xl mx-auto mb-5 animate-on-scroll">
+          <span class="section-subtitle">Pillowy Soft &amp; Warm</span>
+          <h2 id="bao-heading" class="section-title mb-3">Steamed Bao Collection</h2>
+          <p class="text-secondary-custom">Light, fluffy open-faced lotus-leaf bao buns stuffed with richly marinated meats and crisp pickled garnishes.</p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <!-- Bao 1: Crispy Chicken -->
+          <div class="col-md-6 col-lg-4 animate-on-scroll">
+            <div class="food-card h-100">
+              <div class="food-card-img-wrap">
+                <img 
+                  src="https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?auto=format&fit=crop&w=800&q=80" 
+                  alt="Crispy Chicken Bao bun loaded with fried chicken and fresh scallions"
+                  loading="lazy"
+                  width="400"
+                  height="275"
+                  onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=800&q=80';"
+                >
+              </div>
+              <div class="food-card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-popular">Fan Favorite</span>
+                  <span class="food-price">$11.50</span>
+                </div>
+                <h3 class="fs-5 fw-bold mb-2">Crispy Chicken Bao</h3>
+                <p class="text-secondary-custom small flex-grow-1 mb-3">Golden panko-crusted chicken thigh, Japanese mayo, sweet gochujang glaze, and pickled daikon chiken Bao.</p>
+                <a href="menu.html" class="btn btn-outline-chili mt-auto w-100">
+                  <span>Order in Menu</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bao 2: Sticky Mushroom -->
+          <div class="col-md-6 col-lg-4 animate-on-scroll delay-100">
+            <div class="food-card h-100">
+              <div class="food-card-img-wrap">
+                <img 
+                  src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80" 
+                  alt="Sticky Glazed Shiitake Mushroom Bao with sesame cucumber ribbons"
+                  loading="lazy"
+                  width="400"
+                  height="275"
+                  onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=800&q=80';"
+                >
+              </div>
+              <div class="food-card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-veg"><i class="bi bi-flower1"></i> Plant-Based</span>
+                  <span class="food-price">$10.50</span>
+                </div>
+                <h3 class="fs-5 fw-bold mb-2">Sticky Mushroom Bao</h3>
+                <p class="text-secondary-custom small flex-grow-1 mb-3">Caramelized king oyster and shiitake mushrooms, sweet hoisin glaze, roasted sesame, and fresh coriander.</p>
+                <a href="menu.html" class="btn btn-outline-chili mt-auto w-100">
+                  <span>Order in Menu</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bao 3: Slow-Cooked Pork -->
+          <div class="col-md-6 col-lg-4 animate-on-scroll delay-200">
+            <div class="food-card h-100">
+              <div class="food-card-img-wrap">
+                <img 
+                  src="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=800&q=80" 
+                  alt="Slow-Cooked Pork Belly Gua Bao with crushed peanuts and pickled mustard greens"
+                  loading="lazy"
+                  width="400"
+                  height="275"
+                  onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=800&q=80';"
+                >
+              </div>
+              <div class="food-card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-signature"><i class="bi bi-star-fill"></i> House Specialty</span>
+                  <span class="food-price">$12.50</span>
+                </div>
+                <h3 class="fs-5 fw-bold mb-2">Slow-Cooked Pork Bao</h3>
+                <p class="text-secondary-custom small flex-grow-1 mb-3">12-hour braised pork belly that melts in your mouth, crushed roasted peanuts, and tangy pickled mustard greens.</p>
+                <a href="menu.html" class="btn btn-outline-chili mt-auto w-100">
+                  <span>Order in Menu</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION D: OUR CRAFT (Alternating Layout)
+         ======================================================================= -->
+    <section class="py-5" id="our-craft" style="background-color: var(--bg-secondary);" aria-labelledby="craft-heading">
+      <div class="container py-3">
+        <div class="text-center max-w-2xl mx-auto mb-5 animate-on-scroll">
+          <span class="section-subtitle">Heritage &amp; Passion</span>
+          <h2 id="craft-heading" class="section-title mb-3">Our Handmade Craft</h2>
+          <p class="text-secondary-custom">No shortcuts, no frozen industrial dough. Every dumpling and bao is born from time-honored techniques passed down through generations.</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Step 1: Dough -->
+          <div class="col-md-6 col-lg-3 animate-on-scroll">
+            <div class="craft-step-card text-center">
+              <div class="step-num-pill">1</div>
+              <h3 class="fs-5 fw-bold mb-2">Fresh Daily Dough</h3>
+              <p class="small text-secondary-custom mb-3">Wheat flour, filtered water, and patient resting produce wrappers that are light yet pleasantly chewy.</p>
+              <img 
+                src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80" 
+                alt="Flour dusted wooden preparation surface and freshly kneaded dumpling dough"
+                loading="lazy"
+                width="350"
+                height="220"
+              >
+            </div>
+          </div>
+
+          <!-- Step 2: Ingredients -->
+          <div class="col-md-6 col-lg-3 animate-on-scroll delay-100">
+            <div class="craft-step-card text-center">
+              <div class="step-num-pill">2</div>
+              <h3 class="fs-5 fw-bold mb-2">Selected Fillings</h3>
+              <p class="small text-secondary-custom mb-3">Farm-crisp ginger, scallions, fresh herbs, and sustainably sourced meats seasoned with vintage soy.</p>
+              <img 
+                src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80" 
+                alt="Market fresh herbs, garlic cloves, and culinary produce for dumpling fillings"
+                loading="lazy"
+                width="350"
+                height="220"
+              >
+            </div>
+          </div>
+
+          <!-- Step 3: Pleating -->
+          <div class="col-md-6 col-lg-3 animate-on-scroll delay-200">
+            <div class="craft-step-card text-center">
+              <div class="step-num-pill">3</div>
+              <h3 class="fs-5 fw-bold mb-2">Hand-Folded Pleats</h3>
+              <p class="small text-secondary-custom mb-3">Our dumpling artisans fold and crimp every single dumpling with precision to lock in the savoury juices.</p>
+              <img 
+                src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80" 
+                alt="Chefs hands meticulously folding and pleating dumpling wrappers"
+                loading="lazy"
+                width="350"
+                height="220"
+              >
+            </div>
+          </div>
+
+          <!-- Step 4: Steaming -->
+          <div class="col-md-6 col-lg-3 animate-on-scroll delay-300">
+            <div class="craft-step-card text-center">
+              <div class="step-num-pill">4</div>
+              <h3 class="fs-5 fw-bold mb-2">Bamboo Steamed</h3>
+              <p class="small text-secondary-custom mb-3">Stacked high over simmering hot water, natural bamboo entle, woody fragrance as they steam.</p>
+              <img 
+                src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80" 
+                alt="Stacked authentic bamboo steamers releasing hot aromatic steam"
+                loading="lazy"
+                width="350"
+                height="220"
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION E: INTERACTIVE FOOD GALLERY
+         ======================================================================= -->
+    <section class="py-5" aria-labelledby="gallery-heading">
+      <div class="container py-3">
+        <div class="row align-items-end justify-content-between mb-4">
+          <div class="col-lg-8 animate-on-scroll">
+            <span class="section-subtitle">Visual Feast</span>
+            <h2 id="gallery-heading" class="section-title mb-2">The Kitchen Gallery</h2>
+            <p class="text-secondary-custom mb-0">From golden crispy pan-fried bottoms to cloudy soft steamed buns, explore a snapshot of our kitchen craft.</p>
+          </div>
+          <div class="col-lg-4 text-lg-end mt-3 mt-lg-0 animate-on-scroll delay-100">
+            <span class="small text-muted-custom"><i class="bi bi-camera-fill me-1"></i> Tag us @DumplingBaoKitchen</span>
+          </div>
+        </div>
+
+        <div class="gallery-grid animate-on-scroll">
+          <!-- Item 1: Wide Golden Gyoza Potstickers -->
+          <div class="gallery-item col-span-8">
+            <img 
+              src="https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=800&q=80" 
+              alt="Crispy golden potstickers with lace crust sizzling in skillet"
+              loading="lazy"
+            >
+            <div class="gallery-overlay">
+              <span>Crispy Lace Potstickers</span>
+            </div>
+          </div>
+
+          <!-- Item 2: Dipping Sauces & Chili Oil -->
+          <div class="gallery-item col-span-4">
+            <img 
+              src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" 
+              alt="House red chili oil with garlic and aromatic scallion oil dip"
+              loading="lazy"
+            >
+            <div class="gallery-overlay">
+              <span>House Chili Crisp &amp; Vinegar</span>
+            </div>
+          </div>
+
+          <!-- Item 3: Street-Food Plating -->
+          <div class="gallery-item col-span-4">
+            <img 
+              src="https://images.unsplash.com/photo-1607301406259-dfb186e15de8?auto=format&fit=crop&w=800&q=80" 
+              alt="Freshly plated dim sum banquet on restaurant dining table"
+              loading="lazy"
+            >
+            <div class="gallery-overlay">
+              <span>Street Kitchen Service</span>
+            </div>
+          </div>
+
+          <!-- Item 4: Steamed Dim Sum Spread -->
+          <div class="gallery-item col-span-8">
+            <img 
+              src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80" 
+              alt="Assorted steamed dim sum baskets with shumai and bao buns"
+              loading="lazy"
+            >
+            <div class="gallery-overlay">
+              <span>Fresh Steamed Dim Sum Spread</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION F: CUSTOMER FAVORITES (Horizontal Friendly Cards)
+         ======================================================================= -->
+    <section class="py-5" style="background-color: var(--bg-secondary);" aria-labelledby="favorites-heading">
+      <div class="container py-3">
+        <div class="d-flex justify-content-between align-items-end mb-4">
+          <div class="animate-on-scroll">
+            <span class="section-subtitle">Most Ordered</span>
+            <h2 id="favorites-heading" class="section-title mb-1">Customer Favorites</h2>
+            <p class="text-secondary-custom mb-0">The plates our regulars keep coming back for, week after week.</p>
+          </div>
+        </div>
+
+        <div class="favorites-container py-2">
+          <!-- Fav 1: Potstickers -->
+          <div class="favorites-item">
+            <div class="food-card">
+              <div class="food-card-img-wrap">
+                <img 
+                  src="https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?auto=format&fit=crop&w=800&q=80" 
+                  alt="Crispy bottom pan fried pork gyoza potstickers"
+                  loading="lazy"
+                >
+              </div>
+              <div class="food-card-body">
+                <span class="food-badge badge-signature mb-2">#1 Loved</span>
+                <h3 class="fs-6 fw-bold mb-1">Pan-Fried Pork Potstickers</h3>
+                <p class="small text-secondary-custom mb-3">Crispy golden crust with juicy spiced pork &amp; cabbage filling.</p>
+                <div class="d-flex justify-content-between align-items-center mt-auto">
+                  <span class="food-price">$13.50</span>
+                  <a href="menu.html" class="btn btn-sm btn-outline-chili">Order</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fav 2: Chili Wontons -->
+          <div class="favorites-item">
+            <div class="food-card">
+              <div class="food-card-img-wrap">
+                <img 
+                  src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=80" 
+                  alt="Spicy wontons swimming in red chili oil and vinegar"
+                  loading="lazy"
+                >
+              </div>
+              <div class="food-card-body">
+                <span class="food-badge badge-spicy mb-2">Szechuan Style</span>
+                <h3 class="fs-6 fw-bold mb-1">Spicy Red Oil Wontons</h3>
+                <p class="small text-secondary-custom mb-3">Delicate shrimp &amp; pork dumplings submerged in spicy chili oil.</p>
+                <div class="d-flex justify-content-between align-items-center mt-auto">
+                  <span class="food-price">$14.50</span>
+                  <a href="menu.html" class="btn btn-sm btn-outline-chili">Order</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fav 3: Roast Duck Bao -->
+          <div class="favorites-item">
+            <div class="food-card">
+              <div class="food-card-img-wrap">
+                <img 
+                  src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80" 
+                  alt="Tender roast duck folded in steamed lotus bao bun"
+                  loading="lazy"
+                >
+              </div>
+              <div class="food-card-body">
+                <span class="food-badge badge-signature mb-2">Crispy Skin</span>
+                <h3 class="fs-6 fw-bold mb-1">Peking Duck Bao Bun</h3>
+                <p class="small text-secondary-custom mb-3">Tender duck breast, crisp cucumber spears, and sweet hoisin sauce.</p>
+                <div class="d-flex justify-content-between align-items-center mt-auto">
+                  <span class="food-price">$13.00</span>
+                  <a href="menu.html" class="btn btn-sm btn-outline-chili">Order</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fav 4: Truffle Mushroom -->
+          <div class="favorites-item">
+            <div class="food-card">
+              <div class="food-card-img-wrap">
+                <img 
+                  src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80" 
+                  alt="Wild forest mushroom and black truffle dumplings"
+                  loading="lazy"
+                >
+              </div>
+              <div class="food-card-body">
+                <span class="food-badge badge-veg mb-2">Gourmet Veg</span>
+                <h3 class="fs-6 fw-bold mb-1">Truffle Wild Mushroom</h3>
+                <p class="small text-secondary-custom mb-3">Earthy wild mushrooms, black truffle oil, and tender bamboo shoots.</p>
+                <div class="d-flex justify-content-between align-items-center mt-auto">
+                  <span class="food-price">$14.50</span>
+                  <a href="menu.html" class="btn btn-sm btn-outline-chili">Order</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION G: CALL TO ACTION
+         ======================================================================= -->
+    <section class="py-5" aria-labelledby="cta-heading">
+      <div class="container py-4">
+        <div class="p-5 rounded-4 text-center text-white position-relative overflow-hidden" 
+             style="background: linear-gradient(135deg, var(--brand-dark-brown) 0%, #3B332C 100%); border: 1px solid var(--border-medium);">
+          <!-- Decorative steam behind banner -->
+          <div class="steam-container" style="top: -20px;" aria-hidden="true">
+            <div class="steam-particle"></div>
+            <div class="steam-particle"></div>
+          </div>
+
+          <div class="max-w-xl mx-auto position-relative z-1 animate-on-scroll">
+            <span class="food-badge badge-signature mb-3">Fresh Kitchen Daily</span>
+            <h2 id="cta-heading" class="fs-1 fw-bold text-white mb-3">Your Next Favourite Bite Is Waiting.</h2>
+            <p class="fs-5 text-white-50 mb-4">
+              Dine in at our street-style kitchen or stock your home freezer with restaurant-grade handmade packs ready in just 8 minutes.
+            </p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+              <a href="menu.html" class="btn-chili">
+                <span>View Full Menu</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+              <a href="frozen-packs.html" class="btn btn-outline-light rounded-pill px-4 py-2.5 fw-semibold">
+                <i class="bi bi-box2 me-1"></i> Order Frozen Packs
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       SHARED FOOTER
+       ========================================================================= -->
+  <footer class="footer-custom" role="contentinfo">
+    <div class="container footer-container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand -->
+        <div class="footer-col footer-col-brand">
+          <a href="index.html" class="footer-brand-title mb-3 text-decoration-none">
+            <span class="brand-logo-mark" aria-hidden="true">
+              <img src="assets/icons/logo.svg" alt="Dumpling &amp; Bao Kitchen Logo" width="42" height="42" class="brand-logo-img">
+            </span>
+            <span>Dumpling &amp; Bao <span class="brand-name-kitchen">Kitchen</span></span>
+          </a>
+          <p class="footer-desc mb-4 pe-lg-3">
+            Handmade street dumplings, fluffy steamed bao buns, and authentic Asian culinary delights prepared fresh each day with care and love.
+          </p>
+          <div class="d-flex align-items-center gap-2 footer-signature">
+            <img src="assets/icons/dumpling.svg" alt="Dumpling logo mark" width="28" height="28" style="opacity: 0.85;">
+            <span class="small fw-semibold footer-signature-text">Hand-Folded with Passion</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Explore -->
+        <div class="footer-col footer-col-explore">
+          <h3 class="footer-col-title">Explore</h3>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="bi bi-chevron-right small"></i> Kitchen &amp; Story</a></li>
+            <li><a href="dumpling-experience.html"><i class="bi bi-chevron-right small"></i> Tasting Experience</a></li>
+            <li><a href="menu.html"><i class="bi bi-chevron-right small"></i> Menu</a></li>
+            <li><a href="frozen-packs.html"><i class="bi bi-chevron-right small"></i> Frozen Packs</a></li>
+            <li><a href="about.html"><i class="bi bi-chevron-right small"></i> About Us</a></li>
+            <li><a href="contact.html"><i class="bi bi-chevron-right small"></i> Contact</a></li>
+            <li><a href="antigravity-hero.html" style="color: var(--accent-chili);"><i class="bi bi-rocket-takeoff small"></i> Antigravity 3D</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Customer Information -->
+        <div class="footer-col footer-col-info">
+          <h3 class="footer-col-title">Information</h3>
+          <ul class="footer-links">
+            <li><a href="contact.html#opening-hours"><i class="bi bi-clock small"></i> Opening Hours</a></li>
+            <li><a href="contact.html?enquiry=catering#contact-form"><i class="bi bi-people small"></i> Catering Enquiries</a></li>
+            <li><a href="frozen-packs.html#cooking-guide"><i class="bi bi-snow small"></i> Frozen Pack Guide</a></li>
+            <li><a href="contact.html#location-map"><i class="bi bi-geo-alt small"></i> Location &amp; Map</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Follow Us -->
+        <div class="footer-col footer-col-follow">
+          <h3 class="footer-col-title">Follow Our Kitchen</h3>
+          <p class="footer-follow-desc mb-3">Join our community for seasonal specials and secret dumpling recipes.</p>
+          <div class="footer-social-row">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn" aria-label="Visit our Instagram page">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn" aria-label="Visit our Facebook page">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn" aria-label="Visit our YouTube channel">
+              <i class="bi bi-youtube"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn" aria-label="Visit our Twitter / X profile" title="Twitter / X">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom-bar d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <div>
+          &copy; <span id="currentYear">2026</span> Dumpling &amp; Bao Kitchen. All rights reserved.
+        </div>
+        <div class="footer-bottom-links d-flex gap-3">
+          <a href="contact.html" class="text-decoration-none" style="color: var(--footer-muted);">Privacy Policy (Demo)</a>
+          <span style="color: var(--footer-border);">|</span>
+          <a href="contact.html" class="text-decoration-none" style="color: var(--footer-muted);">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Lenis Buttery Smooth Scroll Engine -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+
+  <!-- Application Scripts -->
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/homepage-premium.js"></script>
+</body>
+</html>

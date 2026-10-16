@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <!-- Warm Chili Brand Gradient -->
+    <linearGradient id="brandGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6F3C" />
+      <stop offset="55%" stop-color="#E05624" />
+      <stop offset="100%" stop-color="#982D0C" />
+    </linearGradient>
+
+    <!-- Warm Bamboo Gradient -->
+    <linearGradient id="bambooGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F7C896" />
+      <stop offset="50%" stop-color="#DF9D5A" />
+      <stop offset="100%" stop-color="#B8732E" />
+    </linearGradient>
+
+    <!-- Steam Gradient -->
+    <linearGradient id="steamGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#FFFDF9" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#FFE7D6" stop-opacity="0.15" />
+    </linearGradient>
+
+    <!-- Soft Drop Shadow for Dim Sum & Steamer -->
+    <filter id="softGlow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="2.5" stdDeviation="2" flood-color="#3A1104" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Squircle Base Emblem -->
+  <rect x="3" y="3" width="94" height="94" rx="24" fill="url(#brandGradient)" stroke="rgba(255, 240, 230, 0.28)" stroke-width="2" />
+
+  <!-- Bamboo Steamer Basket Base -->
+  <g filter="url(#softGlow)">
+    <path d="M18 72 C18 80 82 80 82 72 L80 65 C80 70 20 70 20 65 Z" fill="url(#bambooGrad)" />
+    <!-- Basket Weave Accent Slats -->
+    <line x1="32" y1="67" x2="32" y2="72" stroke="#884414" stroke-width="1.2" stroke-linecap="round" opacity="0.6" />
+    <line x1="44" y1="68" x2="44" y2="73" stroke="#884414" stroke-width="1.2" stroke-linecap="round" opacity="0.6" />
+    <line x1="56" y1="68" x2="56" y2="73" stroke="#884414" stroke-width="1.2" stroke-linecap="round" opacity="0.6" />
+    <line x1="68" y1="67" x2="68" y2="72" stroke="#884414" stroke-width="1.2" stroke-linecap="round" opacity="0.6" />
+  </g>
+
+  <!-- The Fluffy Steamed Bao (Right) -->
+  <g filter="url(#softGlow)">
+    <!-- Bao Body -->
+    <path d="M46 66 C44 54 53 44 65 44 C77 44 85 54 83 66 C83 68 46 68 46 66 Z" fill="#FFFDF9" />
+    <!-- Bao Top Pleat Swirls -->
+    <path d="M65 44 C62 48 60 54 59 58" stroke="#DCA268" stroke-width="1.6" stroke-linecap="round" fill="none" />
+    <path d="M65 44 C67 48 70 54 72 58" stroke="#DCA268" stroke-width="1.6" stroke-linecap="round" fill="none" />
+    <path d="M65 44 C65 49 66 54 66 60" stroke="#DCA268" stroke-width="1.6" stroke-linecap="round" fill="none" />
+    <!-- Bao Center Knot Dot -->
+    <circle cx="65" cy="44" r="2" fill="#E05624" />
+  </g>
+
+  <!-- The Hand-Pleated Dumpling (Left & Foreground) -->
+  <g filter="url(#softGlow)">
+    <!-- Dumpling Crescent Pouch -->
+    <path d="M19 66 C17 56 24 46 36 41 C48 36 58 43 61 55 C62 61 59 66 57 67 C45 68 28 68 19 66 Z" fill="#FFFFFF" />
+    <!-- Dumpling Pleats / Folds -->
+    <path d="M36 41 C33 46 31 52 29 58" stroke="#E05624" stroke-width="1.8" stroke-linecap="round" fill="none" />
+    <path d="M42 42 C40 48 38 54 37 60" stroke="#E05624" stroke-width="1.8" stroke-linecap="round" fill="none" />
+    <path d="M48 46 C47 51 46 56 46 61" stroke="#E05624" stroke-width="1.8" stroke-linecap="round" fill="none" />
+    <path d="M54 51 C53 56 52 60 52 64" stroke="#E05624" stroke-width="1.8" stroke-linecap="round" fill="none" />
+    <!-- Bottom Rim Fold -->
+    <path d="M21 65 C31 62 46 62 57 65" stroke="#DF9D5A" stroke-width="1.5" stroke-linecap="round" fill="none" />
+  </g>
+
+  <!-- Steaming Swirls Rising -->
+  <path d="M38 33 C34 26 41 21 37 14" stroke="url(#steamGrad)" stroke-width="2.8" stroke-linecap="round" fill="none" />
+  <path d="M51 29 C55 22 47 17 52 10" stroke="url(#steamGrad)" stroke-width="2.8" stroke-linecap="round" fill="none" />
+  <path d="M64 34 C68 27 62 22 66 15" stroke="url(#steamGrad)" stroke-width="2.5" stroke-linecap="round" fill="none" />
+
+  <!-- Artisan Golden Sparkle (Top-Left) -->
+  <path d="M22 21 L23.5 24.5 L27 26 L23.5 27.5 L22 31 L20.5 27.5 L17 26 L20.5 24.5 Z" fill="#FFEBBF" opacity="0.95" />
+</svg>

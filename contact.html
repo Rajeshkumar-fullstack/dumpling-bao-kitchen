@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with Dumpling & Bao Kitchen for table bookings, menu inquiries, frozen pack orders, and wholesale catering.">
+  <title>Contact Us — Dumpling &amp; Bao Kitchen</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+  <link rel="alternate icon" type="image/svg+xml" href="assets/icons/dumpling.svg">
+  <link rel="apple-touch-icon" href="assets/icons/logo.svg">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Tailwind CSS Configuration (Disables conflicting collapse utility) -->
+  <script>
+    tailwind = {
+      corePlugins: {
+        visibility: false,
+      }
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Theme, Main & Responsive CSS -->
+  <link rel="stylesheet" href="assets/css/themes.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/homepage-premium.css">
+
+  <!-- Early Theme Scripts -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/rtl.js"></script>
+</head>
+<body>
+
+  <!-- =========================================================================
+       SHARED STICKY NAVBAR
+       ========================================================================= -->
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-custom" id="mainNavbar" aria-label="Main navigation">
+      <div class="container navbar-container">
+        <!-- Brand Logo -->
+        <a class="navbar-brand-custom" href="index.html" aria-label="Dumpling and Bao Kitchen Home">
+          <span class="brand-logo-mark" aria-hidden="true">
+            <img src="assets/icons/logo.svg" alt="Dumpling &amp; Bao Kitchen Logo" width="38" height="38" class="brand-logo-img">
+          </span>
+          <span class="brand-name">Dumpling &amp; Bao <span class="brand-name-kitchen">Kitchen</span></span>
+        </a>
+
+        <!-- Controls: Theme, RTL, Order CTA, and Mobile Hamburger -->
+        <div class="navbar-actions d-flex align-items-center gap-2 order-lg-3">
+          <!-- Theme Toggle -->
+          <button class="btn-ctrl theme-toggle-btn" type="button" aria-label="Toggle dark/light theme" title="Toggle theme">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+
+          <!-- RTL / LTR Direction Toggle -->
+          <button class="btn-ctrl rtl-toggle-btn" type="button" aria-label="Toggle text direction" title="Toggle RTL / LTR">
+            <span class="direction-label fw-bold text-xs">RTL</span>
+          </button>
+
+          <!-- Navbar Shopping Cart Icon & Live Count (Desktop Only) -->
+          <button type="button" class="btn-nav-cart d-none d-lg-inline-flex" aria-label="Shopping Cart, 0 items" id="navbarCartBtn" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" title="Open Shopping Cart">
+            <span class="cart-text">Cart</span>
+            <span class="cart-icon" aria-hidden="true">🛒</span>
+            <span class="cart-count-wrap">(<span class="cart-count" id="navCartCount">0</span>)</span>
+          </button>
+
+          <!-- Quick Action CTA Button (Desktop Only) -->
+          <a href="menu.html" class="btn btn-outline-chili btn-sm d-none d-lg-inline-flex px-3 py-2 ms-1">
+            <i class="bi bi-book"></i>
+            <span>Menu</span>
+          </a>
+
+          <!-- Mobile Hamburger Toggler -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarContent" aria-controls="mainNavbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-list fs-3"></i>
+          </button>
+        </div>
+
+        <!-- Navbar Links & Collapsible Content -->
+        <div class="collapse navbar-collapse order-lg-2" id="mainNavbarContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+            <!-- 1. Home Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+              <ul class="dropdown-menu dropdown-menu-custom shadow-lg" aria-labelledby="homeDropdown">
+                <li>
+                  <a class="dropdown-item" href="index.html">
+                    <div class="d-flex align-items-center gap-2">
+                      <i class="bi bi-shop text-chili fs-5"></i>
+                      <div>
+                        <div class="fw-semibold">Kitchen &amp; Our Story</div>
+                        <div class="small text-muted-custom">Artisan craft &amp; heritage</div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li><hr class="dropdown-divider my-1"></li>
+                <li>
+                  <a class="dropdown-item" href="dumpling-experience.html">
+                    <div class="d-flex align-items-center gap-2">
+                      <i class="bi bi-stars text-chili fs-5"></i>
+                      <div>
+                        <div class="fw-semibold">Dumpling Experience</div>
+                        <div class="small text-muted-custom">Tasting flights &amp; workshops</div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- 2. About -->
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+
+            <!-- 3. Menu -->
+            <li class="nav-item">
+              <a class="nav-link" href="menu.html">Menu</a>
+            </li>
+
+            <!-- 4. Frozen Packs -->
+            <li class="nav-item">
+              <a class="nav-link" href="frozen-packs.html">Frozen Packs</a>
+            </li>
+
+            <!-- 5. Contact -->
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="contact.html">Contact</a>
+            </li>
+          </ul>
+          <!-- Mobile Drawer CTA Buttons (Down side of menu) -->
+          <div class="d-lg-none mobile-drawer-cta-section">
+            <button type="button" class="btn btn-nav-cart-mobile w-100 py-2.5 d-flex align-items-center justify-content-center gap-2 rounded-pill fw-semibold" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-label="Open Shopping Cart">
+              <span class="fs-5" aria-hidden="true">🛒</span>
+              <span>View Shopping Cart</span>
+              <span class="badge cart-count">0</span>
+            </button>
+            <a href="cart.html" class="btn btn-outline-chili w-100 py-2 d-flex align-items-center justify-content-center gap-2 rounded-pill fw-semibold small">
+              <i class="bi bi-bag-check"></i>
+              <span>Go to Full Cart &amp; Checkout</span>
+            </a>
+            <a href="menu.html" class="btn btn-chili w-100 py-2 d-flex align-items-center justify-content-center gap-2 rounded-pill fw-semibold small">
+              <i class="bi bi-book"></i>
+              <span>Explore Our Menu</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- =======================================================================
+         PAGE HERO
+         ======================================================================= -->
+    <section class="hero-section hero-contact py-5" aria-labelledby="contact-hero-heading">
+      <!-- Atmospheric Ambient Glow Nebulas -->
+      <div class="hero-atmosphere-glow" aria-hidden="true">
+        <div class="hero-glow-orb hero-glow-chili"></div>
+        <div class="hero-glow-orb hero-glow-gold"></div>
+      </div>
+
+      <div class="container position-relative z-1">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7 animate-on-scroll">
+            <span class="section-subtitle">
+              <i class="bi bi-chat-dots me-1 text-chili"></i> We'd Love to Hear From You
+            </span>
+            <h1 id="contact-hero-heading" class="hero-title mb-3">
+              <span class="hero-split-line"><span class="hero-split-inner">Let's Talk</span></span>
+              <span class="hero-split-line"><span class="hero-split-inner text-gradient-shimmer">Dumplings</span></span>
+            </h1>
+            <p class="fs-5 text-secondary-custom mb-4 leading-relaxed">
+              Have questions about allergen ingredients, custom retail orders, catering your upcoming celebration, or visiting our kitchen? Reach out directly using our form below.
+            </p>
+            <div class="d-flex flex-wrap gap-2 text-muted-custom small">
+              <span class="badge bg-secondary-subtle text-body border p-2"><i class="bi bi-clock me-1 text-chili"></i> Responses within 24 Hours</span>
+              <span class="badge bg-secondary-subtle text-body border p-2"><i class="bi bi-people me-1 text-chili"></i> Private Party Bookings</span>
+            </div>
+          </div>
+          <div class="col-lg-5 animate-on-scroll delay-100">
+            <div class="hero-visual-3d" id="heroVisual3D">
+              <div class="hero-visual-inner">
+                <div class="hero-image-wrapper">
+                  <img 
+                    src="https://images.unsplash.com/photo-1607301406259-dfb186e15de8?auto=format&fit=crop&w=1200&q=80" 
+                    alt="Cozy warm kitchen atmosphere with Asian street-food dining table"
+                    width="600"
+                    height="380"
+                    class="img-fluid"
+                    loading="eager"
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         CONTACT FORM & INFO SECTION
+         ======================================================================= -->
+    <section class="py-5" id="contact-form" style="background-color: var(--bg-secondary);" aria-labelledby="contact-form-heading">
+      <div class="container py-2">
+        <div class="row g-5">
+          <!-- Left Column: Contact Form -->
+          <div class="col-lg-7 animate-on-scroll">
+            <div class="bg-card p-4 p-sm-5 rounded-4 border border-light-subtle shadow-sm" style="background-color: var(--bg-surface);">
+              <h2 id="contact-form-heading" class="fs-3 fw-bold mb-2">Send an Enquiry</h2>
+              <p class="text-secondary-custom small mb-4">Complete the fields below and our front-of-house team will get back to you promptly.</p>
+
+              <!-- Dynamic Confirmation Alert (Frontend Demo Notice) -->
+              <div id="formSuccessAlert" class="alert alert-success d-none mb-4" role="alert" aria-live="polite"></div>
+
+              <!-- Accessible Form -->
+              <form id="contactForm" novalidate>
+                <div class="row g-3">
+                  <!-- Full Name -->
+                  <div class="col-md-6">
+                    <label for="fullName" class="form-label">Full Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="fullName" name="fullName" placeholder="e.g. Jane Chen" required autocomplete="name" maxlength="50" aria-required="true" aria-describedby="fullNameError">
+                    <div class="invalid-feedback" id="fullNameError" role="alert">Name must contain letters only. Numbers are not allowed.</div>
+                  </div>
+
+                  <!-- Email Address -->
+                  <div class="col-md-6">
+                    <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="jane@example.com" required autocomplete="email" aria-required="true" aria-describedby="emailError">
+                    <div class="invalid-feedback" id="emailError" role="alert">Please provide a valid email address.</div>
+                  </div>
+
+                  <!-- Phone Number -->
+                  <div class="col-md-6">
+                    <label for="phone" class="form-label">Phone Number <span class="text-danger">*</span></label>
+                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="e.g. 9876543210" required autocomplete="tel" inputmode="numeric" maxlength="10" aria-required="true" aria-describedby="phoneError">
+                    <div class="invalid-feedback" id="phoneError" role="alert">Phone number must contain digits only. Letters are not allowed.</div>
+                  </div>
+
+                  <!-- Enquiry Type -->
+                  <div class="col-md-6">
+                    <label for="enquiryType" class="form-label">Enquiry Category <span class="text-danger">*</span></label>
+                    <select class="form-select" id="enquiryType" name="enquiryType" required>
+                      <option value="" selected disabled>Select category...</option>
+                      <option value="general">General Enquiry</option>
+                      <option value="menu">Menu &amp; Allergen Question</option>
+                      <option value="frozen-packs">Frozen Retail Packs</option>
+                      <option value="catering">Catering &amp; Bulk Orders</option>
+                      <option value="feedback">Feedback &amp; Compliments</option>
+                    </select>
+                    <div class="invalid-feedback">Please select an enquiry category.</div>
+                  </div>
+
+                  <!-- Subject -->
+                  <div class="col-12">
+                    <label for="subject" class="form-label">Subject <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="subject" name="subject" placeholder="What is your enquiry about?" required>
+                    <div class="invalid-feedback">Please enter a subject.</div>
+                  </div>
+
+                  <!-- Message -->
+                  <div class="col-12">
+                    <label for="message" class="form-label">Message <span class="text-danger">*</span></label>
+                    <textarea class="form-control" id="message" name="message" rows="5" placeholder="Share the details of your inquiry, party date, or pack order..." required></textarea>
+                    <div class="invalid-feedback">Please write a message with at least 10 characters.</div>
+                  </div>
+
+                  <!-- Privacy Consent Checkbox -->
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="privacyConsent" name="privacyConsent" required>
+                      <label class="form-check-label small text-secondary-custom" for="privacyConsent">
+                        I consent to Dumpling &amp; Bao Kitchen processing my details for the purpose of answering this enquiry (Demo terms). <span class="text-danger">*</span>
+                      </label>
+                      <div class="invalid-feedback">You must consent before submitting.</div>
+                    </div>
+                  </div>
+
+                  <!-- Submit Button -->
+                  <div class="col-12 pt-2">
+                    <button type="submit" class="btn btn-chili px-4 py-2.5">
+                      <i class="bi bi-send-fill"></i>
+                      <span>Send Message </span>
+                    </button>
+                    <span class="small text-muted-custom d-block mt-2">
+                      <i class="bi bi-lock-fill me-1"></i> Client-validated frontend demonstration.
+                    </span>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Right Column: Contact Information Cards -->
+          <div class="col-lg-5 animate-on-scroll delay-100">
+            <div class="d-flex flex-column gap-4">
+              <!-- Location Card -->
+              <div class="contact-info-card">
+                <div class="d-flex align-items-start gap-3">
+                  <div class="contact-icon-box">
+                    <i class="bi bi-geo-alt-fill"></i>
+                  </div>
+                  <div>
+                    <h3 class="fs-5 fw-bold mb-1">Kitchen Address</h3>
+                    <p class="small text-secondary-custom mb-1">
+                      88 Lotus Blossom Lane, Chinatown Culinary Quarter<br>
+                      Melbourne, VIC 3000, Australia
+                    </p>
+                    <div class="d-flex align-items-center gap-2 mt-2">
+                      <a href="#location-map" class="badge bg-secondary-subtle text-chili border text-decoration-none">
+                        <i class="bi bi-geo-alt me-1"></i>View on Map
+                      </a>
+                      <a href="https://maps.google.com/?q=88+Little+Bourke+St,+Melbourne+VIC+3000" target="_blank" rel="noopener noreferrer" class="badge bg-secondary-subtle text-muted-custom border text-decoration-none">
+                        <i class="bi bi-box-arrow-up-right me-1"></i>Google Maps
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Phone & Email Card -->
+              <div class="contact-info-card">
+                <div class="d-flex align-items-start gap-3">
+                  <div class="contact-icon-box">
+                    <i class="bi bi-telephone-fill"></i>
+                  </div>
+                  <div>
+                    <h3 class="fs-5 fw-bold mb-1">Direct Contacts</h3>
+                    <p class="small text-secondary-custom mb-1">
+                      <strong>Phone:</strong> +61 (03) 9555-0188 <span class="text-muted-custom">(Demo)</span><br>
+                      <strong>Email:</strong> hello@dumplingbaokitchen.demo
+                    </p>
+                    <p class="small text-secondary-custom mb-0">
+                      <strong>Retail &amp; Wholesale Desk:</strong> retail@dumplingbaokitchen.demo
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Hours Card -->
+              <div class="contact-info-card" id="opening-hours">
+                <div class="d-flex align-items-start gap-3">
+                  <div class="contact-icon-box">
+                    <i class="bi bi-clock-fill"></i>
+                  </div>
+                  <div class="w-100">
+                    <h3 class="fs-5 fw-bold mb-2">Kitchen Opening Hours</h3>
+                    <ul class="list-unstyled small text-secondary-custom mb-0">
+                      <li class="d-flex justify-content-between py-1 border-bottom border-light-subtle">
+                        <span>Monday – Thursday</span>
+                        <span class="fw-semibold">11:30 AM – 9:30 PM</span>
+                      </li>
+                      <li class="d-flex justify-content-between py-1 border-bottom border-light-subtle">
+                        <span>Friday – Saturday</span>
+                        <span class="fw-semibold text-chili">11:30 AM – 10:30 PM</span>
+                      </li>
+                      <li class="d-flex justify-content-between py-1">
+                        <span>Sunday &amp; Holidays</span>
+                        <span class="fw-semibold">12:00 PM – 9:00 PM</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         MAP SECTION (GOOGLE MAPS INTEGRATION)
+         ======================================================================= -->
+    <section class="py-5" id="location-map" aria-labelledby="map-heading">
+      <div class="container py-2">
+        <div class="row justify-content-between align-items-end mb-4 g-3">
+          <div class="col-lg-7 animate-on-scroll">
+            <span class="section-subtitle">Find Our Kitchen</span>
+            <h2 id="map-heading" class="section-title mb-1">Interactive Location Map</h2>
+            <p class="text-secondary-custom mb-0">Easily reachable by public transit, right in the heart of Melbourne's Chinatown culinary district.</p>
+          </div>
+          <div class="col-lg-5 text-lg-end animate-on-scroll delay-100">
+            <div class="d-flex flex-wrap gap-2 justify-content-lg-end">
+              <a href="https://maps.google.com/?q=88+Little+Bourke+St,+Melbourne+VIC+3000" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-chili">
+                <i class="bi bi-geo-alt-fill me-1"></i>
+                <span>Open in Google Maps</span>
+              </a>
+              <a href="https://www.google.com/maps/dir/?api=1&amp;destination=88+Little+Bourke+St,+Melbourne+VIC+3000" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-chili">
+                <i class="bi bi-sign-turn-right me-1"></i>
+                <span>Get Directions</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Responsive Google Maps Frame -->
+        <div class="map-container animate-on-scroll">
+          <iframe 
+            title="Dumpling &amp; Bao Kitchen Location on Google Maps"
+            width="100%" 
+            height="100%" 
+            style="border: 0;"
+            src="https://maps.google.com/maps?q=88+Little+Bourke+St,+Melbourne+VIC+3000,+Australia&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            aria-label="Google Maps interactive view of Dumpling &amp; Bao Kitchen, 88 Lotus Blossom Lane, Chinatown Melbourne">
+          </iframe>
+        </div>
+
+        <!-- Transit, Parking & Directions Information Strip -->
+        <div class="row g-3 mt-3 animate-on-scroll">
+          <div class="col-md-4">
+            <div class="p-3 rounded-3 h-100" style="background-color: var(--bg-card); border: 1px solid var(--border-light);">
+              <div class="d-flex align-items-center gap-2 mb-1.5">
+                <i class="bi bi-train-front text-chili fs-5"></i>
+                <h4 class="fs-6 fw-bold mb-0">By Train &amp; Tram</h4>
+              </div>
+              <p class="small text-secondary-custom mb-0">
+                Parliament &amp; Flinders St Stations are a short 6-minute walk. Trams 86, 96, 11 &amp; 12 stop right outside on Bourke &amp; Swanston Streets.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 rounded-3 h-100" style="background-color: var(--bg-card); border: 1px solid var(--border-light);">
+              <div class="d-flex align-items-center gap-2 mb-1.5">
+                <i class="bi bi-p-square text-chili fs-5"></i>
+                <h4 class="fs-6 fw-bold mb-0">Parking &amp; Access</h4>
+              </div>
+              <p class="small text-secondary-custom mb-0">
+                Chinatown Secure Parking (222 Russell St) and MidCity Arcade Car Park are both within a 150m walking distance from our door.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 rounded-3 h-100" style="background-color: var(--bg-card); border: 1px solid var(--border-light);">
+              <div class="d-flex align-items-center gap-2 mb-1.5">
+                <i class="bi bi-geo-alt-fill text-chili fs-5"></i>
+                <h4 class="fs-6 fw-bold mb-0">Street Entrance</h4>
+              </div>
+              <p class="small text-secondary-custom mb-0">
+                Look for the glowing red lantern &amp; steaming bamboo signage at 88 Lotus Blossom Lane (corner of Little Bourke Street).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex flex-wrap justify-content-between align-items-center mt-3 pt-1 small text-muted-custom">
+          <div>
+            <i class="bi bi-info-circle me-1"></i> Connected to Google Maps. Interactive zoom, pan, and real-time street view navigation enabled.
+          </div>
+          <div class="mt-1 mt-sm-0">
+            <a href="https://maps.google.com/?q=88+Little+Bourke+St,+Melbourne+VIC+3000" target="_blank" rel="noopener noreferrer" class="text-chili text-decoration-none fw-semibold">
+              <i class="bi bi-arrow-up-right-square me-1"></i>View full screen on Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         CONTACT CTA & VISIT SHOWCASE SECTION
+         ======================================================================= -->
+    <section class="py-5 position-relative" aria-labelledby="bottom-cta-heading">
+      <div class="container py-2">
+        <div class="contact-cta-card p-4 p-md-5 rounded-4 position-relative overflow-hidden" 
+             style="background: linear-gradient(135deg, var(--brand-dark-brown) 0%, #3B332C 100%); border: 1px solid var(--border-medium); box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);">
+          
+          <!-- Decorative steam behind banner -->
+          <div class="steam-container" style="top: -20px;" aria-hidden="true">
+            <div class="steam-particle"></div>
+            <div class="steam-particle"></div>
+          </div>
+
+          <div class="row align-items-center g-4 position-relative z-1">
+            <!-- Left Column: Content & Features -->
+            <div class="col-lg-7 animate-on-scroll">
+              <div class="d-inline-flex align-items-center gap-2 px-3 py-1.5 rounded-pill mb-3" 
+                   style="background: rgba(224, 86, 36, 0.18); border: 1px solid rgba(224, 86, 36, 0.35);">
+                <i class="bi bi-fire text-chili"></i>
+                <span class="small fw-bold text-uppercase" style="letter-spacing: 0.05em; color: var(--accent-chili);">Steaming Fresh Daily</span>
+              </div>
+              
+              <h2 id="bottom-cta-heading" class="fs-2 fs-md-1 fw-bold text-white mb-3">
+                Craving Freshly Steamed Dumplings Right Now?
+              </h2>
+              
+              <p class="fs-5 text-white-50 mb-4 pe-lg-3" style="line-height: 1.6;">
+                Drop by our street kitchen for piping-hot baskets straight off the bamboo steamers, or stock your freezer with handcrafted packs ready in 8 minutes.
+              </p>
+
+              <!-- Responsive 3-Pillar Quick Cards -->
+              <div class="row g-3 mb-4">
+                <div class="col-sm-4">
+                  <div class="p-3 rounded-3 h-100" style="background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.08);">
+                    <div class="d-flex align-items-center gap-2 mb-1.5">
+                      <i class="bi bi-shop text-chili fs-6"></i>
+                      <span class="fw-semibold text-white small">Dine-In &amp; Takeaway</span>
+                    </div>
+                    <p class="text-white-50 mb-0 small" style="font-size: 0.82rem; line-height: 1.4;">
+                      Walk-ins welcome with fast counter &amp; steamer service.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="p-3 rounded-3 h-100" style="background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.08);">
+                    <div class="d-flex align-items-center gap-2 mb-1.5">
+                      <i class="bi bi-snow text-chili fs-6"></i>
+                      <span class="fw-semibold text-white small">Handmade Frozen</span>
+                    </div>
+                    <p class="text-white-50 mb-0 small" style="font-size: 0.82rem; line-height: 1.4;">
+                      12-piece retail packs flash-frozen fresh for home.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="p-3 rounded-3 h-100" style="background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.08);">
+                    <div class="d-flex align-items-center gap-2 mb-1.5">
+                      <i class="bi bi-calendar-event text-chili fs-6"></i>
+                      <span class="fw-semibold text-white small">Catering Platters</span>
+                    </div>
+                    <p class="text-white-50 mb-0 small" style="font-size: 0.82rem; line-height: 1.4;">
+                      Custom dim sum platters for events &amp; office parties.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Buttons -->
+              <div class="d-flex flex-wrap gap-3 align-items-center">
+                <a href="menu.html" class="btn-chili">
+                  <i class="bi bi-book me-1"></i>
+                  <span>Explore Menu</span>
+                  <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+                <a href="frozen-packs.html" class="btn btn-outline-light rounded-pill px-4 py-2.5 fw-semibold">
+                  <i class="bi bi-box2 me-1"></i>
+                  <span>Frozen Packs</span>
+                </a>
+                <a href="contact.html?enquiry=catering" class="btn btn-outline-light rounded-pill px-4 py-2.5 fw-semibold">
+                  <i class="bi bi-calendar-check me-1"></i>
+                  <span>Book Catering</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right Column: Interactive Image & Kitchen Snapshot -->
+            <div class="col-lg-5 animate-on-scroll delay-100">
+              <div class="contact-cta-media rounded-4 overflow-hidden position-relative shadow-lg" 
+                   style="border: 1px solid rgba(255, 255, 255, 0.12);">
+                <div class="ratio ratio-4x3">
+                  <img src="https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=800&q=80" 
+                       alt="Steaming baskets of dumplings and bao buns" 
+                       class="w-100 h-100 object-fit-cover"
+                       loading="lazy"
+                       onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80';">
+                </div>
+                <div class="position-absolute bottom-0 start-0 end-0 p-3 p-md-4" 
+                     style="background: linear-gradient(180deg, transparent 0%, rgba(20, 16, 14, 0.95) 100%);">
+                  <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="badge bg-chili text-white px-3 py-1.5 rounded-pill small fw-semibold">
+                      <i class="bi bi-stars me-1"></i> Kitchen Hours Today
+                    </span>
+                    <span class="text-white small fw-bold">11:30 AM – 10:30 PM</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2 text-white-50 small">
+                    <i class="bi bi-geo-alt-fill text-chili"></i>
+                    <span class="text-truncate">88 Lotus Blossom Lane, Chinatown</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       SHARED FOOTER
+       ========================================================================= -->
+  <footer class="footer-custom" role="contentinfo">
+    <div class="container footer-container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand -->
+        <div class="footer-col footer-col-brand">
+          <a href="index.html" class="footer-brand-title mb-3 text-decoration-none">
+            <span class="brand-logo-mark" aria-hidden="true">
+              <img src="assets/icons/logo.svg" alt="Dumpling &amp; Bao Kitchen Logo" width="42" height="42" class="brand-logo-img">
+            </span>
+            <span>Dumpling &amp; Bao <span class="brand-name-kitchen">Kitchen</span></span>
+          </a>
+          <p class="footer-desc mb-4 pe-lg-3">
+            Handmade street dumplings, fluffy steamed bao buns, and authentic Asian culinary delights prepared fresh each day with care and love.
+          </p>
+          <div class="d-flex align-items-center gap-2 footer-signature">
+            <img src="assets/icons/dumpling.svg" alt="Dumpling logo mark" width="28" height="28" style="opacity: 0.85;">
+            <span class="small fw-semibold footer-signature-text">Hand-Folded with Passion</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Explore -->
+        <div class="footer-col footer-col-explore">
+          <h3 class="footer-col-title">Explore</h3>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="bi bi-chevron-right small"></i> Kitchen &amp; Story</a></li>
+            <li><a href="dumpling-experience.html"><i class="bi bi-chevron-right small"></i> Tasting Experience</a></li>
+            <li><a href="menu.html"><i class="bi bi-chevron-right small"></i> Menu</a></li>
+            <li><a href="frozen-packs.html"><i class="bi bi-chevron-right small"></i> Frozen Packs</a></li>
+            <li><a href="about.html"><i class="bi bi-chevron-right small"></i> About Us</a></li>
+            <li><a href="contact.html"><i class="bi bi-chevron-right small"></i> Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Customer Information -->
+        <div class="footer-col footer-col-info">
+          <h3 class="footer-col-title">Information</h3>
+          <ul class="footer-links">
+            <li><a href="contact.html#opening-hours"><i class="bi bi-clock small"></i> Opening Hours</a></li>
+            <li><a href="contact.html?enquiry=catering#contact-form"><i class="bi bi-people small"></i> Catering Enquiries</a></li>
+            <li><a href="frozen-packs.html#cooking-guide"><i class="bi bi-snow small"></i> Frozen Pack Guide</a></li>
+            <li><a href="contact.html#location-map"><i class="bi bi-geo-alt small"></i> Location &amp; Map</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Follow Us -->
+        <div class="footer-col footer-col-follow">
+          <h3 class="footer-col-title">Follow Our Kitchen</h3>
+          <p class="footer-follow-desc mb-3">Join our community for seasonal specials and secret dumpling recipes.</p>
+          <div class="footer-social-row">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn" aria-label="Visit our Instagram page">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn" aria-label="Visit our Facebook page">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn" aria-label="Visit our YouTube channel">
+              <i class="bi bi-youtube"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn" aria-label="Visit our Twitter / X profile" title="Twitter / X">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <div>
+          &copy; <span id="currentYear">2026</span> Dumpling &amp; Bao Kitchen. All rights reserved.
+        </div>
+        <div class="footer-bottom-links d-flex gap-3">
+          <a href="contact.html" class="text-decoration-none" style="color: var(--footer-muted);">Privacy Policy (Demo)</a>
+          <span style="color: var(--footer-border);">|</span>
+          <a href="contact.html" class="text-decoration-none" style="color: var(--footer-muted);">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Lenis Buttery Smooth Scroll Engine -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+
+  <!-- Application Scripts -->
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/form-validation.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/homepage-premium.js"></script>
+</body>
+</html>

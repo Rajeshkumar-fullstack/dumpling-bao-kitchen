@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore our authentic menu of handmade dumplings, steamed lotus bao buns, crispy potstickers, and house dipping sauces at Dumpling & Bao Kitchen.">
+  <title>Menu — Dumpling &amp; Bao Kitchen</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+  <link rel="alternate icon" type="image/svg+xml" href="assets/icons/dumpling.svg">
+  <link rel="apple-touch-icon" href="assets/icons/logo.svg">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Tailwind CSS Configuration (Disables conflicting collapse utility) -->
+  <script>
+    tailwind = {
+      corePlugins: {
+        visibility: false,
+      }
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Theme, Main & Responsive CSS -->
+  <link rel="stylesheet" href="assets/css/themes.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/homepage-premium.css">
+
+  <!-- Early Theme Scripts -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/rtl.js"></script>
+</head>
+<body>
+
+  <!-- =========================================================================
+       SHARED STICKY NAVBAR
+       ========================================================================= -->
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-custom" id="mainNavbar" aria-label="Main navigation">
+      <div class="container navbar-container">
+        <!-- Brand Logo -->
+        <a class="navbar-brand-custom" href="index.html" aria-label="Dumpling and Bao Kitchen Home">
+          <span class="brand-logo-mark" aria-hidden="true">
+            <img src="assets/icons/logo.svg" alt="Dumpling &amp; Bao Kitchen Logo" width="38" height="38" class="brand-logo-img">
+          </span>
+          <span class="brand-name">Dumpling &amp; Bao <span class="brand-name-kitchen">Kitchen</span></span>
+        </a>
+
+        <!-- Controls: Theme, RTL, Order CTA, and Mobile Hamburger -->
+        <div class="navbar-actions d-flex align-items-center gap-2 order-lg-3">
+          <!-- Theme Toggle -->
+          <button class="btn-ctrl theme-toggle-btn" type="button" aria-label="Toggle dark/light theme" title="Toggle theme">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+
+          <!-- RTL / LTR Direction Toggle -->
+          <button class="btn-ctrl rtl-toggle-btn" type="button" aria-label="Toggle text direction" title="Toggle RTL / LTR">
+            <span class="direction-label fw-bold text-xs">RTL</span>
+          </button>
+
+          <!-- Navbar Shopping Cart Icon & Live Count (Desktop Only) -->
+          <button type="button" class="btn-nav-cart d-none d-lg-inline-flex" aria-label="Shopping Cart, 0 items" id="navbarCartBtn" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" title="Open Shopping Cart">
+            <span class="cart-text">Cart</span>
+            <span class="cart-icon" aria-hidden="true">🛒</span>
+            <span class="cart-count-wrap">(<span class="cart-count" id="navCartCount">0</span>)</span>
+          </button>
+
+          <!-- Quick Action CTA Button (Desktop Only) -->
+          <a href="frozen-packs.html" class="btn btn-outline-chili btn-sm d-none d-lg-inline-flex px-3 py-2 ms-1">
+            <i class="bi bi-box2"></i>
+            <span>Frozen Packs</span>
+          </a>
+
+          <!-- Mobile Hamburger Toggler -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarContent" aria-controls="mainNavbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-list fs-3"></i>
+          </button>
+        </div>
+
+        <!-- Navbar Links & Collapsible Content -->
+        <div class="collapse navbar-collapse order-lg-2" id="mainNavbarContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+            <!-- 1. Home Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+              <ul class="dropdown-menu dropdown-menu-custom shadow-lg" aria-labelledby="homeDropdown">
+                <li>
+                  <a class="dropdown-item" href="index.html">
+                    <div class="d-flex align-items-center gap-2">
+                      <i class="bi bi-shop text-chili fs-5"></i>
+                      <div>
+                        <div class="fw-semibold">Kitchen &amp; Our Story</div>
+                        <div class="small text-muted-custom">Artisan craft &amp; heritage</div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li><hr class="dropdown-divider my-1"></li>
+                <li>
+                  <a class="dropdown-item" href="dumpling-experience.html">
+                    <div class="d-flex align-items-center gap-2">
+                      <i class="bi bi-stars text-chili fs-5"></i>
+                      <div>
+                        <div class="fw-semibold">Dumpling Experience</div>
+                        <div class="small text-muted-custom">Tasting flights &amp; workshops</div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- 2. About -->
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+
+            <!-- 3. Menu -->
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="menu.html">Menu</a>
+            </li>
+
+            <!-- 4. Frozen Packs -->
+            <li class="nav-item">
+              <a class="nav-link" href="frozen-packs.html">Frozen Packs</a>
+            </li>
+
+            <!-- 5. Contact -->
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+          <!-- Mobile Drawer CTA Buttons (Down side of menu) -->
+          <div class="d-lg-none mobile-drawer-cta-section">
+            <button type="button" class="btn btn-nav-cart-mobile w-100 py-2.5 d-flex align-items-center justify-content-center gap-2 rounded-pill fw-semibold" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-label="Open Shopping Cart">
+              <span class="fs-5" aria-hidden="true">🛒</span>
+              <span>View Shopping Cart</span>
+              <span class="badge cart-count">0</span>
+            </button>
+            <a href="cart.html" class="btn btn-outline-chili w-100 py-2 d-flex align-items-center justify-content-center gap-2 rounded-pill fw-semibold small">
+              <i class="bi bi-bag-check"></i>
+              <span>Go to Full Cart &amp; Checkout</span>
+            </a>
+            <a href="frozen-packs.html" class="btn btn-chili w-100 py-2 d-flex align-items-center justify-content-center gap-2 rounded-pill fw-semibold small">
+              <i class="bi bi-box2"></i>
+              <span>Explore Frozen Packs</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- =======================================================================
+         MENU HERO SECTION
+         ======================================================================= -->
+    <section class="hero-section hero-menu py-5" aria-labelledby="menu-hero-heading">
+      <!-- Atmospheric Ambient Glow Nebulas -->
+      <div class="hero-atmosphere-glow" aria-hidden="true">
+        <div class="hero-glow-orb hero-glow-chili"></div>
+        <div class="hero-glow-orb hero-glow-gold"></div>
+      </div>
+
+      <div class="container position-relative z-1">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7 animate-on-scroll">
+            <span class="section-subtitle text-start">
+              <i class="bi bi-journal-text me-1 text-chili"></i> Kitchen Menu
+            </span>
+            <h1 id="menu-hero-heading" class="hero-title mb-3 text-start">
+              <span class="hero-split-line"><span class="hero-split-inner">A Little Fold</span></span><br class="d-none d-sm-inline">
+              <span class="hero-split-line"><span class="hero-split-inner text-gradient-shimmer">A Lot of Flavour</span></span>
+            </h1>
+            <p class="fs-5 text-secondary-custom mb-4 text-start leading-relaxed">
+              Explore our diverse selection of fresh steamed dumplings, crispy pan-fried potstickers, fluffy bao buns, and house-made dipping sauces. Every dish is seasoned with authentic Asian culinary heritage.
+            </p>
+            <div class="d-flex flex-wrap gap-2 text-muted-custom small">
+              <span class="badge bg-secondary-subtle text-body border p-2">Steamed to Order</span>
+              <span class="badge bg-secondary-subtle text-body border p-2">Handmade Wrappers</span>
+              <span class="badge bg-secondary-subtle text-body border p-2">Vegetarian &amp; Gluten Options</span>
+            </div>
+          </div>
+          <div class="col-lg-5 animate-on-scroll delay-100">
+            <div class="hero-visual-3d" id="heroVisual3D">
+              <div class="hero-visual-inner">
+                <div class="hero-image-wrapper">
+                  <!-- Decorative Steam -->
+                  <div class="steam-container" aria-hidden="true">
+                    <div class="steam-particle"></div>
+                    <div class="steam-particle"></div>
+                  </div>
+                  <img 
+                    src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=1200&q=80" 
+                    alt="Fresh dumplings steaming in layered bamboo steamer baskets" 
+                    width="600" 
+                    height="380"
+                    class="img-fluid"
+                    loading="eager"
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         INTERACTIVE CATEGORY FILTER BAR
+         ======================================================================= -->
+    <section class="py-3 py-md-3.5 border-top border-bottom border-light-subtle menu-filter-bar" id="menuFilterBar" aria-label="Menu Category Filter Bar">
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+          <!-- Filter Buttons Pill Carousel / Horizontal Scroll -->
+          <div class="d-flex flex-wrap gap-2 menu-filter-group" role="group" aria-label="Menu category filters">
+            <button type="button" class="menu-filter-pill active" data-filter="all">
+              <span>All Items</span>
+            </button>
+            <button type="button" class="menu-filter-pill" data-filter="vegetable">
+              <i class="bi bi-flower1"></i> Vegetable
+            </button>
+            <button type="button" class="menu-filter-pill" data-filter="chicken">
+              <i class="bi bi-egg-fried"></i> Chicken
+            </button>
+            <button type="button" class="menu-filter-pill" data-filter="pork">
+              <i class="bi bi-fire"></i> Pork
+            </button>
+            <button type="button" class="menu-filter-pill" data-filter="seafood">
+              <i class="bi bi-water"></i> Seafood
+            </button>
+            <button type="button" class="menu-filter-pill" data-filter="bao">
+              <i class="bi bi-circle"></i> Bao Buns
+            </button>
+            <button type="button" class="menu-filter-pill" data-filter="sides">
+              <i class="bi bi-cup-hot"></i> Sides &amp; Sauces
+            </button>
+          </div>
+
+          <!-- Live Count Indicator -->
+          <div class="small fw-semibold text-secondary-custom d-none d-sm-block" id="menuItemCount">
+            24 items available
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         MENU ITEMS GRID
+         ======================================================================= -->
+    <section class="py-5" aria-label="Menu Items Collection">
+      <div class="container py-2">
+        <div class="row g-4" id="menuGridContainer">
+
+          <!-- ================= CATEGORY 1: VEGETABLE DUMPLINGS ================= -->
+          <!-- Veg Item 1 -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 menu-item-card" data-category="vegetable">
+            <div class="food-card" data-product-id="menu-garden-chive-tofu" 
+                 data-title="Garden Chive & Tofu Dumplings" 
+                 data-desc="Tender garlic chives, crumbled firm organic tofu, vermicelli noodles, and fragrant sesame oil pleated in handmade spinach-infused green wrapper."
+                 data-price="$12.50" 
+                 data-img="https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=800&q=80"
+                 data-badge="veg"
+                 data-ingredients="Garlic chives, organic firm tofu, mung bean vermicelli, ginger, toasted sesame oil, unbleached wheat flour."
+                 data-allergens="Contains Wheat, Soy, Sesame. 100% Plant-Based.">
+              <div class="food-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=800&q=80" alt="Garden Chive & Tofu Dumplings" loading="lazy">
+              </div>
+              <div class="food-card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-veg"><i class="bi bi-flower1"></i> Vegetarian</span>
+                  <span class="food-price">$12.50</span>
+                </div>
+                <h3 class="fs-6 fw-bold mb-1">Garden Chive &amp; Tofu</h3>
+                <p class="small text-secondary-custom mb-3">Fresh chives, organic tofu, vermicelli, and sesame oil.</p>
+                <div class="product-actions mt-auto pt-2">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <div class="quantity-input-group d-flex align-items-center">
+                      <button type="button" class="btn-qty btn-qty-minus" aria-label="Decrease quantity for Garden Chive & Tofu Dumplings">-</button>
+                      <input type="number" class="qty-field" value="1" min="1" max="99" aria-label="Quantity for Garden Chive & Tofu Dumplings">
+                      <button type="button" class="btn-qty btn-qty-plus" aria-label="Increase quantity for Garden Chive & Tofu Dumplings">+</button>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-chili flex-grow-1 btn-add-to-cart d-flex align-items-center justify-content-center gap-1.5"
+                            data-id="menu-garden-chive-tofu"
+                            data-name="Garden Chive & Tofu Dumplings"
+                            data-price="12.50"
+                            data-image="https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=800&q=80"
+                            data-category="vegetable">
+                      <i class="bi bi-cart-plus"></i>
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                  <button type="button" class="btn btn-sm btn-outline-chili w-100 btn-view-details">
+                    <span>View Details</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Veg Item 2 -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 menu-item-card" data-category="vegetable">
+            <div class="food-card" data-product-id="menu-shiitake-bok-choy" 
+                 data-title="Shiitake & Baby Bok Choy Dumplings" 
+                 data-desc="Wok-seared Japanese shiitake mushrooms tossed with crisp baby bok choy and sweet Chinese cabbage, packed into a translucent wrapper."
+                 data-price="$13.00" 
+                 data-img="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80"
+                 data-badge="veg"
+                 data-ingredients="Dried & fresh shiitake mushrooms, baby bok choy, scallions, aged light soy, sesame seeds."
+                 data-allergens="Contains Wheat, Soy, Sesame.">
+              <div class="food-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80" alt="Shiitake & Baby Bok Choy Dumplings" loading="lazy">
+              </div>
+              <div class="food-card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-veg"><i class="bi bi-flower1"></i> Vegetarian</span>
+                  <span class="food-price">$13.00</span>
+                </div>
+                <h3 class="fs-6 fw-bold mb-1">Shiitake &amp; Baby Bok Choy</h3>
+                <p class="small text-secondary-custom mb-3">Savory forest mushrooms with crunchy greens.</p>
+                <div class="product-actions mt-auto pt-2">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <div class="quantity-input-group d-flex align-items-center">
+                      <button type="button" class="btn-qty btn-qty-minus" aria-label="Decrease quantity for Shiitake & Baby Bok Choy Dumplings">-</button>
+                      <input type="number" class="qty-field" value="1" min="1" max="99" aria-label="Quantity for Shiitake & Baby Bok Choy Dumplings">
+                      <button type="button" class="btn-qty btn-qty-plus" aria-label="Increase quantity for Shiitake & Baby Bok Choy Dumplings">+</button>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-chili flex-grow-1 btn-add-to-cart d-flex align-items-center justify-content-center gap-1.5"
+                            data-id="menu-shiitake-bok-choy"
+                            data-name="Shiitake & Baby Bok Choy Dumplings"
+                            data-price="13.00"
+                            data-image="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80"
+                            data-category="vegetable">
+                      <i class="bi bi-cart-plus"></i>
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                  <button type="button" class="btn btn-sm btn-outline-chili w-100 btn-view-details">
+                    <span>View Details</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Veg Item 3 -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 menu-item-card" data-category="vegetable">
+            <div class="food-card" data-product-id="menu-sweet-corn-chestnut" 
+                 data-title="Sweet Corn & Water Chestnut" 
+                 data-desc="Sweet golden corn kernels, diced crunchy water chestnuts, cilantro, and shredded carrots with white pepper warmth."
+                 data-price="$12.00" 
+                 data-img="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80"
+                 data-badge="veg"
+                 data-ingredients="Sweet corn, water chestnuts, carrots, ginger, cilantro, white pepper."
+                 data-allergens="Contains Wheat, Sesame.">
+              <div class="food-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80" alt="Sweet Corn & Water Chestnut Dumplings" loading="lazy">
+              </div>
+              <div class="food-card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-veg"><i class="bi bi-flower1"></i> Vegetarian</span>
+                  <span class="food-price">$12.00</span>
+                </div>
+                <h3 class="fs-6 fw-bold mb-1">Sweet Corn &amp; Chestnut</h3>
+                <p class="small text-secondary-custom mb-3">Sweet corn kernels with crisp water chestnuts.</p>
+                <div class="product-actions mt-auto pt-2">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <div class="quantity-input-group d-flex align-items-center">
+                      <button type="button" class="btn-qty btn-qty-minus" aria-label="Decrease quantity for Sweet Corn & Water Chestnut">-</button>
+                      <input type="number" class="qty-field" value="1" min="1" max="99" aria-label="Quantity for Sweet Corn & Water Chestnut">
+                      <button type="button" class="btn-qty btn-qty-plus" aria-label="Increase quantity for Sweet Corn & Water Chestnut">+</button>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-chili flex-grow-1 btn-add-to-cart d-flex align-items-center justify-content-center gap-1.5"
+                            data-id="menu-sweet-corn-chestnut"
+                            data-name="Sweet Corn & Water Chestnut"
+                            data-price="12.00"
+                            data-image="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80"
+                            data-category="vegetable">
+                      <i class="bi bi-cart-plus"></i>
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                  <button type="button" class="btn btn-sm btn-outline-chili w-100 btn-view-details">
+                    <span>View Details</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Veg Item 4 -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 menu-item-card" data-category="vegetable">
+            <div class="food-card" data-product-id="menu-truffle-wild-mushroom" 
+                 data-title="Truffle Wild Forest Mushroom" 
+                 data-desc="Earthy trio of porcini, chanterelle, and king oyster mushrooms finished with fragrant Italian black truffle essence."
+                 data-price="$15.00" 
+                 data-img="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80"
+                 data-badge="signature veg"
+                 data-ingredients="Porcini, chanterelle, king oyster, black truffle oil, shallots, garlic chives."
+                 data-allergens="Contains Wheat, Soy.">
+              <div class="food-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80" alt="Truffle Wild Forest Mushroom Dumplings" loading="lazy">
+              </div>
+              <div class="food-card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-signature"><i class="bi bi-star-fill"></i> Chef Choice</span>
+                  <span class="food-price">$15.00</span>
+                </div>
+                <h3 class="fs-6 fw-bold mb-1">Truffle Wild Mushroom</h3>
+                <p class="small text-secondary-custom mb-3">Gourmet wild mushrooms infused with black truffle oil.</p>
+                <div class="product-actions mt-auto pt-2">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <div class="quantity-input-group d-flex align-items-center">
+                      <button type="button" class="btn-qty btn-qty-minus" aria-label="Decrease quantity for Truffle Wild Forest Mushroom">-</button>
+                      <input type="number" class="qty-field" value="1" min="1" max="99" aria-label="Quantity for Truffle Wild Forest Mushroom">
+                      <button type="button" class="btn-qty btn-qty-plus" aria-label="Increase quantity for Truffle Wild Forest Mushroom">+</button>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-chili flex-grow-1 btn-add-to-cart d-flex align-items-center justify-content-center gap-1.5"
+                            data-id="menu-truffle-wild-mushroom"
+                            data-name="Truffle Wild Forest Mushroom"
+                            data-price="15.00"
+                            data-image="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80"
+                            data-category="vegetable">
+                      <i class="bi bi-cart-plus"></i>
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                  <button type="button" class="btn btn-sm btn-outline-chili w-100 btn-view-details">
+                    <span>View Details</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= CATEGORY 2: CHICKEN DUMPLINGS ================= -->
+          <!-- Chicken Item 1 -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 menu-item-card" data-category="chicken">
+            <div class="food-card" data-product-id="menu-ginger-scallion-chicken" 
+                 data-title="Ginger Scallion Chicken Dumplings" 
+                 data-desc="Minced free-range chicken breast mixed with freshly grated yellow ginger, fragrant scallions, and pure sesame oil."
+                 data-price="$13.50" 
+                 data-img="https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&w=800&q=80"
+                 data-badge="popular"
+                 data-ingredients="Free-range chicken, spring scallions, ginger root, Shaoxing cooking wine, sesame oil."
+                 data-allergens="Contains Wheat, Sesame, Soy.">
+              <div class="food-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&w=800&q=80" alt="Ginger Scallion Chicken Dumplings" loading="lazy">
+              </div>
+              <div class="food-card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-popular">Best Seller</span>
+                  <span class="food-price">$13.50</span>
+                </div>
+                <h3 class="fs-6 fw-bold mb-1">Ginger Scallion Chicken</h3>
+                <p class="small text-secondary-custom mb-3">Fresh ground chicken with vibrant ginger aroma.</p>
+                <div class="product-actions mt-auto pt-2">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <div class="quantity-input-group d-flex align-items-center">
+                      <button type="button" class="btn-qty btn-qty-minus" aria-label="Decrease quantity for Ginger Scallion Chicken Dumplings">-</button>
+                      <input type="number" class="qty-field" value="1" min="1" max="99" aria-label="Quantity for Ginger Scallion Chicken Dumplings">
+                      <button type="button" class="btn-qty btn-qty-plus" aria-label="Increase quantity for Ginger Scallion Chicken Dumplings">+</button>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-chili flex-grow-1 btn-add-to-cart d-flex align-items-center justify-content-center gap-1.5"
+                            data-id="menu-ginger-scallion-chicken"
+                            data-name="Ginger Scallion Chicken Dumplings"
+                            data-price="13.50"
+                            data-image="https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&w=800&q=80"
+                            data-category="chicken">
+                      <i class="bi bi-cart-plus"></i>
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                  <button type="button" class="btn btn-sm btn-outline-chili w-100 btn-view-details">
+                    <span>View Details</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chicken Item 2 -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 menu-item-card" data-category="chicken">
+            <div class="food-card" data-product-id="menu-lemongrass-cilantro-chicken" 
+                 data-title="Lemongrass & Cilantro Chicken" 
+                 data-desc="Fragrant Thai lemongrass, crushed cilantro stems, lime leaf, and juicy chicken thigh with a hint of white chili."
+                 data-price="$13.75" 
+                 data-img="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80"
+                 data-badge=""
+                 data-ingredients="Chicken thigh, lemongrass stalks, cilantro, lime leaves, garlic, sea salt."
+                 data-allergens="Contains Wheat, Soy.">
+              <div class="food-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80" alt="Lemongrass & Cilantro Chicken Dumplings" loading="lazy">
+              </div>
+              <div class="food-card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-popular">Aromatic</span>
+                  <span class="food-price">$13.75</span>
+                </div>
+                <h3 class="fs-6 fw-bold mb-1">Lemongrass &amp; Cilantro</h3>
+                <p class="small text-secondary-custom mb-3">Zesty lemongrass and fresh cilantro in soft wrapper.</p>
+                <div class="product-actions mt-auto pt-2">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <div class="quantity-input-group d-flex align-items-center">
+                      <button type="button" class="btn-qty btn-qty-minus" aria-label="Decrease quantity for Lemongrass & Cilantro Chicken">-</button>
+                      <input type="number" class="qty-field" value="1" min="1" max="99" aria-label="Quantity for Lemongrass & Cilantro Chicken">
+                      <button type="button" class="btn-qty btn-qty-plus" aria-label="Increase quantity for Lemongrass & Cilantro Chicken">+</button>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-chili flex-grow-1 btn-add-to-cart d-flex align-items-center justify-content-center gap-1.5"
+                            data-id="menu-lemongrass-cilantro-chicken"
+                            data-name="Lemongrass & Cilantro Chicken"
+                            data-price="13.75"
+                            data-image="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80"
+                            data-category="chicken">
+                      <i class="bi bi-cart-plus"></i>
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                  <button type="button" class="btn btn-sm btn-outline-chili w-100 btn-view-details">
+                    <span>View Details</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chicken Item 3 -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 menu-item-card" data-category="chicken">
+            <div class="food-card" data-product-id="menu-spicy-mala-chicken" 
+                 data-title="Spicy Mala Chicken Dumplings" 
+                 data-desc="Tender minced chicken seasoned with roasted Szechuan peppercorns, dried red chilies, and garlic broth."
+                 data-price="$14.00" 
+                 data-img="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=800&q=80"
+                 data-badge="spicy"
+                 data-ingredients="Chicken, Szechuan peppercorns, chili flakes, fermented bean paste, scallions."
+                 data-allergens="Contains Wheat, Soy, Sesame.">
+              <div class="food-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=800&q=80" alt="Spicy Mala Chicken Dumplings" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=800&q=80';">
+              </div>
+              <div class="food-card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-spicy"><i class="bi bi-fire"></i> Szechuan Mala</span>
+                  <span class="food-price">$14.00</span>
+                </div>
+                <h3 class="fs-6 fw-bold mb-1">Spicy Mala Chicken</h3>
+                <p class="small text-secondary-custom mb-3">Tingly Szechuan heat packed with savoury broth.</p>
+                <div class="product-actions mt-auto pt-2">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <div class="quantity-input-group d-flex align-items-center">
+                      <button type="button" class="btn-qty btn-qty-minus" aria-label="Decrease quantity for Spicy Mala Chicken Dumplings">-</button>
+                      <input type="number" class="qty-field" value="1" min="1" max="99" aria-label="Quantity for Spicy Mala Chicken Dumplings">
+                      <button type="button" class="btn-qty btn-qty-plus" aria-label="Increase quantity for Spicy Mala Chicken Dumplings">+</button>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-chili flex-grow-1 btn-add-to-cart d-flex align-items-center justify-content-center gap-1.5"
+                            data-id="menu-spicy-mala-chicken"
+                            data-name="Spicy Mala Chicken Dumplings"
+                            data-price="14.00"
+                            data-image="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=800&q=80"
+                            data-category="chicken">
+                      <i class="bi bi-cart-plus"></i>
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                  <button type="button" class="btn btn-sm btn-outline-chili w-100 btn-view-details">
+                    <span>View Details</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chicken Item 4 -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 menu-item-card" data-category="chicken">
+            <div class="food-card" data-product-id="menu-golden-chicken-gyoza" 
+                 data-title="Golden Pan-Fried Chicken Gyoza" 
+                 data-desc="Japanese-style gyoza with golden pan-fried bottom lace, filled with juicy chicken, cabbage, and roasted garlic."
+                 data-price="$13.50" 
+                 data-img="https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?auto=format&fit=crop&w=800&q=80"
+                 data-badge="signature"
+                 data-ingredients="Chicken, Napa cabbage, roasted garlic, sesame oil, rice vinegar."
+                 data-allergens="Contains Wheat, Sesame, Soy.">
+              <div class="food-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?auto=format&fit=crop&w=800&q=80" alt="Golden Pan-Fried Chicken Gyoza" loading="lazy">
+              </div>
+              <div class="food-card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-signature">Crispy Bottom</span>
+                  <span class="food-price">$13.50</span>
+                </div>
+                <h3 class="fs-6 fw-bold mb-1">Pan-Fried Chicken Gyoza</h3>
+                <p class="small text-secondary-custom mb-3">Golden crispy bottom crust with tender chicken filling.</p>
+                <div class="product-actions mt-auto pt-2">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <div class="quantity-input-group d-flex align-items-center">
+                      <button type="button" class="btn-qty btn-qty-minus" aria-label="Decrease quantity for Golden Pan-Fried Chicken Gyoza">-</button>
+                      <input type="number" class="qty-field" value="1" min="1" max="99" aria-label="Quantity for Golden Pan-Fried Chicken Gyoza">
+                      <button type="button" class="btn-qty btn-qty-plus" aria-label="Increase quantity for Golden Pan-Fried Chicken Gyoza">+</button>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-chili flex-grow-1 btn-add-to-cart d-flex align-items-center justify-content-center gap-1.5"
+                            data-id="menu-golden-chicken-gyoza"
+                            data-name="Golden Pan-Fried Chicken Gyoza"
+                            data-price="13.50"
+                            data-image="https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?auto=format&fit=crop&w=800&q=80"
+                            data-category="chicken">
+                      <i class="bi bi-cart-plus"></i>
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                  <button type="button" class="btn btn-sm btn-outline-chili w-100 btn-view-details">
+                    <span>View Details</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= CATEGORY 3: PORK DUMPLINGS ================= -->
+          <!-- Pork Item 1 -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 menu-item-card" data-category="pork">
+            <div class="food-card" data-product-id="menu-shanghai-soup-dumplings" 
+                 data-title="Shanghai Soup Dumplings (Xiao Long Bao)" 
+                 data-desc="Delicate soup dumplings holding rich collagen pork bone broth that bursts open with each succulent bite."
+                 data-price="$14.50" 
+                 data-img="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80"
+                 data-badge="signature popular"
+                 data-ingredients="Pork shoulder, pork bone broth gelatine, ginger, black vinegar, scallion."
+                 data-allergens="Contains Wheat, Soy. Served with ginger black vinegar.">
+              <div class="food-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80" alt="Shanghai Xiao Long Bao soup dumplings" loading="lazy">
+              </div>
+              <div class="food-card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-signature"><i class="bi bi-star-fill"></i> Xiao Long Bao</span>
+                  <span class="food-price">$14.50</span>
+                </div>
+                <h3 class="fs-6 fw-bold mb-1">Shanghai Soup Dumplings</h3>
+                <p class="small text-secondary-custom mb-3">Famous broth-filled dumplings folded with 18 pleats.</p>
+                <div class="product-actions mt-auto pt-2">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <div class="quantity-input-group d-flex align-items-center">
+                      <button type="button" class="btn-qty btn-qty-minus" aria-label="Decrease quantity for Shanghai Soup Dumplings (Xiao Long Bao)">-</button>
+                      <input type="number" class="qty-field" value="1" min="1" max="99" aria-label="Quantity for Shanghai Soup Dumplings (Xiao Long Bao)">
+                      <button type="button" class="btn-qty btn-qty-plus" aria-label="Increase quantity for Shanghai Soup Dumplings (Xiao Long Bao)">+</button>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-chili flex-grow-1 btn-add-to-cart d-flex align-items-center justify-content-center gap-1.5"
+                            data-id="menu-shanghai-soup-dumplings"
+                            data-name="Shanghai Soup Dumplings (Xiao Long Bao)"
+                            data-price="14.50"
+                            data-image="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80"
+                            data-category="pork">
+                      <i class="bi bi-cart-plus"></i>
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                  <button type="button" class="btn btn-sm btn-outline-chili w-100 btn-view-details">
+                    <span>View Details</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pork Item 2 -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 menu-item-card" data-category="pork">
+            <div class="food-card" data-product-id="menu-crispy-lace-pork-potstickers" 
+                 data-title="Crispy Lace Pork Potstickers" 
+                 data-desc="Hand-folded pork and Chinese chive dumplings pan-fried in cast iron with a delicate potato-starch web crust."
+                 data-price="$14.00" 
+                 data-img="https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=800&q=80"
+                 data-badge="popular"
+                 data-ingredients="Ground pork, Chinese chives, ginger, light soy, sesame oil, cornstarch lace."
+                 data-allergens="Contains Wheat, Soy, Sesame.">
+              <div class="food-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=800&q=80" alt="Crispy Lace Pork Potstickers" loading="lazy">
+              </div>
+              <div class="food-card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-popular">Crunchy Lace</span>
+                  <span class="food-price">$14.00</span>
+                </div>
+                <h3 class="fs-6 fw-bold mb-1">Crispy Lace Potstickers</h3>
+                <p class="small text-secondary-custom mb-3">Pan-fried pork dumplings with delicate web crust.</p>
+                <div class="product-actions mt-auto pt-2">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <div class="quantity-input-group d-flex align-items-center">
+                      <button type="button" class="btn-qty btn-qty-minus" aria-label="Decrease quantity for Crispy Lace Pork Potstickers">-</button>
+                      <input type="number" class="qty-field" value="1" min="1" max="99" aria-label="Quantity for Crispy Lace Pork Potstickers">
+                      <button type="button" class="btn-qty btn-qty-plus" aria-label="Increase quantity for Crispy Lace Pork Potstickers">+</button>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-chili flex-grow-1 btn-add-to-cart d-flex align-items-center justify-content-center gap-1.5"
+                            data-id="menu-crispy-lace-pork-potstickers"
+                            data-name="Crispy Lace Pork Potstickers"
+                            data-price="14.00"
+                            data-image="https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=800&q=80"
+                            data-category="pork">
+                      <i class="bi bi-cart-plus"></i>
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                  <button type="button" class="btn btn-sm btn-outline-chili w-100 btn-view-details">
+                    <span>View Details</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pork Item 3 -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 menu-item-card" data-category="pork">
+            <div class="food-card" data-product-id="menu-szechuan-red-oil-wontons" 
+                 data-title="Szechuan Red Oil Pork Wontons" 
+                 data-desc="Silky, pleated pork wontons floating in a rich bowl of house red chili oil, aged Zhenjiang black vinegar, and crushed peanuts."
+                 data-price="$14.50" 
+                 data-img="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=80"
+                 data-badge="spicy signature"
+                 data-ingredients="Pork, chili oil, garlic, black vinegar, Sichuan peppercorn, roasted peanuts."
+                 data-allergens="Contains Wheat, Peanuts, Soy, Sesame.">
+              <div class="food-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=80" alt="Szechuan Red Oil Pork Wontons" loading="lazy">
+              </div>
+              <div class="food-card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-spicy"><i class="bi bi-fire"></i> Hot &amp; Sour</span>
+                  <span class="food-price">$14.50</span>
+                </div>
+                <h3 class="fs-6 fw-bold mb-1">Red Oil Pork Wontons</h3>
+                <p class="small text-secondary-custom mb-3">Silky wontons drenched in fragrant chili oil &amp; vinegar.</p>
+                <div class="product-actions mt-auto pt-2">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <div class="quantity-input-group d-flex align-items-center">
+                      <button type="button" class="btn-qty btn-qty-minus" aria-label="Decrease quantity for Szechuan Red Oil Pork Wontons">-</button>
+                      <input type="number" class="qty-field" value="1" min="1" max="99" aria-label="Quantity for Szechuan Red Oil Pork Wontons">
+                      <button type="button" class="btn-qty btn-qty-plus" aria-label="Increase quantity for Szechuan Red Oil Pork Wontons">+</button>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-chili flex-grow-1 btn-add-to-cart d-flex align-items-center justify-content-center gap-1.5"
+                            data-id="menu-szechuan-red-oil-wontons"
+                            data-name="Szechuan Red Oil Pork Wontons"
+                            data-price="14.50"
+                            data-image="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=80"
+                            data-category="pork">
+                      <i class="bi bi-cart-plus"></i>
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                  <button type="button" class="btn btn-sm btn-outline-chili w-100 btn-view-details">
+                    <span>View Details</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pork Item 4 -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 menu-item-card" data-category="pork">
+            <div class="food-card" data-product-id="menu-traditional-pork-cabbage" 
+                 data-title="Traditional Pork & Napa Cabbage" 
+                 data-desc="The timeless northern Chinese street classic: juicy minced pork, salted Napa cabbage, white pepper, and scallion ginger broth."
+                 data-price="$13.00" 
+                 data-img="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=800&q=80"
+                 data-badge=""
+                 data-ingredients="Pork, Napa cabbage, ginger, scallion, five-spice, soy sauce."
+                 data-allergens="Contains Wheat, Soy.">
+              <div class="food-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=800&q=80" alt="Traditional Pork & Napa Cabbage Dumplings" loading="lazy">
+              </div>
+              <div class="food-card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-popular">Classic</span>
+                  <span class="food-price">$13.00</span>
+                </div>
+                <h3 class="fs-6 fw-bold mb-1">Pork &amp; Napa Cabbage</h3>
+                <p class="small text-secondary-custom mb-3">Northern street style comfort dumplings.</p>
+                <div class="product-actions mt-auto pt-2">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <div class="quantity-input-group d-flex align-items-center">
+                      <button type="button" class="btn-qty btn-qty-minus" aria-label="Decrease quantity for Traditional Pork & Napa Cabbage">-</button>
+                      <input type="number" class="qty-field" value="1" min="1" max="99" aria-label="Quantity for Traditional Pork & Napa Cabbage">
+                      <button type="button" class="btn-qty btn-qty-plus" aria-label="Increase quantity for Traditional Pork & Napa Cabbage">+</button>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-chili flex-grow-1 btn-add-to-cart d-flex align-items-center justify-content-center gap-1.5"
+                            data-id="menu-traditional-pork-cabbage"
+                            data-name="Traditional Pork & Napa Cabbage"
+                            data-price="13.00"
+                            data-image="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=800&q=80"
+                            data-category="pork">
+                      <i class="bi bi-cart-plus"></i>
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                  <button type="button" class="btn btn-sm btn-outline-chili w-100 btn-view-details">
+                    <span>View Details</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= CATEGORY 4: SEAFOOD DUMPLINGS ================= -->
+          <!-- Seafood Item 1 -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 menu-item-card" data-category="seafood">
+            <div class="food-card" data-product-id="menu-crystal-har-gow" 
+                 data-title="Crystal Har Gow (Shrimp)" 
+                 data-desc="Translucent wheat-starch dumpling pleats wrapped around chunky tiger prawns, crispy bamboo shoots, and sesame pork fat."
+                 data-price="$15.50" 
+                 data-img="https://images.unsplash.com/photo-1576577445504-6af96477db52?auto=format&fit=crop&w=800&q=80"
+                 data-badge="signature"
+                 data-ingredients="Wild tiger prawns, bamboo shoots, wheat starch, tapioca, white pepper."
+                 data-allergens="Contains Crustacean Shellfish, Wheat, Sesame.">
+              <div class="food-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1576577445504-6af96477db52?auto=format&fit=crop&w=800&q=80" alt="Crystal Har Gow Shrimp Dumplings" loading="lazy">
+              </div>
+              <div class="food-card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-signature"><i class="bi bi-star-fill"></i> Dim Sum Star</span>
+                  <span class="food-price">$15.50</span>
+                </div>
+                <h3 class="fs-6 fw-bold mb-1">Crystal Har Gow (Shrimp)</h3>
+                <p class="small text-secondary-custom mb-3">Plump whole tiger prawns in glassy skin.</p>
+                <div class="product-actions mt-auto pt-2">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <div class="quantity-input-group d-flex align-items-center">
+                      <button type="button" class="btn-qty btn-qty-minus" aria-label="Decrease quantity for Crystal Har Gow (Shrimp)">-</button>
+                      <input type="number" class="qty-field" value="1" min="1" max="99" aria-label="Quantity for Crystal Har Gow (Shrimp)">
+                      <button type="button" class="btn-qty btn-qty-plus" aria-label="Increase quantity for Crystal Har Gow (Shrimp)">+</button>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-chili flex-grow-1 btn-add-to-cart d-flex align-items-center justify-content-center gap-1.5"
+                            data-id="menu-crystal-har-gow"
+                            data-name="Crystal Har Gow (Shrimp)"
+                            data-price="15.50"
+                            data-image="https://images.unsplash.com/photo-1576577445504-6af96477db52?auto=format&fit=crop&w=800&q=80"
+                            data-category="seafood">
+                      <i class="bi bi-cart-plus"></i>
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                  <button type="button" class="btn btn-sm btn-outline-chili w-100 btn-view-details">
+                    <span>View Details</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Seafood Item 2 -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 menu-item-card" data-category="seafood">
+            <div class="food-card" data-product-id="menu-scallop-garlic-chive" 
+                 data-title="Scallop & Garlic Chive Dumplings" 
+                 data-desc="Sweet Hokkaido sea scallops minced with wild garlic chives and ginger, steamed to tender perfection in thin skin."
+                 data-price="$16.00" 
+                 data-img="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80"
+                 data-badge="signature"
+                 data-ingredients="Hokkaido scallops, shrimp, garlic chives, ginger, light soy, sesame oil."
+                 data-allergens="Contains Mollusc / Shellfish, Wheat, Soy.">
+              <div class="food-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80" alt="Scallop & Garlic Chive Dumplings" loading="lazy">
+              </div>
+              <div class="food-card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-signature">Premium</span>
+                  <span class="food-price">$16.00</span>
+                </div>
+                <h3 class="fs-6 fw-bold mb-1">Scallop &amp; Chive Dumplings</h3>
+                <p class="small text-secondary-custom mb-3">Delicate sea scallops with sweet garlic chives.</p>
+                <div class="product-actions mt-auto pt-2">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <div class="quantity-input-group d-flex align-items-center">
+                      <button type="button" class="btn-qty btn-qty-minus" aria-label="Decrease quantity for Scallop & Garlic Chive Dumplings">-</button>
+                      <input type="number" class="qty-field" value="1" min="1" max="99" aria-label="Quantity for Scallop & Garlic Chive Dumplings">
+                      <button type="button" class="btn-qty btn-qty-plus" aria-label="Increase quantity for Scallop & Garlic Chive Dumplings">+</button>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-chili flex-grow-1 btn-add-to-cart d-flex align-items-center justify-content-center gap-1.5"
+                            data-id="menu-scallop-garlic-chive"
+                            data-name="Scallop & Garlic Chive Dumplings"
+                            data-price="16.00"
+                            data-image="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80"
+                            data-category="seafood">
+                      <i class="bi bi-cart-plus"></i>
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                  <button type="button" class="btn btn-sm btn-outline-chili w-100 btn-view-details">
+                    <span>View Details</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Seafood Item 3 -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 menu-item-card" data-category="seafood">
+            <div class="food-card" data-product-id="menu-crab-prawn-shumai" 
+                 data-title="Crab & Prawn Shumai" 
+                 data-desc="Open-topped steamed egg-wonton cups filled with succulent pork, prawn, and blue swimmer crab topped with flying fish roe."
+                 data-price="$15.00" 
+                 data-img="https://images.unsplash.com/photo-1607301406259-dfb186e15de8?auto=format&fit=crop&w=800&q=80"
+                 data-badge="popular"
+                 data-ingredients="Prawn, pork, crab meat, tobiko roe, shiitake mushroom, egg pastry."
+                 data-allergens="Contains Crustacean Shellfish, Egg, Wheat, Soy.">
+              <div class="food-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1607301406259-dfb186e15de8?auto=format&fit=crop&w=800&q=80" alt="Crab & Prawn Shumai" loading="lazy">
+              </div>
+              <div class="food-card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-popular">Classic Dim Sum</span>
+                  <span class="food-price">$15.00</span>
+                </div>
+                <h3 class="fs-6 fw-bold mb-1">Crab &amp; Prawn Shumai</h3>
+                <p class="small text-secondary-custom mb-3">Open-faced dumplings with crab and roe.</p>
+                <div class="product-actions mt-auto pt-2">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <div class="quantity-input-group d-flex align-items-center">
+                      <button type="button" class="btn-qty btn-qty-minus" aria-label="Decrease quantity for Crab & Prawn Shumai">-</button>
+                      <input type="number" class="qty-field" value="1" min="1" max="99" aria-label="Quantity for Crab & Prawn Shumai">
+                      <button type="button" class="btn-qty btn-qty-plus" aria-label="Increase quantity for Crab & Prawn Shumai">+</button>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-chili flex-grow-1 btn-add-to-cart d-flex align-items-center justify-content-center gap-1.5"
+                            data-id="menu-crab-prawn-shumai"
+                            data-name="Crab & Prawn Shumai"
+                            data-price="15.00"
+                            data-image="https://images.unsplash.com/photo-1607301406259-dfb186e15de8?auto=format&fit=crop&w=800&q=80"
+                            data-category="seafood">
+                      <i class="bi bi-cart-plus"></i>
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                  <button type="button" class="btn btn-sm btn-outline-chili w-100 btn-view-details">
+                    <span>View Details</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Seafood Item 4 -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 menu-item-card" data-category="seafood">
+            <div class="food-card" data-product-id="menu-golden-prawn-broth" 
+                 data-title="Golden Prawn Dumpling in Broth" 
+                 data-desc="Jumbo prawn and herb dumplings floating in clear, slow-simmered chicken and dried seafood consommé."
+                 data-price="$15.50" 
+                 data-img="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=800&q=80"
+                 data-badge=""
+                 data-ingredients="Prawns, dried scallops, chicken broth, baby bok choy, scallions."
+                 data-allergens="Contains Crustaceans, Soy, Wheat.">
+              <div class="food-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=800&q=80" alt="Golden Prawn Dumpling in Broth" loading="lazy">
+              </div>
+              <div class="food-card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-popular">Comfort Broth</span>
+                  <span class="food-price">$15.50</span>
+                </div>
+                <h3 class="fs-6 fw-bold mb-1">Prawn in Golden Broth</h3>
+                <p class="small text-secondary-custom mb-3">Served in aromatic clear chicken broth.</p>
+                <div class="product-actions mt-auto pt-2">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <div class="quantity-input-group d-flex align-items-center">
+                      <button type="button" class="btn-qty btn-qty-minus" aria-label="Decrease quantity for Golden Prawn Dumpling in Broth">-</button>
+                      <input type="number" class="qty-field" value="1" min="1" max="99" aria-label="Quantity for Golden Prawn Dumpling in Broth">
+                      <button type="button" class="btn-qty btn-qty-plus" aria-label="Increase quantity for Golden Prawn Dumpling in Broth">+</button>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-chili flex-grow-1 btn-add-to-cart d-flex align-items-center justify-content-center gap-1.5"
+                            data-id="menu-golden-prawn-broth"
+                            data-name="Golden Prawn Dumpling in Broth"
+                            data-price="15.50"
+                            data-image="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=800&q=80"
+                            data-category="seafood">
+                      <i class="bi bi-cart-plus"></i>
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                  <button type="button" class="btn btn-sm btn-outline-chili w-100 btn-view-details">
+                    <span>View Details</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= CATEGORY 5: SIGNATURE BAO BUNS ================= -->
+          <!-- Bao Item 1 -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 menu-item-card" data-category="bao">
+            <div class="food-card" data-product-id="menu-pork-belly-gua-bao" 
+                 data-title="Slow-Cooked Pork Belly Gua Bao" 
+                 data-desc="12-hour braised pork belly, crushed roasted peanuts, coriander leaves, and house pickled mustard greens in a cloud bao."
+                 data-price="$12.50" 
+                 data-img="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=800&q=80"
+                 data-badge="signature popular"
+                 data-ingredients="Pork belly, Taiwanese pickled mustard greens, roasted peanuts, brown sugar, cilantro, yeast wheat flour bun."
+                 data-allergens="Contains Wheat, Peanuts, Soy.">
+              <div class="food-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=800&q=80" alt="Slow-Cooked Pork Belly Gua Bao" loading="lazy">
+              </div>
+              <div class="food-card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-signature">Iconic Bao</span>
+                  <span class="food-price">$12.50</span>
+                </div>
+                <h3 class="fs-6 fw-bold mb-1">Slow-Cooked Pork Bao</h3>
+                <p class="small text-secondary-custom mb-3">Melt-in-mouth pork belly with crushed peanuts.</p>
+                <div class="product-actions mt-auto pt-2">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <div class="quantity-input-group d-flex align-items-center">
+                      <button type="button" class="btn-qty btn-qty-minus" aria-label="Decrease quantity for Slow-Cooked Pork Belly Gua Bao">-</button>
+                      <input type="number" class="qty-field" value="1" min="1" max="99" aria-label="Quantity for Slow-Cooked Pork Belly Gua Bao">
+                      <button type="button" class="btn-qty btn-qty-plus" aria-label="Increase quantity for Slow-Cooked Pork Belly Gua Bao">+</button>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-chili flex-grow-1 btn-add-to-cart d-flex align-items-center justify-content-center gap-1.5"
+                            data-id="menu-pork-belly-gua-bao"
+                            data-name="Slow-Cooked Pork Belly Gua Bao"
+                            data-price="12.50"
+                            data-image="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=800&q=80"
+                            data-category="bao">
+                      <i class="bi bi-cart-plus"></i>
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                  <button type="button" class="btn btn-sm btn-outline-chili w-100 btn-view-details">
+                    <span>View Details</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bao Item 2 -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 menu-item-card" data-category="bao">
+            <div class="food-card" data-product-id="menu-korean-crispy-chicken-bao" 
+                 data-title="Korean Crispy Fried Chicken Bao" 
+                 data-desc="Double-fried chicken thigh tossed in sweet garlic gochujang chili glaze, Japanese kewpie mayonnaise, and quick pickled daikon."
+                 data-price="$11.50" 
+                 data-img="https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?auto=format&fit=crop&w=800&q=80"
+                 data-badge="spicy popular"
+                 data-ingredients="Chicken thigh, panko crumbs, gochujang, kewpie mayo, daikon pickle, sesame seeds."
+                 data-allergens="Contains Wheat, Egg, Soy, Sesame.">
+              <div class="food-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?auto=format&fit=crop&w=800&q=80" alt="Korean Crispy Fried Chicken Bao" loading="lazy">
+              </div>
+              <div class="food-card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-spicy"><i class="bi bi-fire"></i> Gochujang</span>
+                  <span class="food-price">$11.50</span>
+                </div>
+                <h3 class="fs-6 fw-bold mb-1">Crispy Fried Chicken Bao</h3>
+                <p class="small text-secondary-custom mb-3">Double-crisped chicken with sweet spicy glaze.</p>
+                <div class="product-actions mt-auto pt-2">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <div class="quantity-input-group d-flex align-items-center">
+                      <button type="button" class="btn-qty btn-qty-minus" aria-label="Decrease quantity for Korean Crispy Fried Chicken Bao">-</button>
+                      <input type="number" class="qty-field" value="1" min="1" max="99" aria-label="Quantity for Korean Crispy Fried Chicken Bao">
+                      <button type="button" class="btn-qty btn-qty-plus" aria-label="Increase quantity for Korean Crispy Fried Chicken Bao">+</button>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-chili flex-grow-1 btn-add-to-cart d-flex align-items-center justify-content-center gap-1.5"
+                            data-id="menu-korean-crispy-chicken-bao"
+                            data-name="Korean Crispy Fried Chicken Bao"
+                            data-price="11.50"
+                            data-image="https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?auto=format&fit=crop&w=800&q=80"
+                            data-category="bao">
+                      <i class="bi bi-cart-plus"></i>
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                  <button type="button" class="btn btn-sm btn-outline-chili w-100 btn-view-details">
+                    <span>View Details</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bao Item 3 -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 menu-item-card" data-category="bao">
+            <div class="food-card" data-product-id="menu-braised-soy-mushroom-bao" 
+                 data-title="Braised Soy Mushroom Bao" 
+                 data-desc="Caramelized king oyster and shiitake mushrooms glazed in dark sweet soy, shredded scallions, and toasted sesame."
+                 data-price="$10.50" 
+                 data-img="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80"
+                 data-badge="veg"
+                 data-ingredients="King oyster mushrooms, shiitake, sweet soy, cucumber ribbons, sesame seeds."
+                 data-allergens="Contains Wheat, Soy, Sesame. 100% Plant-Based.">
+              <div class="food-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80" alt="Braised Soy Mushroom Bao" loading="lazy">
+              </div>
+              <div class="food-card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-veg"><i class="bi bi-flower1"></i> Vegan</span>
+                  <span class="food-price">$10.50</span>
+                </div>
+                <h3 class="fs-6 fw-bold mb-1">Braised Mushroom Bao</h3>
+                <p class="small text-secondary-custom mb-3">Rich savory mushrooms and cucumber ribbons.</p>
+                <div class="product-actions mt-auto pt-2">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <div class="quantity-input-group d-flex align-items-center">
+                      <button type="button" class="btn-qty btn-qty-minus" aria-label="Decrease quantity for Braised Soy Mushroom Bao">-</button>
+                      <input type="number" class="qty-field" value="1" min="1" max="99" aria-label="Quantity for Braised Soy Mushroom Bao">
+                      <button type="button" class="btn-qty btn-qty-plus" aria-label="Increase quantity for Braised Soy Mushroom Bao">+</button>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-chili flex-grow-1 btn-add-to-cart d-flex align-items-center justify-content-center gap-1.5"
+                            data-id="menu-braised-soy-mushroom-bao"
+                            data-name="Braised Soy Mushroom Bao"
+                            data-price="10.50"
+                            data-image="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80"
+                            data-category="bao">
+                      <i class="bi bi-cart-plus"></i>
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                  <button type="button" class="btn btn-sm btn-outline-chili w-100 btn-view-details">
+                    <span>View Details</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bao Item 4 -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 menu-item-card" data-category="bao">
+            <div class="food-card" data-product-id="menu-custard-lava-bao" 
+                 data-title="Sweet Golden Custard Lava Bao" 
+                 data-desc="Piping hot dessert bao bun filled with creamy salted egg yolk custard that flows like molten gold when torn open."
+                 data-price="$9.50" 
+                 data-img="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80"
+                 data-badge="signature"
+                 data-ingredients="Salted duck egg yolk, butter, coconut milk, sugar, condensed milk, bao flour."
+                 data-allergens="Contains Dairy, Egg, Wheat.">
+              <div class="food-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80" alt="Sweet Golden Custard Lava Bao" loading="lazy">
+              </div>
+              <div class="food-card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-signature">Sweet Dessert</span>
+                  <span class="food-price">$9.50</span>
+                </div>
+                <h3 class="fs-6 fw-bold mb-1">Molten Custard Lava Bao</h3>
+                <p class="small text-secondary-custom mb-3">Warm sweet salted egg yolk custard lava.</p>
+                <div class="product-actions mt-auto pt-2">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <div class="quantity-input-group d-flex align-items-center">
+                      <button type="button" class="btn-qty btn-qty-minus" aria-label="Decrease quantity for Sweet Golden Custard Lava Bao">-</button>
+                      <input type="number" class="qty-field" value="1" min="1" max="99" aria-label="Quantity for Sweet Golden Custard Lava Bao">
+                      <button type="button" class="btn-qty btn-qty-plus" aria-label="Increase quantity for Sweet Golden Custard Lava Bao">+</button>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-chili flex-grow-1 btn-add-to-cart d-flex align-items-center justify-content-center gap-1.5"
+                            data-id="menu-custard-lava-bao"
+                            data-name="Sweet Golden Custard Lava Bao"
+                            data-price="9.50"
+                            data-image="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80"
+                            data-category="bao">
+                      <i class="bi bi-cart-plus"></i>
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                  <button type="button" class="btn btn-sm btn-outline-chili w-100 btn-view-details">
+                    <span>View Details</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= CATEGORY 6: SIDES & DIPPING SAUCES ================= -->
+          <!-- Side Item 1 -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 menu-item-card" data-category="sides">
+            <div class="food-card" data-product-id="menu-szechuan-chili-crisp-jar" 
+                 data-title="House Szechuan Chili Crisp Jar" 
+                 data-desc="Infused with 14 aromatics, crispy fried garlic, roasted shallots, and spicy Szechuan chilis in golden oil."
+                 data-price="$6.50" 
+                 data-img="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80"
+                 data-badge="spicy popular"
+                 data-ingredients="Rapeseed oil, dry red chilis, crispy garlic, fried shallots, star anise, cardamom, sesame seeds."
+                 data-allergens="Contains Sesame. Vegan & Gluten-Free.">
+              <div class="food-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" alt="House Szechuan Chili Crisp Jar" loading="lazy">
+              </div>
+              <div class="food-card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-spicy"><i class="bi bi-fire"></i> Signature Dip</span>
+                  <span class="food-price">$6.50</span>
+                </div>
+                <h3 class="fs-6 fw-bold mb-1">House Chili Crisp Jar</h3>
+                <p class="small text-secondary-custom mb-3">Crunchy aromatic chili oil crafted in kitchen.</p>
+                <div class="product-actions mt-auto pt-2">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <div class="quantity-input-group d-flex align-items-center">
+                      <button type="button" class="btn-qty btn-qty-minus" aria-label="Decrease quantity for House Szechuan Chili Crisp Jar">-</button>
+                      <input type="number" class="qty-field" value="1" min="1" max="99" aria-label="Quantity for House Szechuan Chili Crisp Jar">
+                      <button type="button" class="btn-qty btn-qty-plus" aria-label="Increase quantity for House Szechuan Chili Crisp Jar">+</button>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-chili flex-grow-1 btn-add-to-cart d-flex align-items-center justify-content-center gap-1.5"
+                            data-id="menu-szechuan-chili-crisp-jar"
+                            data-name="House Szechuan Chili Crisp Jar"
+                            data-price="6.50"
+                            data-image="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80"
+                            data-category="sides">
+                      <i class="bi bi-cart-plus"></i>
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                  <button type="button" class="btn btn-sm btn-outline-chili w-100 btn-view-details">
+                    <span>View Details</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Side Item 2 -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 menu-item-card" data-category="sides">
+            <div class="food-card" data-product-id="menu-smashed-cucumber-salad" 
+                 data-title="Garlic Smashed Cucumber Salad" 
+                 data-desc="Crisp baby cucumbers smashed to absorb black Zhenjiang vinegar, raw garlic, chili oil, and toasted sesame seeds."
+                 data-price="$7.00" 
+                 data-img="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80"
+                 data-badge="veg"
+                 data-ingredients="English cucumbers, garlic, black vinegar, sesame oil, chili crisps."
+                 data-allergens="Contains Sesame, Soy. Vegan.">
+              <div class="food-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80" alt="Garlic Smashed Cucumber Salad" loading="lazy">
+              </div>
+              <div class="food-card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-veg"><i class="bi bi-flower1"></i> Refreshing</span>
+                  <span class="food-price">$7.00</span>
+                </div>
+                <h3 class="fs-6 fw-bold mb-1">Smashed Cucumber Salad</h3>
+                <p class="small text-secondary-custom mb-3">Zesty black vinegar, garlic &amp; chili oilsavoury heat .</p>
+                <div class="product-actions mt-auto pt-2">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <div class="quantity-input-group d-flex align-items-center">
+                      <button type="button" class="btn-qty btn-qty-minus" aria-label="Decrease quantity for Garlic Smashed Cucumber Salad">-</button>
+                      <input type="number" class="qty-field" value="1" min="1" max="99" aria-label="Quantity for Garlic Smashed Cucumber Salad">
+                      <button type="button" class="btn-qty btn-qty-plus" aria-label="Increase quantity for Garlic Smashed Cucumber Salad">+</button>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-chili flex-grow-1 btn-add-to-cart d-flex align-items-center justify-content-center gap-1.5"
+                            data-id="menu-smashed-cucumber-salad"
+                            data-name="Garlic Smashed Cucumber Salad"
+                            data-price="7.00"
+                            data-image="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80"
+                            data-category="sides">
+                      <i class="bi bi-cart-plus"></i>
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                  <button type="button" class="btn btn-sm btn-outline-chili w-100 btn-view-details">
+                    <span>View Details</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Side Item 3 -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 menu-item-card" data-category="sides">
+            <div class="food-card" data-product-id="menu-scallion-pancake" 
+                 data-title="Crispy Sesame Scallion Pancake" 
+                 data-desc="Flaky multi-layered pan-fried flatbread brushed with scallion oil, toasted white sesame seeds, and five-spice sea salt."
+                 data-price="$8.50" 
+                 data-img="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80"
+                 data-badge="veg popular"
+                 data-ingredients="Wheat flour, chopped scallions, sesame oil, white sesame, lard/vegetable oil."
+                 data-allergens="Contains Wheat, Sesame.">
+              <div class="food-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80" alt="Crispy Sesame Scallion Pancake" loading="lazy">
+              </div>
+              <div class="food-card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-popular">Flaky Layers</span>
+                  <span class="food-price">$8.50</span>
+                </div>
+                <h3 class="fs-6 fw-bold mb-1">Scallion Pancake</h3>
+                <p class="small text-secondary-custom mb-3">Crispy, laminated bread with aromatic scallions.</p>
+                <div class="product-actions mt-auto pt-2">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <div class="quantity-input-group d-flex align-items-center">
+                      <button type="button" class="btn-qty btn-qty-minus" aria-label="Decrease quantity for Crispy Sesame Scallion Pancake">-</button>
+                      <input type="number" class="qty-field" value="1" min="1" max="99" aria-label="Quantity for Crispy Sesame Scallion Pancake">
+                      <button type="button" class="btn-qty btn-qty-plus" aria-label="Increase quantity for Crispy Sesame Scallion Pancake">+</button>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-chili flex-grow-1 btn-add-to-cart d-flex align-items-center justify-content-center gap-1.5"
+                            data-id="menu-scallion-pancake"
+                            data-name="Crispy Sesame Scallion Pancake"
+                            data-price="8.50"
+                            data-image="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80"
+                            data-category="sides">
+                      <i class="bi bi-cart-plus"></i>
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                  <button type="button" class="btn btn-sm btn-outline-chili w-100 btn-view-details">
+                    <span>View Details</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Side Item 4 -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 menu-item-card" data-category="sides">
+            <div class="food-card" data-product-id="menu-daikon-carrot-slaw" 
+                 data-title="Pickled Daikon & Carrot Slaw" 
+                 data-desc="Sweet and tangy pickled radish ribbons with ginger threads to cleanse your palate between savory dumpling bites."
+                 data-price="$5.50" 
+                 data-img="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80"
+                 data-badge="veg"
+                 data-ingredients="Daikon radish, carrot ribbons, rice vinegar, cane sugar, ginger."
+                 data-allergens="Gluten-Free, Vegan.">
+              <div class="food-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80" alt="Pickled Daikon & Carrot Slaw" loading="lazy">
+              </div>
+              <div class="food-card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-veg"><i class="bi bi-flower1"></i> Tangy Palate</span>
+                  <span class="food-price">$5.50</span>
+                </div>
+                <h3 class="fs-6 fw-bold mb-1">Pickled Daikon Slaw</h3>
+                <p class="small text-secondary-custom mb-3">Sweet and sour crisp radish ribbons bright, tangy crunch.</p>
+                <div class="product-actions mt-auto pt-2">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <div class="quantity-input-group d-flex align-items-center">
+                      <button type="button" class="btn-qty btn-qty-minus" aria-label="Decrease quantity for Pickled Daikon & Carrot Slaw">-</button>
+                      <input type="number" class="qty-field" value="1" min="1" max="99" aria-label="Quantity for Pickled Daikon & Carrot Slaw">
+                      <button type="button" class="btn-qty btn-qty-plus" aria-label="Increase quantity for Pickled Daikon & Carrot Slaw">+</button>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-chili flex-grow-1 btn-add-to-cart d-flex align-items-center justify-content-center gap-1.5"
+                            data-id="menu-daikon-carrot-slaw"
+                            data-name="Pickled Daikon & Carrot Slaw"
+                            data-price="5.50"
+                            data-image="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80"
+                            data-category="sides">
+                      <i class="bi bi-cart-plus"></i>
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                  <button type="button" class="btn btn-sm btn-outline-chili w-100 btn-view-details">
+                    <span>View Details</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       ITEM DETAIL BOOTSTRAP 5 MODAL
+       ========================================================================= -->
+  <div class="modal fade" id="itemDetailModal" tabindex="-1" aria-labelledby="itemDetailModalTitle" aria-hidden="true" data-lenis-prevent="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5 fw-bold modal-item-title" id="itemDetailModalTitle">Item Title</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-3 p-md-4" data-lenis-prevent="true">
+          <div class="row g-4 align-items-center">
+            <div class="col-md-5">
+              <img src="" alt="" class="img-fluid rounded-3 modal-item-img shadow-sm w-100" style="height: 250px; object-fit: cover;">
+            </div>
+            <div class="col-md-7">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <div class="modal-item-badges"></div>
+                <div class="modal-item-price fs-4 fw-bold" style="color: var(--accent-chili);">$0.00</div>
+              </div>
+              <p class="modal-item-desc text-secondary-custom mb-3"></p>
+              
+              <div class="p-3 rounded-3 mb-3" style="background-color: var(--bg-secondary); border: 1px solid var(--border-light);">
+                <div class="small fw-bold mb-1 text-primary-custom">Fresh Ingredients:</div>
+                <p class="small text-secondary-custom mb-2 modal-item-ingredients"></p>
+                <div class="small fw-bold mb-1 text-primary-custom">Allergen Information:</div>
+                <p class="small text-secondary-custom mb-0 modal-item-allergens"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer d-flex flex-wrap justify-content-between align-items-center gap-2">
+          <button type="button" class="btn btn-outline-secondary rounded-pill px-3" data-bs-dismiss="modal">Close</button>
+          <div class="d-flex align-items-center gap-2">
+            <div class="quantity-input-group d-flex align-items-center">
+              <button type="button" class="btn-qty btn-qty-minus" aria-label="Decrease quantity">-</button>
+              <input type="number" class="qty-field modal-qty-input" value="1" min="1" max="99" aria-label="Quantity">
+              <button type="button" class="btn-qty btn-qty-plus" aria-label="Increase quantity">+</button>
+            </div>
+            <button type="button" class="btn btn-chili btn-add-to-cart d-flex align-items-center gap-1.5" id="modalAddToCartBtn"
+                    data-id="" data-name="" data-price="" data-image="" data-category="">
+              <i class="bi bi-cart-plus"></i>
+              <span>Add to Cart</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       SHARED FOOTER
+       ========================================================================= -->
+  <footer class="footer-custom" role="contentinfo">
+    <div class="container footer-container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand -->
+        <div class="footer-col footer-col-brand">
+          <a href="index.html" class="footer-brand-title mb-3 text-decoration-none">
+            <span class="brand-logo-mark" aria-hidden="true">
+              <img src="assets/icons/logo.svg" alt="Dumpling &amp; Bao Kitchen Logo" width="42" height="42" class="brand-logo-img">
+            </span>
+            <span>Dumpling &amp; Bao <span class="brand-name-kitchen">Kitchen</span></span>
+          </a>
+          <p class="footer-desc mb-4 pe-lg-3">
+            Handmade street dumplings, fluffy steamed bao buns, and authentic Asian culinary delights prepared fresh each day with care and love.
+          </p>
+          <div class="d-flex align-items-center gap-2 footer-signature">
+            <img src="assets/icons/dumpling.svg" alt="Dumpling logo mark" width="28" height="28" style="opacity: 0.85;">
+            <span class="small fw-semibold footer-signature-text">Hand-Folded with Passion</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Explore -->
+        <div class="footer-col footer-col-explore">
+          <h3 class="footer-col-title">Explore</h3>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="bi bi-chevron-right small"></i> Kitchen &amp; Story</a></li>
+            <li><a href="dumpling-experience.html"><i class="bi bi-chevron-right small"></i> Tasting Experience</a></li>
+            <li><a href="menu.html"><i class="bi bi-chevron-right small"></i> Menu</a></li>
+            <li><a href="frozen-packs.html"><i class="bi bi-chevron-right small"></i> Frozen Packs</a></li>
+            <li><a href="about.html"><i class="bi bi-chevron-right small"></i> About Us</a></li>
+            <li><a href="contact.html"><i class="bi bi-chevron-right small"></i> Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Customer Information -->
+        <div class="footer-col footer-col-info">
+          <h3 class="footer-col-title">Information</h3>
+          <ul class="footer-links">
+            <li><a href="contact.html#opening-hours"><i class="bi bi-clock small"></i> Opening Hours</a></li>
+            <li><a href="contact.html?enquiry=catering#contact-form"><i class="bi bi-people small"></i> Catering Enquiries</a></li>
+            <li><a href="frozen-packs.html#cooking-guide"><i class="bi bi-snow small"></i> Frozen Pack Guide</a></li>
+            <li><a href="contact.html#location-map"><i class="bi bi-geo-alt small"></i> Location &amp; Map</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Follow Us -->
+        <div class="footer-col footer-col-follow">
+          <h3 class="footer-col-title">Follow Our Kitchen</h3>
+          <p class="footer-follow-desc mb-3">Join our community for seasonal specials and secret dumpling recipes.</p>
+          <div class="footer-social-row">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn" aria-label="Visit our Instagram page">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn" aria-label="Visit our Facebook page">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn" aria-label="Visit our YouTube channel">
+              <i class="bi bi-youtube"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn" aria-label="Visit our Twitter / X profile" title="Twitter / X">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <div>
+          &copy; <span id="currentYear">2026</span> Dumpling &amp; Bao Kitchen. All rights reserved.
+        </div>
+        <div class="footer-bottom-links d-flex gap-3">
+          <a href="contact.html" class="text-decoration-none" style="color: var(--footer-muted);">Privacy Policy (Demo)</a>
+          <span style="color: var(--footer-border);">|</span>
+          <a href="contact.html" class="text-decoration-none" style="color: var(--footer-muted);">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Lenis Buttery Smooth Scroll Engine -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+
+  <!-- Application Scripts -->
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/homepage-premium.js"></script>
+</body>
+</html>

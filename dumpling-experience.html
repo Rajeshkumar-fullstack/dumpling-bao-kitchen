@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Immerse yourself in our Dumpling Experience at Dumpling & Bao Kitchen. Enjoy multi-course tasting flights, tableside bamboo steaming, and hands-on folding masterclasses.">
+  <meta name="keywords" content="dumpling experience, tasting flights, dim sum tasting, dumpling masterclass, folding workshop, asian dining experience">
+  <title>Dumpling Experience — Tasting Flights &amp; Masterclasses | Dumpling &amp; Bao Kitchen</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+  <link rel="alternate icon" type="image/svg+xml" href="assets/icons/dumpling.svg">
+  <link rel="apple-touch-icon" href="assets/icons/logo.svg">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Tailwind CSS Configuration (Disables conflicting collapse utility) -->
+  <script>
+    tailwind = {
+      corePlugins: {
+        visibility: false,
+      }
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Theme, Main & Responsive CSS -->
+  <link rel="stylesheet" href="assets/css/themes.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/homepage-premium.css">
+
+  <!-- Early Theme Scripts -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/rtl.js"></script>
+</head>
+<body>
+
+  <!-- =========================================================================
+       SHARED STICKY NAVBAR WITH HOME DROPDOWN
+       ========================================================================= -->
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-custom" id="mainNavbar" aria-label="Main navigation">
+      <div class="container navbar-container">
+        <!-- Brand Logo -->
+        <a class="navbar-brand-custom" href="index.html" aria-label="Dumpling and Bao Kitchen Home">
+          <span class="brand-logo-mark" aria-hidden="true">
+            <img src="assets/icons/logo.svg" alt="Dumpling &amp; Bao Kitchen Logo" width="38" height="38" class="brand-logo-img">
+          </span>
+          <span class="brand-name">Dumpling &amp; Bao <span class="brand-name-kitchen">Kitchen</span></span>
+        </a>
+
+        <!-- Controls: Theme, RTL, Order CTA, and Mobile Hamburger -->
+        <div class="navbar-actions d-flex align-items-center gap-2 order-lg-3">
+          <!-- Theme Toggle -->
+          <button class="btn-ctrl theme-toggle-btn" type="button" aria-label="Toggle dark/light theme" title="Toggle theme">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+
+          <!-- RTL / LTR Direction Toggle -->
+          <button class="btn-ctrl rtl-toggle-btn" type="button" aria-label="Toggle text direction" title="Toggle RTL / LTR">
+            <span class="direction-label fw-bold text-xs">RTL</span>
+          </button>
+
+          <!-- Navbar Shopping Cart Icon & Live Count (Desktop Only) -->
+          <button type="button" class="btn-nav-cart d-none d-lg-inline-flex" aria-label="Shopping Cart, 0 items" id="navbarCartBtn" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" title="Open Shopping Cart">
+            <span class="cart-text">Cart</span>
+            <span class="cart-icon" aria-hidden="true">🛒</span>
+            <span class="cart-count-wrap">(<span class="cart-count" id="navCartCount">0</span>)</span>
+          </button>
+
+          <!-- Quick Action CTA Button (Desktop Only) -->
+          <a href="#tasting-flights" class="btn btn-chili btn-sm d-none d-lg-inline-flex px-3 py-2 ms-1">
+            <span>Book Flight</span>
+            <i class="bi bi-arrow-right"></i>
+          </a>
+
+          <!-- Mobile Hamburger Toggler -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarContent" aria-controls="mainNavbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-list fs-3"></i>
+          </button>
+        </div>
+
+        <!-- Navbar Links & Collapsible Content -->
+        <div class="collapse navbar-collapse order-lg-2" id="mainNavbarContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+            <!-- 1. Home Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+              <ul class="dropdown-menu dropdown-menu-custom shadow-lg" aria-labelledby="homeDropdown">
+                <li>
+                  <a class="dropdown-item" href="index.html">
+                    <div class="d-flex align-items-center gap-2">
+                      <i class="bi bi-shop text-chili fs-5"></i>
+                      <div>
+                        <div class="fw-semibold">Kitchen &amp; Our Story</div>
+                        <div class="small text-muted-custom">Artisan craft &amp; heritage</div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li><hr class="dropdown-divider my-1"></li>
+                <li>
+                  <a class="dropdown-item active" href="dumpling-experience.html">
+                    <div class="d-flex align-items-center gap-2">
+                      <i class="bi bi-stars text-chili fs-5"></i>
+                      <div>
+                        <div class="fw-semibold">Dumpling Experience</div>
+                        <div class="small text-muted-custom">Tasting flights &amp; workshops</div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- 2. About -->
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+
+            <!-- 3. Menu -->
+            <li class="nav-item">
+              <a class="nav-link" href="menu.html">Menu</a>
+            </li>
+
+            <!-- 4. Frozen Packs -->
+            <li class="nav-item">
+              <a class="nav-link" href="frozen-packs.html">Frozen Packs</a>
+            </li>
+
+            <!-- 5. Contact -->
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+          <!-- Mobile Drawer CTA Buttons (Down side of menu) -->
+          <div class="d-lg-none mobile-drawer-cta-section">
+            <button type="button" class="btn btn-nav-cart-mobile w-100 py-2.5 d-flex align-items-center justify-content-center gap-2 rounded-pill fw-semibold" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-label="Open Shopping Cart">
+              <span class="fs-5" aria-hidden="true">🛒</span>
+              <span>View Shopping Cart</span>
+              <span class="badge cart-count">0</span>
+            </button>
+            <a href="cart.html" class="btn btn-outline-chili w-100 py-2 d-flex align-items-center justify-content-center gap-2 rounded-pill fw-semibold small">
+              <i class="bi bi-bag-check"></i>
+              <span>Go to Full Cart &amp; Checkout</span>
+            </a>
+            <a href="#tasting-flights" class="btn btn-chili w-100 py-2 d-flex align-items-center justify-content-center gap-2 rounded-pill fw-semibold small">
+              <span>Book Tasting Flight</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- =======================================================================
+         EXPERIENCE HERO SECTION
+         ======================================================================= -->
+    <section class="hero-section hero-experience py-5" aria-labelledby="experience-hero-heading">
+      <!-- Atmospheric Ambient Glow Nebulas -->
+      <div class="hero-atmosphere-glow" aria-hidden="true">
+        <div class="hero-glow-orb hero-glow-chili"></div>
+        <div class="hero-glow-orb hero-glow-gold"></div>
+      </div>
+
+      <div class="container position-relative z-1">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7 animate-on-scroll">
+            <span class="section-subtitle">
+              <i class="bi bi-stars me-1 text-chili"></i> Interactive Dining &amp; Culture
+            </span>
+            <h1 id="experience-hero-heading" class="hero-title mb-3">
+              <span class="hero-split-line"><span class="hero-split-inner">The Art of Tasting</span></span><br class="d-none d-sm-inline">
+              <span class="hero-split-line"><span class="hero-split-inner text-gradient-shimmer">The Joy of Dim Sum</span></span>
+            </h1>
+            <p class="fs-5 text-secondary-custom mb-4 leading-relaxed">
+              Step beyond ordinary dining into an immersive culinary adventure. From theatrical tableside bamboo basket reveals to curated multi-course dumpling flights and hands-on weekend pleating masterclasses, immerse your senses in the craft of dim sum.
+            </p>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="#tasting-flights" class="btn-chili btn-magnetic btn-shimmer">
+                <i class="bi bi-cup-hot"></i>
+                <span>Explore Tasting Flights</span>
+              </a>
+              <a href="#masterclass" class="btn-outline-chili btn-magnetic btn-shimmer">
+                <i class="bi bi-mortarboard"></i>
+                <span>Weekend Masterclass</span>
+              </a>
+            </div>
+
+            <!-- Features Highlights -->
+            <div class="row g-3 mt-4 pt-3 border-top border-light-subtle">
+              <div class="col-sm-4">
+                <div class="fw-bold small text-primary-custom"><i class="bi bi-check-circle-fill text-chili me-1"></i> Multi-Course Flights</div>
+                <div class="small text-muted-custom">Curated 4-stage tastings</div>
+              </div>
+              <div class="col-sm-4">
+                <div class="fw-bold small text-primary-custom"><i class="bi bi-check-circle-fill text-chili me-1"></i> Live Steamer Bar</div>
+                <div class="small text-muted-custom">12 seconds from steam to plate</div>
+              </div>
+              <div class="col-sm-4">
+                <div class="fw-bold small text-primary-custom"><i class="bi bi-check-circle-fill text-chili me-1"></i> Tea &amp; Sauce Pairings</div>
+                <div class="small text-muted-custom">Vintage teas &amp; craft crisps</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Image Column -->
+          <div class="col-lg-5 animate-on-scroll delay-100">
+            <div class="hero-visual-3d" id="heroVisual3D">
+              <div class="hero-visual-inner">
+                <div class="hero-image-wrapper">
+                  <!-- Steam Animation -->
+                  <div class="steam-container" aria-hidden="true">
+                    <div class="steam-particle"></div>
+                    <div class="steam-particle"></div>
+                    <div class="steam-particle"></div>
+                  </div>
+                  <img 
+                    src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80" 
+                    alt="Elaborate dining banquet with multiple steaming bamboo baskets and condiments"
+                    width="600" 
+                    height="400"
+                    style="height: 400px; object-fit: cover;"
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 1: CURATED TASTING FLIGHTS
+         ======================================================================= -->
+    <section class="py-5" id="tasting-flights" style="background-color: var(--bg-secondary);" aria-labelledby="flights-heading">
+      <div class="container py-3">
+        <div class="text-center max-w-2xl mx-auto mb-5 animate-on-scroll">
+          <span class="section-subtitle">Multi-Course Tasting</span>
+          <h2 id="flights-heading" class="section-title mb-2">Curated Dumpling Journeys</h2>
+          <p class="text-secondary-custom">
+            Designed for curious foodies and dim sum aficionados. Each flight includes 4 sequential courses paired with artisanal loose-leaf teas and specialty dipping accompaniments.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Flight 1: Emperor's Heritage -->
+          <div class="col-lg-4 col-md-6 animate-on-scroll">
+            <div class="food-card h-100">
+              <div class="food-card-img-wrap">
+                <img 
+                  src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80" 
+                  alt="Emperor's Heritage Dim Sum Tasting Flight with soup dumplings"
+                  loading="lazy"
+                >
+              </div>
+              <div class="food-card-body d-flex flex-column h-100">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-signature"><i class="bi bi-crown"></i> Heritage Flight</span>
+                  <span class="food-price">$38 <span class="fs-6 fw-normal text-muted-custom">/ guest</span></span>
+                </div>
+                <h3 class="fs-5 fw-bold mb-2">The Emperor's Classic Flight</h3>
+                <p class="small text-secondary-custom flight-desc flex-grow-0 mb-3">Our definitive tour through the greatest classic dumpling traditions.</p>
+                
+                <div class="flight-course-list flex-grow-1">
+                  <ul class="list-unstyled flight-courses-wrap mb-0">
+                    <li><strong>Course 1:</strong> <span>Shanghai Xiao Long Bao Soup Dumplings</span></li>
+                    <li><strong>Course 2:</strong> <span>Translucent Tiger Prawn Har Gow</span></li>
+                    <li><strong>Course 3:</strong> <span>Crispy Golden Lace Pork Potstickers</span></li>
+                    <li><strong>Course 4:</strong> <span>Molten Salted Egg Yolk Custard Bao</span></li>
+                  </ul>
+                  <div class="flight-pairing">
+                    <i class="bi bi-cup-hot"></i>
+                    <span>Paired with Dragon Pearl Jasmine Tea</span>
+                  </div>
+                </div>
+
+                <a href="contact.html?enquiry=catering&product=emperors-classic-tasting-flight" class="btn btn-chili w-100 mt-auto">
+                  <i class="bi bi-calendar-check"></i>
+                  <span>Reserve This Flight</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flight 2: Szechuan Spice Fire -->
+          <div class="col-lg-4 col-md-6 animate-on-scroll delay-100">
+            <div class="food-card h-100">
+              <div class="food-card-img-wrap">
+                <img 
+                  src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=80" 
+                  alt="Szechuan Chili and Spice Dim Sum Expedition"
+                  loading="lazy"
+                >
+              </div>
+              <div class="food-card-body d-flex flex-column h-100">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-spicy"><i class="bi bi-fire"></i> Fiery &amp; Numbing</span>
+                  <span class="food-price">$42 <span class="fs-6 fw-normal text-muted-custom">/ guest</span></span>
+                </div>
+                <h3 class="fs-5 fw-bold mb-2">Szechuan Spice Expedition</h3>
+                <p class="small text-secondary-custom flight-desc flex-grow-0 mb-3">A bold exploration of mala chili oil, peppercorn heat, and vinegar balance.</p>
+                
+                <div class="flight-course-list flex-grow-1">
+                  <ul class="list-unstyled flight-courses-wrap mb-0">
+                    <li><strong>Course 1:</strong> <span>Garlic Smashed Cucumber Palate Opener</span></li>
+                    <li><strong>Course 2:</strong> <span>Szechuan Red Oil Pork Wontons</span></li>
+                    <li><strong>Course 3:</strong> <span>Spicy Mala Chicken Jiaozi in Broth</span></li>
+                    <li><strong>Course 4:</strong> <span>Korean Gochujang Fried Chicken Bao</span></li>
+                  </ul>
+                  <div class="flight-pairing">
+                    <i class="bi bi-cup-hot"></i>
+                    <span>Paired with Roasted Da Hong Pao Oolong</span>
+                  </div>
+                </div>
+
+                <a href="contact.html?enquiry=catering&product=szechuan-spice-tasting-flight" class="btn btn-chili w-100 mt-auto">
+                  <i class="bi bi-calendar-check"></i>
+                  <span>Reserve This Flight</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flight 3: Botanical Garden (Vegan) -->
+          <div class="col-lg-4 col-md-6 animate-on-scroll delay-200">
+            <div class="food-card h-100">
+              <div class="food-card-img-wrap">
+                <img 
+                  src="https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=800&q=80" 
+                  alt="Botanical Garden Plant-Based Dumpling Tasting Flight"
+                  loading="lazy"
+                >
+              </div>
+              <div class="food-card-body d-flex flex-column h-100">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="food-badge badge-veg"><i class="bi bi-flower1"></i> 100% Plant-Based</span>
+                  <span class="food-price">$36 <span class="fs-6 fw-normal text-muted-custom">/ guest</span></span>
+                </div>
+                <h3 class="fs-5 fw-bold mb-2">The Botanical Garden Flight</h3>
+                <p class="small text-secondary-custom flight-desc flex-grow-0 mb-3">Fresh earth, forest mushrooms, and garden aromatics hand-folded daily.</p>
+                
+                <div class="flight-course-list flex-grow-1">
+                  <ul class="list-unstyled flight-courses-wrap mb-0">
+                    <li><strong>Course 1:</strong> <span>Sweet Corn &amp; Crunchy Chestnut Jiaozi</span></li>
+                    <li><strong>Course 2:</strong> <span>Garden Garlic Chive &amp; Silky Tofu</span></li>
+                    <li><strong>Course 3:</strong> <span>Truffle Wild Forest Mushroom Dumpling</span></li>
+                    <li><strong>Course 4:</strong> <span>Glazed Shiitake &amp; Pickled Mustard Bao</span></li>
+                  </ul>
+                  <div class="flight-pairing">
+                    <i class="bi bi-cup-hot"></i>
+                    <span>Paired with Golden Chrysanthemum Tea</span>
+                  </div>
+                </div>
+
+                <a href="contact.html?enquiry=catering&product=botanical-garden-tasting-flight" class="btn btn-chili w-100 mt-auto">
+                  <i class="bi bi-calendar-check"></i>
+                  <span>Reserve This Flight</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 2: THE LIVE STEAMING STATION EXPERIENCE
+         ======================================================================= -->
+    <section class="py-5" aria-labelledby="live-station-heading">
+      <div class="container py-3">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 animate-on-scroll">
+            <span class="section-subtitle">Theater of Steam</span>
+            <h2 id="live-station-heading" class="section-title mb-3">From Steamer to Table in 12 Seconds</h2>
+            <p class="fs-5 text-secondary-custom mb-4 leading-relaxed">
+              Dim sum at its zenith is all about temperature. When a bamboo basket is lifted from our roaring steam bank, it arrives at your table while the skins are shimmering and the savory broth inside is at peak aromatic bloom.
+            </p>
+            
+            <div class="d-flex flex-column gap-3">
+              <div class="d-flex align-items-start gap-3 p-3 rounded-3" style="background-color: var(--bg-secondary); border: 1px solid var(--border-light);">
+                <div class="brand-icon-box" style="width: 36px; height: 36px; font-size: 1.05rem;">
+                  <i class="bi bi-hand-index-thumb"></i>
+                </div>
+                <div>
+                  <h4 class="fs-6 fw-bold mb-1">Live Open-Pleating Bench</h4>
+                  <p class="small text-secondary-custom mb-0">Watch our dumpling masters roll, fill, and crimp 18 uniform folds in under 8 seconds per dumpling.</p>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-start gap-3 p-3 rounded-3" style="background-color: var(--bg-secondary); border: 1px solid var(--border-light);">
+                <div class="brand-icon-box" style="width: 36px; height: 36px; font-size: 1.05rem;">
+                  <i class="bi bi-cloud-haze2"></i>
+                </div>
+                <div>
+                  <h4 class="fs-6 fw-bold mb-1">100°C Natural Cedar &amp; Bamboo Vapour</h4>
+                  <p class="small text-secondary-custom mb-0">Unlacquered bamboo imparts a subtle woody fragrance to the wrappers that metal pots can never replicate.</p>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-start gap-3 p-3 rounded-3" style="background-color: var(--bg-secondary); border: 1px solid var(--border-light);">
+                <div class="brand-icon-box" style="width: 36px; height: 36px; font-size: 1.05rem;">
+                  <i class="bi bi-bell"></i>
+                </div>
+                <div>
+                  <h4 class="fs-6 fw-bold mb-1">Tableside Basket Unveiling</h4>
+                  <p class="small text-secondary-custom mb-0">Every course is unveiled right before your eyes with an aromatic burst of culinary steam.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 animate-on-scroll delay-100">
+            <div class="position-relative">
+              <img 
+                src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1200&q=80" 
+                alt="Stacked bamboo steamers on roaring steam station"
+                class="rounded-4 shadow-lg w-100"
+                style="height: 480px; object-fit: cover; border: 1px solid var(--border-medium);"
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 3: HANDS-ON DUMPLING MASTERCLASSES
+         ======================================================================= -->
+    <section class="py-5" id="masterclass" style="background-color: var(--bg-secondary);" aria-labelledby="masterclass-heading">
+      <div class="container py-3">
+        <div class="p-4 p-lg-5 rounded-4 border border-light-subtle shadow-sm" style="background-color: var(--bg-surface);">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6 animate-on-scroll">
+              <span class="section-subtitle">Artisan Workshops</span>
+              <h2 id="masterclass-heading" class="fs-2 fw-bold mb-3">Fold With The Masters: Weekend Masterclass</h2>
+              <p class="text-secondary-custom mb-4 leading-relaxed">
+                Ever wanted to create tender, pleated dumplings from scratch in your own kitchen? Join our Master Chef for a 2-hour interactive weekend workshop where you'll knead, roll, pleat, and steam your own delicious feast.
+              </p>
+
+              <div class="row g-3 mb-4">
+                <div class="col-sm-6">
+                  <div class="p-3 rounded-3" style="background-color: var(--bg-secondary); border: 1px solid var(--border-light);">
+                    <div class="fw-bold mb-1"><i class="bi bi-clock text-chili me-1"></i> 2-Hour Session</div>
+                    <div class="small text-secondary-custom">Every Saturday &amp; Sunday at 10:30 AM</div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="p-3 rounded-3" style="background-color: var(--bg-secondary); border: 1px solid var(--border-light);">
+                    <div class="fw-bold mb-1"><i class="bi bi-cash-coin text-chili me-1"></i> $75 per Guest</div>
+                    <div class="small text-secondary-custom">Includes apron, feast &amp; recipe booklet</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex flex-wrap gap-3">
+                <a href="contact.html?enquiry=catering&product=dumpling-masterclass-ticket" class="btn-chili">
+                  <i class="bi bi-ticket-perforated"></i>
+                  <span>Book Masterclass Tickets</span>
+                </a>
+                <a href="contact.html?enquiry=catering&product=private-group-masterclass" class="btn btn-outline-chili">
+                  <span>Private Corporate Sessions</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-6 animate-on-scroll delay-100">
+              <div class="position-relative">
+                <img 
+                  src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1200&q=80" 
+                  alt="Dumpling folding masterclass student learning the 18-fold pleating technique"
+                  class="rounded-4 shadow-md w-100"
+                  style="height: 380px; object-fit: cover;"
+                >
+              </div>
+              <div class="d-flex align-items-center gap-2 mt-2">
+                <span class="badge bg-danger p-2 me-1">Beginner Friendly</span>
+                <span class="small fw-semibold text-primary-custom">All Ingredients Provided</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 4: CRAFT DIPPING BAR & TEA PAIRINGS
+         ======================================================================= -->
+    <section class="py-5" aria-labelledby="dipping-bar-heading">
+      <div class="container py-3">
+        <div class="text-center max-w-2xl mx-auto mb-5 animate-on-scroll">
+          <span class="section-subtitle">Aromatic Harmony</span>
+          <h2 id="dipping-bar-heading" class="section-title mb-2">The Dipping Bar &amp; Tea Flights</h2>
+          <p class="text-secondary-custom">Every dumpling deserves its soulmate sauce. Create your own personalized condiment alchemy at our tableside dipping bar.</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Sauce 1 -->
+          <div class="col-sm-6 col-lg-3 animate-on-scroll">
+            <div class="cooking-card">
+              <div class="cooking-icon-circle">
+                <i class="bi bi-fire"></i>
+              </div>
+              <h3 class="fs-6 fw-bold mb-1">House Chili Crisp</h3>
+              <p class="small text-secondary-custom mb-3">Crispy shallots, garlic flakes, Sichuan peppers, and roasted rapeseed oil.</p>
+              <span class="badge badge-spicy">Crunchy &amp; Spicy</span>
+            </div>
+          </div>
+
+          <!-- Sauce 2 -->
+          <div class="col-sm-6 col-lg-3 animate-on-scroll delay-100">
+            <div class="cooking-card">
+              <div class="cooking-icon-circle">
+                <i class="bi bi-droplet-half"></i>
+              </div>
+              <h3 class="fs-6 fw-bold mb-1">10-Year Black Vinegar</h3>
+              <p class="small text-secondary-custom mb-3">Zhenjiang aged black rice vinegar steeped with young ginger matchsticks.</p>
+              <span class="badge badge-popular">Tangy &amp; Mellow</span>
+            </div>
+          </div>
+
+          <!-- Sauce 3 -->
+          <div class="col-sm-6 col-lg-3 animate-on-scroll delay-200">
+            <div class="cooking-card">
+              <div class="cooking-icon-circle">
+                <i class="bi bi-palette"></i>
+              </div>
+              <h3 class="fs-6 fw-bold mb-1">Sweet Garlic Soy Glaze</h3>
+              <p class="small text-secondary-custom mb-3">Simmered dark soy with rock sugar, roasted garlic, and toasted sesame oil.</p>
+              <span class="badge badge-sweet">Savory &amp; Sweet</span>
+            </div>
+          </div>
+
+          <!-- Sauce 4 -->
+          <div class="col-sm-6 col-lg-3 animate-on-scroll delay-300">
+            <div class="cooking-card">
+              <div class="cooking-icon-circle">
+                <i class="bi bi-cup-hot"></i>
+              </div>
+              <h3 class="fs-6 fw-bold mb-1">Craft Tea Pairings</h3>
+              <p class="small text-secondary-custom mb-3">Organic Jasmine Dragon Pearls, high-mountain Oolong, and floral Chrysanthemum.</p>
+              <span class="badge badge-veg">Digestive Ease</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 5: GUEST EXPERIENCES & ATMOSPHERE
+         ======================================================================= -->
+    <section class="py-5" style="background-color: var(--bg-secondary);" aria-labelledby="moments-heading">
+      <div class="container py-3">
+        <div class="row justify-content-between align-items-end mb-4">
+          <div class="col-lg-7 animate-on-scroll">
+            <span class="section-subtitle">Moments from the Table</span>
+            <h2 id="moments-heading" class="section-title mb-1">The Dining Room Atmosphere</h2>
+            <p class="text-secondary-custom mb-0">Where laughter mingles with rising steam and every bite is celebrated.</p>
+          </div>
+          <div class="col-lg-4 text-lg-end mt-3 mt-lg-0 animate-on-scroll delay-100">
+            <a href="contact.html?enquiry=general" class="btn btn-outline-chili">
+              <i class="bi bi-chat-heart"></i>
+              <span>Plan Your Event</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4 animate-on-scroll">
+            <div class="position-relative overflow-hidden rounded-4 shadow-sm" style="height: 280px;">
+              <img 
+                src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" 
+                alt="Colorful bowls of dipping sauces and chili crisp" 
+                class="w-100 h-100 object-fit-cover"
+              >
+            </div>
+          </div>
+          <div class="col-md-4 animate-on-scroll delay-100">
+            <div class="position-relative overflow-hidden rounded-4 shadow-sm" style="height: 280px;">
+              <img 
+                src="https://images.unsplash.com/photo-1607301406259-dfb186e15de8?auto=format&fit=crop&w=800&q=80" 
+                alt="Intimate dining atmosphere with friends sharing dim sum baskets" 
+                class="w-100 h-100 object-fit-cover"
+              >
+            </div>
+          </div>
+          <div class="col-md-4 animate-on-scroll delay-200">
+            <div class="position-relative overflow-hidden rounded-4 shadow-sm" style="height: 280px;">
+              <img 
+                src="https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=800&q=80" 
+                alt="Lace crust potstickers freshly removed from the hot skillet" 
+                class="w-100 h-100 object-fit-cover"
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 6: RESERVATION CTA BANNER
+         ======================================================================= -->
+    <section class="py-5" aria-labelledby="experience-cta-heading">
+      <div class="container py-4">
+        <div class="p-5 rounded-4 text-center text-white position-relative overflow-hidden" 
+             style="background: linear-gradient(135deg, var(--brand-dark-brown) 0%, #3B332C 100%); border: 1px solid var(--border-medium);">
+          
+          <div class="steam-container" style="top: -20px;" aria-hidden="true">
+            <div class="steam-particle"></div>
+            <div class="steam-particle"></div>
+          </div>
+
+          <div class="max-w-xl mx-auto position-relative z-1 animate-on-scroll">
+            <span class="food-badge badge-signature mb-3">Reservations Recommended</span>
+            <h2 id="experience-cta-heading" class="fs-1 fw-bold text-white mb-3">Ready to Experience Dim Sum Like Never Before?</h2>
+            <p class="fs-5 text-white-50 mb-4">
+              Reserve your seat for tonight's tasting flight or book a private weekend masterclass for your family, friends, or team.
+            </p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+              <a href="contact.html?enquiry=catering&product=dumpling-experience-booking" class="btn-chili">
+                <i class="bi bi-calendar-event"></i>
+                <span>Reserve an Experience</span>
+              </a>
+              <a href="menu.html" class="btn btn-outline-light rounded-pill px-4 py-2.5 fw-semibold">
+                <i class="bi bi-journal-text me-1"></i> Browse Regular Menu
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       SHARED FOOTER
+       ========================================================================= -->
+  <footer class="footer-custom" role="contentinfo">
+    <div class="container footer-container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand -->
+        <div class="footer-col footer-col-brand">
+          <a href="index.html" class="footer-brand-title mb-3 text-decoration-none">
+            <span class="brand-logo-mark" aria-hidden="true">
+              <img src="assets/icons/logo.svg" alt="Dumpling &amp; Bao Kitchen Logo" width="42" height="42" class="brand-logo-img">
+            </span>
+            <span>Dumpling &amp; Bao <span class="brand-name-kitchen">Kitchen</span></span>
+          </a>
+          <p class="footer-desc mb-4 pe-lg-3">
+            Handmade street dumplings, fluffy steamed bao buns, and authentic Asian culinary delights prepared fresh each day with care and love.
+          </p>
+          <div class="d-flex align-items-center gap-2 footer-signature">
+            <img src="assets/icons/dumpling.svg" alt="Dumpling logo mark" width="28" height="28" style="opacity: 0.85;">
+            <span class="small fw-semibold footer-signature-text">Hand-Folded with Passion</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Explore -->
+        <div class="footer-col footer-col-explore">
+          <h3 class="footer-col-title">Explore</h3>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="bi bi-chevron-right small"></i> Kitchen &amp; Story</a></li>
+            <li><a href="dumpling-experience.html"><i class="bi bi-chevron-right small"></i> Tasting Experience</a></li>
+            <li><a href="menu.html"><i class="bi bi-chevron-right small"></i> Menu</a></li>
+            <li><a href="frozen-packs.html"><i class="bi bi-chevron-right small"></i> Frozen Packs</a></li>
+            <li><a href="about.html"><i class="bi bi-chevron-right small"></i> About Us</a></li>
+            <li><a href="contact.html"><i class="bi bi-chevron-right small"></i> Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Customer Information -->
+        <div class="footer-col footer-col-info">
+          <h3 class="footer-col-title">Information</h3>
+          <ul class="footer-links">
+            <li><a href="contact.html#opening-hours"><i class="bi bi-clock small"></i> Opening Hours</a></li>
+            <li><a href="contact.html?enquiry=catering#contact-form"><i class="bi bi-people small"></i> Catering Enquiries</a></li>
+            <li><a href="frozen-packs.html#cooking-guide"><i class="bi bi-snow small"></i> Frozen Pack Guide</a></li>
+            <li><a href="contact.html#location-map"><i class="bi bi-geo-alt small"></i> Location &amp; Map</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Follow Us -->
+        <div class="footer-col footer-col-follow">
+          <h3 class="footer-col-title">Follow Our Kitchen</h3>
+          <p class="footer-follow-desc mb-3">Join our community for seasonal specials and secret dumpling recipes.</p>
+          <div class="footer-social-row">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn" aria-label="Visit our Instagram page">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn" aria-label="Visit our Facebook page">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn" aria-label="Visit our YouTube channel">
+              <i class="bi bi-youtube"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn" aria-label="Visit our Twitter / X profile" title="Twitter / X">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <div>
+          &copy; <span id="currentYear">2026</span> Dumpling &amp; Bao Kitchen. All rights reserved.
+        </div>
+        <div class="footer-bottom-links d-flex gap-3">
+          <a href="contact.html" class="text-decoration-none" style="color: var(--footer-muted);">Privacy Policy (Demo)</a>
+          <span style="color: var(--footer-border);">|</span>
+          <a href="contact.html" class="text-decoration-none" style="color: var(--footer-muted);">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Lenis Buttery Smooth Scroll Engine -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+
+  <!-- Application Scripts -->
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/homepage-premium.js"></script>
+</body>
+</html>

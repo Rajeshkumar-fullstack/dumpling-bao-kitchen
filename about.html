@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about Dumpling &amp; Bao Kitchen — our story, kitchen philosophy, passionate culinary team, and dedication to handcrafted dumplings and fluffy steamed bao.">
+  <meta name="keywords" content="about dumpling and bao kitchen, dumpling history, artisan dim sum, bao buns story, food philosophy, culinary team">
+  <title>About Us - Our Story, Philosophy &amp; Team | Dumpling &amp; Bao Kitchen</title>
+  <meta name="theme-color" content="#163A5F">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+  <link rel="alternate icon" type="image/svg+xml" href="assets/icons/dumpling.svg">
+  <link rel="apple-touch-icon" href="assets/icons/logo.svg">
+
+  <!-- Google Fonts: Playfair Display (Serif) & Inter (Sans-Serif) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Tailwind CSS Configuration (Disables conflicting collapse utility) -->
+  <script>
+    tailwind = {
+      corePlugins: {
+        visibility: false,
+      }
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Project Design System & Custom Styles -->
+  <link rel="stylesheet" href="assets/css/themes.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/homepage-premium.css">
+
+  <!-- Immediate Theme & Direction Controller -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/rtl.js"></script>
+</head>
+<body>
+
+  <!-- =========================================================================
+       SECTION A: RESPONSIVE NAVBAR
+       ========================================================================= -->
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-custom" id="mainNavbar" aria-label="Main navigation">
+      <div class="container navbar-container">
+        <!-- Brand Logo -->
+        <a class="navbar-brand-custom" href="index.html" aria-label="Dumpling and Bao Kitchen Home">
+          <span class="brand-logo-mark" aria-hidden="true">
+            <img src="assets/icons/logo.svg" alt="Dumpling &amp; Bao Kitchen Logo" width="38" height="38" class="brand-logo-img">
+          </span>
+          <span class="brand-name">Dumpling &amp; Bao <span class="brand-name-kitchen">Kitchen</span></span>
+        </a>
+
+        <!-- Controls: Theme, RTL, Order CTA, and Mobile Hamburger -->
+        <div class="navbar-actions d-flex align-items-center gap-2 order-lg-3">
+          <!-- Theme Toggle -->
+          <button class="btn-ctrl theme-toggle-btn" type="button" aria-label="Toggle dark/light theme" title="Toggle theme">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+
+          <!-- RTL / LTR Direction Toggle -->
+          <button class="btn-ctrl rtl-toggle-btn" type="button" aria-label="Toggle text direction" title="Toggle RTL / LTR">
+            <span class="direction-label fw-bold text-xs">RTL</span>
+          </button>
+
+          <!-- Navbar Shopping Cart Icon & Live Count (Desktop Only) -->
+          <button type="button" class="btn-nav-cart d-none d-lg-inline-flex" aria-label="Shopping Cart, 0 items" id="navbarCartBtn" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" title="Open Shopping Cart">
+            <span class="cart-text">Cart</span>
+            <span class="cart-icon" aria-hidden="true">🛒</span>
+            <span class="cart-count-wrap">(<span class="cart-count" id="navCartCount">0</span>)</span>
+          </button>
+
+          <!-- Quick Action CTA Button (Desktop Only) -->
+          <a href="menu.html" class="btn btn-chili btn-sm d-none d-lg-inline-flex px-3 py-2 ms-1">
+            <span>View Menu</span>
+            <i class="bi bi-arrow-right"></i>
+          </a>
+
+          <!-- Mobile Hamburger Toggler -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarContent" aria-controls="mainNavbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-list fs-3"></i>
+          </button>
+        </div>
+
+        <!-- Navbar Links & Collapsible Content -->
+        <div class="collapse navbar-collapse order-lg-2" id="mainNavbarContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center">
+            <!-- 1. Home Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+              <ul class="dropdown-menu dropdown-menu-custom shadow-lg" aria-labelledby="homeDropdown">
+                <li>
+                  <a class="dropdown-item" href="index.html">
+                    <div class="d-flex align-items-center gap-2">
+                      <i class="bi bi-shop text-chili fs-5"></i>
+                      <div>
+                        <div class="fw-semibold">Kitchen &amp; Our Story</div>
+                        <div class="small text-muted-custom">Artisan craft &amp; heritage</div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li><hr class="dropdown-divider my-1"></li>
+                <li>
+                  <a class="dropdown-item" href="dumpling-experience.html">
+                    <div class="d-flex align-items-center gap-2">
+                      <i class="bi bi-stars text-chili fs-5"></i>
+                      <div>
+                        <div class="fw-semibold">Dumpling Experience</div>
+                        <div class="small text-muted-custom">Tasting flights &amp; workshops</div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- 2. About -->
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="about.html">About</a>
+            </li>
+
+            <!-- 3. Menu -->
+            <li class="nav-item">
+              <a class="nav-link" href="menu.html">Menu</a>
+            </li>
+
+            <!-- 4. Frozen Packs -->
+            <li class="nav-item">
+              <a class="nav-link" href="frozen-packs.html">Frozen Packs</a>
+            </li>
+
+            <!-- 5. Contact -->
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+          <!-- Mobile Drawer CTA Buttons (Down side of menu) -->
+          <div class="d-lg-none mobile-drawer-cta-section">
+            <button type="button" class="btn btn-nav-cart-mobile w-100 py-2.5 d-flex align-items-center justify-content-center gap-2 rounded-pill fw-semibold" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-label="Open Shopping Cart">
+              <span class="fs-5" aria-hidden="true">🛒</span>
+              <span>View Shopping Cart</span>
+              <span class="badge cart-count">0</span>
+            </button>
+            <a href="cart.html" class="btn btn-outline-chili w-100 py-2 d-flex align-items-center justify-content-center gap-2 rounded-pill fw-semibold small">
+              <i class="bi bi-bag-check"></i>
+              <span>Go to Full Cart &amp; Checkout</span>
+            </a>
+            <a href="menu.html" class="btn btn-chili w-100 py-2 d-flex align-items-center justify-content-center gap-2 rounded-pill fw-semibold small">
+              <span>Explore Menu</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <!-- =======================================================================
+         SECTION B: ABOUT HERO SECTION
+         ======================================================================= -->
+    <section class="hero-section hero-about py-5" id="about-hero">
+      <!-- Atmospheric Ambient Glow Nebulas -->
+      <div class="hero-atmosphere-glow" aria-hidden="true">
+        <div class="hero-glow-orb hero-glow-chili"></div>
+        <div class="hero-glow-orb hero-glow-gold"></div>
+      </div>
+
+      <div class="container position-relative z-1 py-lg-4">
+        <div class="row align-items-center g-5">
+          <!-- Left Column: Story Intro & Actions -->
+          <div class="col-lg-6 animate-on-scroll">
+            <span class="section-subtitle">
+              <i class="bi bi-heart-fill me-1 text-chili"></i> Our Passion &amp; Craft
+            </span>
+            <h1 class="hero-title mb-3">
+              <span class="hero-split-line"><span class="hero-split-inner">More Than Dumplings</span></span><br class="d-none d-sm-inline">
+              <span class="hero-split-line"><span class="hero-split-inner text-gradient-shimmer">It's Our Story</span></span>
+            </h1>
+            <p class="hero-desc mb-4 fs-5 text-secondary-custom leading-relaxed">
+              At Dumpling &amp; Bao Kitchen, we bring people together through freshly prepared dumplings, soft steamed bao, bold flavours, and the joy of sharing good food. Every dish reflects our passion for quality ingredients, careful preparation, and memorable dining experiences.
+            </p>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="menu.html" class="btn-chili btn-magnetic btn-shimmer">
+                <i class="bi bi-book me-1"></i>
+                <span>Explore Our Menu</span>
+              </a>
+              <a href="contact.html" class="btn-outline-chili btn-magnetic btn-shimmer">
+                <i class="bi bi-chat-dots me-1"></i>
+                <span>Contact Our Team</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Food Photograph with 3D Perspective -->
+          <div class="col-lg-6 animate-on-scroll delay-200">
+            <div class="hero-visual-3d" id="heroVisual3D">
+              <div class="hero-visual-inner">
+                <div class="hero-image-wrapper">
+                  <!-- Decorative Lightweight Steam Effect -->
+                  <div class="steam-container" aria-hidden="true">
+                    <div class="steam-particle"></div>
+                    <div class="steam-particle"></div>
+                    <div class="steam-particle"></div>
+                    <div class="steam-particle"></div>
+                  </div>
+
+                  <img 
+                    src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1400&q=85" 
+                    alt="Artisan handcrafted golden-crisped dumplings and steamed bao prepared in traditional bamboo steamers" 
+                    class="img-fluid w-100"
+                    width="600"
+                    height="412"
+                    loading="eager"
+                    fetchpriority="high"
+                    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=1400&q=85';"
+                  >
+                </div>
+
+                <!-- Clean, non-intrusive feature chips below image -->
+                <div class="hero-image-highlights" aria-label="Heritage Highlights">
+                  <div class="hero-feature-chip">
+                    <i class="bi bi-heart-fill text-chili" style="color: var(--accent-chili);"></i>
+                    <span>Family Heritage Since 2012</span>
+                  </div>
+                  <div class="hero-feature-chip">
+                    <i class="bi bi-shield-check text-gold" style="color: var(--accent-gold);"></i>
+                    <span>100% Farm-Fresh Filling</span>
+                  </div>
+                  <div class="hero-feature-chip">
+                    <i class="bi bi-award-fill text-gold" style="color: var(--accent-gold);"></i>
+                    <span>Master Dim Sum Recipe</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION C: OUR STORY / HISTORY (TIMELINE)
+         ======================================================================= -->
+    <section class="py-5" style="background-color: var(--bg-secondary);" id="our-story" aria-labelledby="our-story-heading">
+      <div class="container py-lg-4">
+        <div class="text-center max-w-2xl mx-auto mb-5 animate-on-scroll">
+          <span class="d-inline-block px-3 py-1 rounded-pill mb-2 fw-bold text-uppercase small" style="background-color: var(--brand-chili-light); color: var(--accent-chili); font-size: 0.78rem; letter-spacing: 0.05em;">Heritage &amp; Evolution</span>
+          <h2 id="our-story-heading" class="section-title mb-3">Our Journey, One Dumpling at a Time</h2>
+          <p class="section-desc mb-0">
+            Our story begins with a simple idea: make delicious dumplings and bao that bring people closer together. Inspired by Asian comfort-food traditions, we focus on thoughtful preparation, balanced flavours, and food that feels welcoming. From choosing ingredients to presenting every plate, we aim to make every visit enjoyable.
+          </p>
+        </div>
+
+        <!-- Responsive Timeline -->
+        <div class="timeline-track animate-on-scroll">
+          <!-- Milestone 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot">1</div>
+            <div class="timeline-content-card">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <i class="bi bi-lightbulb text-chili fs-5"></i>
+                <h3 class="fs-5 fw-bold mb-0">The Beginning</h3>
+              </div>
+              <p class="text-secondary-custom mb-0">
+                A passion for handcrafted dumplings, fluffy bao buns, and the rich culinary traditions that inspire every bite.
+              </p>
+            </div>
+          </div>
+
+          <!-- Milestone 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot">2</div>
+            <div class="timeline-content-card">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <i class="bi bi-graph-up-arrow text-chili fs-5"></i>
+                <h3 class="fs-5 fw-bold mb-0">Growing Our Kitchen</h3>
+              </div>
+              <p class="text-secondary-custom mb-0">
+                Expanding our menu with flavourful fillings, handmade-style favourites, and satisfying sides.
+              </p>
+            </div>
+          </div>
+
+          <!-- Milestone 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot">3</div>
+            <div class="timeline-content-card">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <i class="bi bi-share text-chili fs-5"></i>
+                <h3 class="fs-5 fw-bold mb-0">Sharing the Experience</h3>
+              </div>
+              <p class="text-secondary-custom mb-0">
+                Bringing our food to more people through dine-in experiences and convenient frozen packs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION D: OUR MISSION AND VALUES
+         ======================================================================= -->
+    <section class="py-5" style="background-color: var(--bg-primary);" id="our-values" aria-labelledby="values-heading">
+      <div class="container py-lg-4">
+        <div class="text-center max-w-2xl mx-auto mb-5 animate-on-scroll">
+          <span class="d-inline-block px-3 py-1 rounded-pill mb-2 fw-bold text-uppercase small" style="background-color: var(--brand-chili-light); color: var(--accent-chili); font-size: 0.78rem; letter-spacing: 0.05em;">Guiding Principles</span>
+          <h2 id="values-heading" class="section-title mb-3">What Matters in Our Kitchen</h2>
+          <p class="section-desc mb-0">
+            Every fold, simmer, and seasoning is guided by four principles that keep our kitchen focused on quality, care, and hospitality.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Value 1 -->
+          <div class="col-lg-3 col-md-6 animate-on-scroll">
+            <div class="value-card">
+              <div class="value-icon-box">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <h3 class="fs-5 fw-bold mb-2">Quality Ingredients</h3>
+              <p class="text-secondary-custom small mb-0">
+                Choose ingredients carefully and focus on freshness and flavour.
+              </p>
+            </div>
+          </div>
+
+          <!-- Value 2 -->
+          <div class="col-lg-3 col-md-6 animate-on-scroll delay-100">
+            <div class="value-card">
+              <div class="value-icon-box">
+                <i class="bi bi-magic"></i>
+              </div>
+              <h3 class="fs-5 fw-bold mb-2">Made with Care</h3>
+              <p class="text-secondary-custom small mb-0">
+                Give attention to preparation, texture, taste, and presentation.
+              </p>
+            </div>
+          </div>
+
+          <!-- Value 3 -->
+          <div class="col-lg-3 col-md-6 animate-on-scroll delay-200">
+            <div class="value-card">
+              <div class="value-icon-box">
+                <i class="bi bi-stars"></i>
+              </div>
+              <h3 class="fs-5 fw-bold mb-2">Flavourful Experiences</h3>
+              <p class="text-secondary-custom small mb-0">
+                Offer delicious options for different tastes and preferences.
+              </p>
+            </div>
+          </div>
+
+          <!-- Value 4 -->
+          <div class="col-lg-3 col-md-6 animate-on-scroll delay-300">
+            <div class="value-card">
+              <div class="value-icon-box">
+                <i class="bi bi-people-fill"></i>
+              </div>
+              <h3 class="fs-5 fw-bold mb-2">Bringing People Together</h3>
+              <p class="text-secondary-custom small mb-0">
+                Make food-sharing moments warm, welcoming, and memorable.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION E: MEET OUR TEAM
+         ======================================================================= -->
+    <section class="py-5" style="background-color: var(--bg-secondary);" id="meet-team" aria-labelledby="team-heading">
+      <div class="container py-lg-4">
+        <div class="text-center max-w-2xl mx-auto mb-5 animate-on-scroll">
+          <span class="d-inline-block px-3 py-1 rounded-pill mb-2 fw-bold text-uppercase small" style="background-color: var(--brand-chili-light); color: var(--accent-chili); font-size: 0.78rem; letter-spacing: 0.05em;">Our Crew</span>
+          <h2 id="team-heading" class="section-title mb-3">The People Behind the Flavour</h2>
+          <p class="section-desc mb-0">
+            Great food comes from care, teamwork, creativity, and attention to detail. Our kitchen and service team work together to create an enjoyable experience from preparation to the final plate.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Team Card 1: Kitchen Team -->
+          <div class="col-lg-4 col-md-6 animate-on-scroll">
+            <div class="team-card">
+              <div class="team-card-img-wrap">
+                <img 
+                  src="https://images.unsplash.com/photo-1570604127008-f644337cfb8b?auto=format&fit=crop&w=800&q=85" 
+                  alt="Dumpling & Bao Kitchen culinary team hand-crafting fresh dumplings with seasoned filling and bamboo trays"
+                  loading="lazy"
+                  onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1574164052277-b9ea797de8e4?auto=format&fit=crop&w=800&q=80';"
+                >
+              </div>
+              <div class="team-card-body">
+                <span class="team-role-badge"><i class="bi bi-fire"></i> Culinary Craft</span>
+                <h3 class="fs-5 fw-bold mb-2">Kitchen Team</h3>
+                <p class="text-secondary-custom small mb-0">
+                Dedicated to careful preparation, consistent quality, and delicious flavours.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Card 2: Food & Menu Team -->
+          <div class="col-lg-4 col-md-6 animate-on-scroll delay-100">
+            <div class="team-card">
+              <div class="team-card-img-wrap">
+                <img 
+                  src="https://images.unsplash.com/photo-1574164052277-b9ea797de8e4?auto=format&fit=crop&w=800&q=85" 
+                  alt="Dim sum master chef carefully preparing freshly pleated dumplings into stacked bamboo steamers"
+                  loading="lazy"
+                  onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80';"
+                >
+              </div>
+              <div class="team-card-body">
+                <span class="team-role-badge"><i class="bi bi-sliders"></i> Recipe Development</span>
+                <h3 class="fs-5 fw-bold mb-2">Food &amp; Menu Team</h3>
+                <p class="text-secondary-custom small mb-0">
+                  Dedicated to developing enjoyable combinations and menu favourites.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Card 3: Guest Experience Team -->
+          <div class="col-lg-4 col-md-6 animate-on-scroll delay-200">
+            <div class="team-card">
+              <div class="team-card-img-wrap">
+                <img 
+                  src="https://images.unsplash.com/photo-1581299894007-aaa50297cf16?auto=format&fit=crop&w=800&q=80" 
+                  alt="Hospitality and service team welcoming guests at the dining counter"
+                  loading="lazy"
+                  onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80';"
+                >
+              </div>
+              <div class="team-card-body">
+                <span class="team-role-badge"><i class="bi bi-heart"></i> Warm Hospitality</span>
+                <h3 class="fs-5 fw-bold mb-2">Guest Experience Team</h3>
+                <p class="text-secondary-custom small mb-0">
+                  Focused on friendly service and welcoming guests.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION F: CUSTOMER TESTIMONIALS
+         ======================================================================= -->
+    <section class="py-5" style="background-color: var(--bg-primary);" id="testimonials" aria-labelledby="testimonials-heading">
+      <div class="container py-lg-4">
+        <div class="text-center max-w-2xl mx-auto mb-5 animate-on-scroll">
+          <span class="d-inline-block px-3 py-1 rounded-pill mb-2 fw-bold text-uppercase small" style="background-color: var(--brand-chili-light); color: var(--accent-chili); font-size: 0.78rem; letter-spacing: 0.05em;">Community Love</span>
+          <h2 id="testimonials-heading" class="section-title mb-3">Moments Worth Sharing</h2>
+          <p class="section-desc mb-0">
+            A glimpse into the shared smiles, steaming baskets, and enjoyable dining moments our guests experience every day.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Testimonial 1 -->
+          <div class="col-lg-4 col-md-6 animate-on-scroll">
+            <div class="testimonial-card">
+              <i class="bi bi-quote testimonial-quote-icon" aria-hidden="true"></i>
+              <div class="testimonial-rating" aria-label="5 out of 5 stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <p class="fst-italic text-secondary-custom mb-4">
+                &ldquo;The dumplings were delicious, and the flavours made the meal feel special.&rdquo;
+              </p>
+              <div class="mt-auto pt-3 border-top border-light-subtle d-flex flex-column gap-1">
+                <span class="fw-bold small text-primary-custom">Guest Experience</span>
+                <span class="testimonial-badge-preview">
+                  <i class="bi bi-info-circle me-1"></i> Sample testimonial for design preview
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="col-lg-4 col-md-6 animate-on-scroll delay-100">
+            <div class="testimonial-card">
+              <i class="bi bi-quote testimonial-quote-icon" aria-hidden="true"></i>
+              <div class="testimonial-rating" aria-label="5 out of 5 stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <p class="fst-italic text-secondary-custom mb-4">
+                &ldquo;The bao buns were soft, satisfying, and beautifully presented.&rdquo;
+              </p>
+              <div class="mt-auto pt-3 border-top border-light-subtle d-flex flex-column gap-1">
+                <span class="fw-bold small text-primary-custom">Bao Enthusiast</span>
+                <span class="testimonial-badge-preview">
+                  <i class="bi bi-info-circle me-1"></i> Sample testimonial for design preview
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="col-lg-4 col-md-6 animate-on-scroll delay-200">
+            <div class="testimonial-card">
+              <i class="bi bi-quote testimonial-quote-icon" aria-hidden="true"></i>
+              <div class="testimonial-rating" aria-label="5 out of 5 stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <p class="fst-italic text-secondary-custom mb-4">
+                &ldquo;A lovely place to enjoy comforting food and share a meal with friends.&rdquo;
+              </p>
+              <div class="mt-auto pt-3 border-top border-light-subtle d-flex flex-column gap-1">
+                <span class="fw-bold small text-primary-custom">Dinner Gathering</span>
+                <span class="testimonial-badge-preview">
+                  <i class="bi bi-info-circle me-1"></i> Sample testimonial for design preview
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION G: OUR FOOD PHILOSOPHY
+         ======================================================================= -->
+    <section class="py-5" style="background-color: var(--bg-secondary);" id="food-philosophy" aria-labelledby="philosophy-heading">
+      <div class="container py-lg-4">
+        <div class="row align-items-center g-5 mb-5">
+          <div class="col-lg-6 animate-on-scroll">
+            <span class="d-inline-block px-3 py-1 rounded-pill mb-2 fw-bold text-uppercase small" style="background-color: var(--brand-chili-light); color: var(--accent-chili); font-size: 0.78rem; letter-spacing: 0.05em;">Our Kitchen Creed</span>
+            <h2 id="philosophy-heading" class="section-title mb-3">
+              Simple Ingredients. <br>
+              Thoughtful Preparation. <br>
+              <span class="text-chili">Memorable Flavours.</span>
+            </h2>
+            <p class="text-secondary-custom mb-3">
+              We focus on balanced flavours, enjoyable textures, careful preparation, and food that encourages sharing. Rather than overcomplicating tradition, our kitchen focuses on clean textures, aromatic broths, and tender doughs that let natural flavours shine.
+            </p>
+            <p class="text-secondary-custom mb-4">
+              From our crispy golden lace potstickers to pillowy steamed bao, every bite is crafted to encourage gathering, conversation, and the timeless pleasure of sharing good food with family and friends.
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="philosophy-pill-badge"><i class="bi bi-check2-circle text-chili"></i> Fresh Daily Dough</span>
+              <span class="philosophy-pill-badge"><i class="bi bi-check2-circle text-chili"></i> Balanced Seasoning</span>
+              <span class="philosophy-pill-badge"><i class="bi bi-check2-circle text-chili"></i> Made for Sharing</span>
+            </div>
+          </div>
+
+          <div class="col-lg-6 animate-on-scroll delay-100">
+            <div class="philosophy-craft-card p-4 rounded-4">
+              <!-- Top: Image Header with Badge -->
+              <div class="philosophy-card-media mb-3 overflow-hidden rounded-3 position-relative" style="aspect-ratio: 16 / 9; max-height: 200px;">
+                <img 
+                  src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80" 
+                  alt="Dumpling and bao kitchen handmade table feast with dipping sauces"
+                  class="w-100 h-100 object-fit-cover"
+                  loading="lazy"
+                  onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=800&q=80';"
+                >
+                <div class="position-absolute bottom-0 start-0 end-0 p-2.5 d-flex justify-content-between align-items-center" style="background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 100%);">
+                  <span class="badge bg-chili text-white small px-2.5 py-1">Master Dim Sum Standard</span>
+                  <span class="text-white small fw-semibold"><i class="bi bi-clock-history me-1"></i> Folded Daily</span>
+                </div>
+              </div>
+
+              <!-- Craft Highlights Heading -->
+              <h3 class="fs-5 fw-bold mb-3 d-flex align-items-center gap-2 text-primary-custom">
+                <i class="bi bi-cup-hot text-chili"></i>
+                <span>The Art of Dumpling Craft</span>
+              </h3>
+
+              <!-- 4 Pillars Grid (2x2) -->
+              <div class="row g-2 mb-3">
+                <div class="col-sm-6">
+                  <div class="p-2.5 rounded-3 h-100" style="background-color: var(--bg-secondary); border: 1px solid var(--border-light);">
+                    <div class="fw-bold small text-primary-custom mb-1 d-flex align-items-center gap-1.5">
+                      <i class="bi bi-check-circle-fill text-chili" style="font-size: 0.85rem;"></i>
+                      <span>Wrapper Consistency</span>
+                    </div>
+                    <p class="small text-secondary-custom mb-0" style="font-size: 0.82rem; line-height: 1.4;">
+                      Rolled thin at translucent edges and sturdy at center to seal in rich broths.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="p-2.5 rounded-3 h-100" style="background-color: var(--bg-secondary); border: 1px solid var(--border-light);">
+                    <div class="fw-bold small text-primary-custom mb-1 d-flex align-items-center gap-1.5">
+                      <i class="bi bi-star-fill text-gold" style="font-size: 0.85rem; color: var(--accent-gold);"></i>
+                      <span>18-Fold Pleating</span>
+                    </div>
+                    <p class="small text-secondary-custom mb-0" style="font-size: 0.82rem; line-height: 1.4;">
+                      Precision crimped by master hands to achieve optimal texture and broth retention.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="p-2.5 rounded-3 h-100" style="background-color: var(--bg-secondary); border: 1px solid var(--border-light);">
+                    <div class="fw-bold small text-primary-custom mb-1 d-flex align-items-center gap-1.5">
+                      <i class="bi bi-droplet-half text-chili" style="font-size: 0.85rem;"></i>
+                      <span>Flavour Harmony</span>
+                    </div>
+                    <p class="small text-secondary-custom mb-0" style="font-size: 0.82rem; line-height: 1.4;">
+                      Calibrated ginger, scallion, and toasted sesame aromatics that comfort the palate.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="p-2.5 rounded-3 h-100" style="background-color: var(--bg-secondary); border: 1px solid var(--border-light);">
+                    <div class="fw-bold small text-primary-custom mb-1 d-flex align-items-center gap-1.5">
+                      <i class="bi bi-cloud-haze2 text-chili" style="font-size: 0.85rem;"></i>
+                      <span>Bamboo Steaming</span>
+                    </div>
+                    <p class="small text-secondary-custom mb-0" style="font-size: 0.82rem; line-height: 1.4;">
+                      Natural cedar and bamboo steam preserves optimal tenderness and juicy warmth.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick Stats Metric Strip at Bottom -->
+              <div class="d-flex justify-content-around align-items-center pt-2.5 border-top border-light-subtle text-center">
+                <div>
+                  <div class="fs-5 fw-bold text-chili">18 Folds</div>
+                  <div class="small text-secondary-custom" style="font-size: 0.75rem;">Per Dumpling</div>
+                </div>
+                <div class="vr" style="height: 28px; opacity: 0.25;"></div>
+                <div>
+                  <div class="fs-5 fw-bold text-chili">8 Mins</div>
+                  <div class="small text-secondary-custom" style="font-size: 0.75rem;">Bamboo Steam</div>
+                </div>
+                <div class="vr" style="height: 28px; opacity: 0.25;"></div>
+                <div>
+                  <div class="fs-5 fw-bold text-chili">100%</div>
+                  <div class="small text-secondary-custom" style="font-size: 0.75rem;">Farm Fresh</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wide Food Showcase Photograph (Authentic Dim Sum Dining Atmosphere) -->
+        <div class="philosophy-banner-wrap animate-on-scroll">
+          <img 
+            src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=1600&q=80" 
+            alt="Wide banquet table display of dumplings, bao buns, dipping sauces, and fresh accompaniments" 
+            loading="lazy"
+            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1600&q=80';"
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION H: CALL-TO-ACTION SECTION
+         ======================================================================= -->
+    <section class="py-5" style="background-color: var(--bg-primary);" id="about-cta" aria-labelledby="cta-heading">
+      <div class="container py-lg-4">
+        <div class="p-4 p-sm-5 rounded-4 text-center text-white position-relative overflow-hidden" 
+             style="background: linear-gradient(135deg, var(--brand-dark-brown) 0%, #3B332C 100%); border: 1px solid var(--border-medium);">
+          
+          <div class="steam-container" style="top: -20px;" aria-hidden="true">
+            <div class="steam-particle"></div>
+            <div class="steam-particle"></div>
+          </div>
+
+          <div class="max-w-2xl mx-auto position-relative z-1 animate-on-scroll">
+            <span class="d-inline-block px-3 py-1 rounded-pill mb-2 fw-bold text-uppercase small" style="background-color: rgba(255, 255, 255, 0.15); color: #FFFFFF; font-size: 0.78rem; letter-spacing: 0.05em;">Start Your Experience</span>
+            <h2 id="cta-heading" class="fs-1 fw-bold text-white mb-3">Ready to Find Your Favourite?</h2>
+            <p class="fs-5 text-white-50 mb-4">
+              Explore our dumpling and bao menu, discover convenient frozen packs, or get in touch with our team.
+            </p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+              <a href="menu.html" class="btn-chili">
+                <i class="bi bi-book me-1"></i>
+                <span>Explore the Menu</span>
+              </a>
+              <a href="frozen-packs.html" class="btn btn-outline-light rounded-pill px-4 py-2.5 fw-semibold">
+                <i class="bi bi-snow me-1"></i>
+                <span>Discover Frozen Packs</span>
+              </a>
+              <a href="contact.html" class="btn btn-outline-light rounded-pill px-4 py-2.5 fw-semibold">
+                <i class="bi bi-envelope me-1"></i>
+                <span>Contact Us</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       SECTION I: SHARED FOOTER
+       ========================================================================= -->
+  <footer class="footer-custom" role="contentinfo">
+    <div class="container footer-container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand -->
+        <div class="footer-col footer-col-brand">
+          <a href="index.html" class="footer-brand-title mb-3 text-decoration-none">
+            <span class="brand-logo-mark" aria-hidden="true">
+              <img src="assets/icons/logo.svg" alt="Dumpling &amp; Bao Kitchen Logo" width="42" height="42" class="brand-logo-img">
+            </span>
+            <span>Dumpling &amp; Bao <span class="brand-name-kitchen">Kitchen</span></span>
+          </a>
+          <p class="footer-desc mb-4 pe-lg-3">
+            Handmade street dumplings, fluffy steamed bao buns, and authentic Asian culinary delights prepared fresh each day with care and love.
+          </p>
+          <div class="d-flex align-items-center gap-2 footer-signature">
+            <img src="assets/icons/dumpling.svg" alt="Dumpling logo mark" width="28" height="28" style="opacity: 0.85;">
+            <span class="small fw-semibold footer-signature-text">Hand-Folded with Passion</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Explore -->
+        <div class="footer-col footer-col-explore">
+          <h3 class="footer-col-title">Explore</h3>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="bi bi-chevron-right small"></i> Kitchen &amp; Story</a></li>
+            <li><a href="dumpling-experience.html"><i class="bi bi-chevron-right small"></i> Tasting Experience</a></li>
+            <li><a href="menu.html"><i class="bi bi-chevron-right small"></i> Menu</a></li>
+            <li><a href="frozen-packs.html"><i class="bi bi-chevron-right small"></i> Frozen Packs</a></li>
+            <li><a href="about.html"><i class="bi bi-chevron-right small"></i> About Us</a></li>
+            <li><a href="contact.html"><i class="bi bi-chevron-right small"></i> Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Customer Information -->
+        <div class="footer-col footer-col-info">
+          <h3 class="footer-col-title">Information</h3>
+          <ul class="footer-links">
+            <li><a href="contact.html#opening-hours"><i class="bi bi-clock small"></i> Opening Hours</a></li>
+            <li><a href="contact.html?enquiry=catering#contact-form"><i class="bi bi-people small"></i> Catering Enquiries</a></li>
+            <li><a href="frozen-packs.html#cooking-guide"><i class="bi bi-snow small"></i> Frozen Pack Guide</a></li>
+            <li><a href="contact.html#location-map"><i class="bi bi-geo-alt small"></i> Location &amp; Map</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Follow Us -->
+        <div class="footer-col footer-col-follow">
+          <h3 class="footer-col-title">Follow Our Kitchen</h3>
+          <p class="footer-follow-desc mb-3">Join our community for seasonal specials and secret dumpling recipes.</p>
+          <div class="footer-social-row">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn" aria-label="Visit our Instagram page">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn" aria-label="Visit our Facebook page">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn" aria-label="Visit our YouTube channel">
+              <i class="bi bi-youtube"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn" aria-label="Visit our Twitter / X profile" title="Twitter / X">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <div>
+          &copy; <span id="currentYear">2026</span> Dumpling &amp; Bao Kitchen. All rights reserved.
+        </div>
+        <div class="footer-bottom-links d-flex gap-3">
+          <a href="contact.html" class="text-decoration-none" style="color: var(--footer-muted);">Privacy Policy (Demo)</a>
+          <span style="color: var(--footer-border);">|</span>
+          <a href="contact.html" class="text-decoration-none" style="color: var(--footer-muted);">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Lenis Buttery Smooth Scroll Engine -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+
+  <!-- Application Scripts -->
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/homepage-premium.js"></script>
+</body>
+</html>
