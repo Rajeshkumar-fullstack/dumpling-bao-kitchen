@@ -42,7 +42,7 @@
       id: 'menu-sweet-corn-chestnut',
       name: 'Sweet Corn & Water Chestnut',
       price: 12.00,
-      image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80',
+      image: 'assets/images/dumplings/sweet-corn-chestnut.jpg',
       category: 'vegetable',
       unit: 'Plate (6 pcs)',
       badge: 'Vegetarian'
@@ -99,8 +99,8 @@
     {
       id: 'menu-shanghai-soup-dumplings',
       name: 'Shanghai Soup Dumplings (Xiao Long Bao)',
-      price: 15.50,
-      image: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80',
+      price: 14.50,
+      image: 'assets/images/dumplings/shanghai-soup-dumplings.jpg',
       category: 'pork',
       unit: 'Steamer (6 pcs)',
       badge: 'House Signature'
@@ -164,8 +164,8 @@
     {
       id: 'menu-golden-prawn-broth',
       name: 'Golden Prawn Dumpling in Broth',
-      price: 17.00,
-      image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=80',
+      price: 15.50,
+      image: 'assets/images/dumplings/prawn-golden-broth.jpg',
       category: 'seafood',
       unit: 'Bowl (4 pcs)',
       badge: 'Warm Broth'
@@ -175,8 +175,8 @@
     {
       id: 'menu-pork-belly-gua-bao',
       name: 'Slow-Cooked Pork Belly Gua Bao',
-      price: 14.50,
-      image: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80',
+      price: 12.50,
+      image: 'assets/images/bao-buns/slow-cooked-pork-bao.jpg',
       category: 'bao',
       unit: 'Set of 2 Bao',
       badge: 'Signature'
@@ -193,8 +193,8 @@
     {
       id: 'menu-braised-soy-mushroom-bao',
       name: 'Braised Soy Mushroom Bao',
-      price: 13.00,
-      image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80',
+      price: 10.50,
+      image: 'assets/images/bao-buns/braised-mushroom-bao.jpg',
       category: 'bao',
       unit: 'Set of 2 Bao',
       badge: 'Vegetarian'

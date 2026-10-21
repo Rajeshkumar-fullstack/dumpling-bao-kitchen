@@ -110,6 +110,31 @@
           if (modalImg) {
             modalImg.src = img;
             modalImg.alt = title;
+            if (img.includes('shanghai-soup-dumplings')) {
+              modalImg.classList.add('shanghai-soup-dumplings-img');
+            } else {
+              modalImg.classList.remove('shanghai-soup-dumplings-img');
+            }
+            if (img.includes('sweet-corn-chestnut')) {
+              modalImg.classList.add('sweet-corn-chestnut-img');
+            } else {
+              modalImg.classList.remove('sweet-corn-chestnut-img');
+            }
+            if (img.includes('prawn-golden-broth')) {
+              modalImg.classList.add('prawn-golden-broth-img');
+            } else {
+              modalImg.classList.remove('prawn-golden-broth-img');
+            }
+            if (img.includes('slow-cooked-pork-bao')) {
+              modalImg.classList.add('slow-cooked-pork-bao-img');
+            } else {
+              modalImg.classList.remove('slow-cooked-pork-bao-img');
+            }
+            if (img.includes('braised-mushroom-bao')) {
+              modalImg.classList.add('braised-mushroom-bao-img');
+            } else {
+              modalImg.classList.remove('braised-mushroom-bao-img');
+            }
           }
           if (modalIngredients) modalIngredients.textContent = ingredients;
           if (modalAllergens) modalAllergens.textContent = allergens;

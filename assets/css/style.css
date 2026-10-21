@@ -761,6 +761,26 @@ header {
   transform: scale(1.06);
 }
 
+.shanghai-soup-dumplings-img {
+  object-position: center 54% !important;
+}
+
+.sweet-corn-chestnut-img {
+  object-position: center 65% !important;
+}
+
+.prawn-golden-broth-img {
+  object-position: center 28% !important;
+}
+
+.slow-cooked-pork-bao-img {
+  object-position: center 52% !important;
+}
+
+.braised-mushroom-bao-img {
+  object-position: center 48% !important;
+}
+
 .food-card-body {
   padding: 1.35rem;
   display: flex;
