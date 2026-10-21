@@ -1518,8 +1518,16 @@ header {
 .footer-links a:focus-visible {
   color: var(--accent-chili) !important;
   transform: translateX(4px) scale(1.015);
-  text-shadow: 0 0 10px rgba(207, 141, 105, 0.25);
   outline: none;
+}
+
+[data-bs-theme="dark"] .footer-links a:hover,
+[data-bs-theme="dark"] .footer-links a:focus-visible {
+  text-shadow: 0 0 10px rgba(207, 141, 105, 0.35);
+}
+
+.footer-links a[style*="accent-chili"] {
+  color: var(--accent-chili) !important;
 }
 
 [dir="rtl"] .footer-links a:hover,
@@ -1572,6 +1580,11 @@ header {
               color 0.25s ease;
   cursor: pointer;
   box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(52, 47, 43, 0.08);
+}
+
+[data-bs-theme="dark"] .social-pill-btn {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
 .social-pill-btn:hover,
@@ -2691,17 +2704,30 @@ header {
   overflow: hidden;
   position: relative;
   background-color: var(--bg-secondary);
+  border-radius: 1.25rem 1.25rem 0 0;
 }
 
 .team-card-img-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 25%;
   transition: transform 0.5s ease;
+  display: block;
 }
 
 .team-card:hover .team-card-img-wrap img {
   transform: scale(1.06);
+}
+
+.kitchen-team-img {
+  object-position: center 46% !important;
+}
+
+@media (max-width: 575.98px) {
+  .team-card-img-wrap {
+    aspect-ratio: 16 / 10;
+  }
 }
 
 .team-card-body {

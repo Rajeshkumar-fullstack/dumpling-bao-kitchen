@@ -117,14 +117,14 @@ html:not([data-bs-theme="dark"]) {
   --shadow-lg: 0 18px 45px rgba(52, 47, 43, 0.13);
   --shadow-hover: 0 22px 50px rgba(52, 47, 43, 0.16);
 
-  /* Footer: Deep warm brown background with cream text and terracotta accents */
-  --footer-bg: #2C2622;         /* Deep Warm Brown / Roasted Wok Charcoal */
-  --footer-text: #FFF8ED;       /* Warm Cream */
-  --footer-muted: #D4C9BC;      /* Warm Sand */
-  --footer-border: rgba(255, 248, 237, 0.14);
-  --footer-social-bg: rgba(255, 248, 237, 0.10);
-  --footer-social-border: rgba(255, 248, 237, 0.22);
-  --footer-social-color: #FFF8ED;
+  /* Footer: Warm ivory / sesame surface with dark chocolate typography and terracotta accents */
+  --footer-bg: #F4ECE1;         /* Warm Ivory-Sesame Ground Surface */
+  --footer-text: #342F2B;       /* Dark Chocolate Typography */
+  --footer-muted: #6B6256;      /* Muted Warm Stone — WCAG AAA Compliant (5.5:1+) */
+  --footer-border: #DCCEB7;     /* Warm Stone Border */
+  --footer-social-bg: #FFFFFF;  /* Crisp White Elevated Pill Buttons */
+  --footer-social-border: #DCCEB7; /* Warm Stone Pill Border */
+  --footer-social-color: #342F2B;  /* Dark Chocolate Icon */
 
   /* Accents */
   --accent-chili: #CF8D69;      /* Terracotta (Primary CTA, highlights, badges) */
@@ -211,6 +211,8 @@ body,
 .footer-brand-title,
 .footer-col-title,
 .footer-desc,
+.footer-follow-desc,
+.footer-signature-text,
 .footer-links a,
 .social-pill-btn,
 .footer-bottom-bar,
