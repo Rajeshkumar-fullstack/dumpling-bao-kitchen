@@ -136,7 +136,7 @@
     // 4. MAGNETIC BUTTONS (Award-Winning Creative Agency Effect)
     // =========================================================================
     if (!prefersReducedMotion && window.innerWidth >= 992) {
-      const magneticButtons = document.querySelectorAll('.btn-magnetic, .btn-chili, .btn-outline-chili');
+      const magneticButtons = document.querySelectorAll('.hero-section .btn-magnetic');
 
       magneticButtons.forEach((btn) => {
         btn.classList.add('btn-magnetic', 'btn-shimmer');

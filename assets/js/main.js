@@ -27,36 +27,150 @@
       });
     }
 
-    // 3. Menu Filtering (menu.html)
+    // 3. Menu Filtering & Page Navigation (menu.html - 1, 2, 3 Pagination)
     const filterButtons = document.querySelectorAll('.menu-filter-pill');
-    const menuItems = document.querySelectorAll('.menu-item-card');
+    const menuItems = Array.from(document.querySelectorAll('.menu-item-card'));
     const menuCountEl = document.getElementById('menuItemCount');
+    const paginationList = document.getElementById('menuPaginationList');
+    const paginationInfo = document.getElementById('menuPaginationInfo');
+    const paginationRow = document.getElementById('menuPaginationRow');
+    const menuFilterBar = document.getElementById('menuFilterBar');
 
     if (filterButtons.length > 0 && menuItems.length > 0) {
-      const updateFilter = (selectedCategory) => {
-        let visibleCount = 0;
+      const ITEMS_PER_PAGE = 8;
+      let currentCategory = 'all';
+      let currentPage = 1;
 
+      const scrollToMenu = () => {
+        if (menuFilterBar) {
+          const y = menuFilterBar.getBoundingClientRect().top + window.pageYOffset - 85;
+          window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+        }
+      };
+
+      const getMatchingItems = (category) => {
+        if (category === 'all') return menuItems;
+        return menuItems.filter((item) => item.getAttribute('data-category') === category);
+      };
+
+      const renderPagination = (matchingItems) => {
+        const totalItems = matchingItems.length;
+        const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE) || 1;
+
+        if (currentPage > totalPages) {
+          currentPage = 1;
+        }
+
+        const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+        const endIndex = startIndex + ITEMS_PER_PAGE;
+        const currentSlice = matchingItems.slice(startIndex, endIndex);
+
+        // Update items visibility
         menuItems.forEach((item) => {
-          const itemCategory = item.getAttribute('data-category');
-          if (selectedCategory === 'all' || itemCategory === selectedCategory) {
+          if (currentSlice.includes(item)) {
             item.style.display = '';
             setTimeout(() => {
               item.style.opacity = '1';
               item.style.transform = 'translateY(0) scale(1)';
             }, 30);
-            visibleCount++;
           } else {
             item.style.opacity = '0';
             item.style.transform = 'translateY(12px) scale(0.96)';
             setTimeout(() => {
               item.style.display = 'none';
-            }, 250);
+            }, 200);
           }
         });
 
+        // Update category items available count
         if (menuCountEl) {
-          menuCountEl.textContent = `${visibleCount} item${visibleCount === 1 ? '' : 's'} available`;
+          menuCountEl.textContent = `${totalItems} item${totalItems === 1 ? '' : 's'} available`;
         }
+
+        // Render Pagination Controls (Prev, 1, 2, 3, Next)
+        if (paginationList) {
+          paginationList.innerHTML = '';
+
+          if (paginationRow) {
+            paginationRow.style.display = totalItems > 0 ? '' : 'none';
+          }
+
+          // Previous Page Button
+          const prevLi = document.createElement('li');
+          prevLi.className = `page-item ${currentPage === 1 ? 'disabled' : ''}`;
+          prevLi.innerHTML = `
+            <button class="page-link page-link-prev" type="button" aria-label="Previous Page" ${currentPage === 1 ? 'tabindex="-1"' : ''}>
+              <i class="bi bi-chevron-left" aria-hidden="true"></i>
+              <span>Prev</span>
+            </button>
+          `;
+          prevLi.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (currentPage > 1) {
+              currentPage--;
+              renderPagination(matchingItems);
+              scrollToMenu();
+            }
+          });
+          paginationList.appendChild(prevLi);
+
+          // Page Number Buttons (1, 2, 3 ...)
+          for (let p = 1; p <= totalPages; p++) {
+            const pageLi = document.createElement('li');
+            pageLi.className = `page-item ${p === currentPage ? 'active' : ''}`;
+            pageLi.innerHTML = `
+              <button class="page-link" type="button" aria-label="Page ${p}" ${p === currentPage ? 'aria-current="page"' : ''}>
+                ${p}
+              </button>
+            `;
+            pageLi.addEventListener('click', (e) => {
+              e.preventDefault();
+              if (currentPage !== p) {
+                currentPage = p;
+                renderPagination(matchingItems);
+                scrollToMenu();
+              }
+            });
+            paginationList.appendChild(pageLi);
+          }
+
+          // Next Page Button
+          const nextLi = document.createElement('li');
+          nextLi.className = `page-item ${currentPage === totalPages ? 'disabled' : ''}`;
+          nextLi.innerHTML = `
+            <button class="page-link page-link-next" type="button" aria-label="Next Page" ${currentPage === totalPages ? 'tabindex="-1"' : ''}>
+              <span>Next</span>
+              <i class="bi bi-chevron-right" aria-hidden="true"></i>
+            </button>
+          `;
+          nextLi.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (currentPage < totalPages) {
+              currentPage++;
+              renderPagination(matchingItems);
+              scrollToMenu();
+            }
+          });
+          paginationList.appendChild(nextLi);
+        }
+
+        // Update Page Info Indicator
+        if (paginationInfo) {
+          if (totalItems === 0) {
+            paginationInfo.textContent = 'No items found in this category';
+          } else {
+            const displayStart = startIndex + 1;
+            const displayEnd = Math.min(endIndex, totalItems);
+            paginationInfo.textContent = `Showing ${displayStart}–${displayEnd} of ${totalItems} items (Page ${currentPage} of ${totalPages})`;
+          }
+        }
+      };
+
+      const updateFilter = (selectedCategory) => {
+        currentCategory = selectedCategory;
+        currentPage = 1;
+        const matching = getMatchingItems(currentCategory);
+        renderPagination(matching);
       };
 
       filterButtons.forEach((btn) => {
@@ -73,6 +187,10 @@
           }
         });
       });
+
+      // Initialize page 1 on load
+      const initialMatching = getMatchingItems('all');
+      renderPagination(initialMatching);
     }
 
     // 4. Item Detail Modal Handler (menu.html)

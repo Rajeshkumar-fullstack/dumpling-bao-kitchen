@@ -564,6 +564,44 @@
       document.body.insertAdjacentHTML('beforeend', drawerHtml);
     },
 
+    // Programmatically close cart drawer & restore scrolling
+    closeDrawer: function () {
+      const drawerEl = document.getElementById('cartOffcanvas');
+      if (!drawerEl) return;
+
+      if (window.bootstrap && window.bootstrap.Offcanvas) {
+        try {
+          const bsOffcanvas = window.bootstrap.Offcanvas.getOrCreateInstance(drawerEl);
+          if (bsOffcanvas) {
+            bsOffcanvas.hide();
+          }
+        } catch (e) {
+          console.warn('Bootstrap offcanvas.hide() error:', e);
+        }
+      }
+
+      // Explicit cleanup to guarantee drawer closes and scroll unlock in all scenarios
+      drawerEl.classList.remove('show', 'showing');
+      drawerEl.setAttribute('aria-hidden', 'true');
+      drawerEl.removeAttribute('aria-modal');
+      drawerEl.removeAttribute('role');
+      drawerEl.style.visibility = '';
+
+      const backdrops = document.querySelectorAll('.offcanvas-backdrop');
+      backdrops.forEach((b) => {
+        b.classList.remove('show');
+        b.remove();
+      });
+
+      document.body.classList.remove('modal-open');
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+
+      if (window.DBKLenis && typeof window.DBKLenis.start === 'function') {
+        window.DBKLenis.start();
+      }
+    },
+
     // Render Cart Drawer Content
     renderDrawer: function () {
       const drawerItemsContainer = document.getElementById('drawerCartItems');
@@ -587,7 +625,7 @@
             <p class="small text-secondary-custom mb-4 leading-relaxed">
               Explore our handmade dumplings, steamed lotus bao buns, and flash-frozen retail packs.
             </p>
-            <a href="menu.html" class="btn btn-chili btn-sm px-4 py-2" data-bs-dismiss="offcanvas">
+            <a href="menu.html" class="btn btn-chili btn-sm px-4 py-2">
               <i class="bi bi-book me-1"></i> Browse Kitchen Menu
             </a>
           </div>
@@ -602,7 +640,7 @@
             <span>Estimated Total</span>
             <span class="fs-5 text-chili">$0.00</span>
           </div>
-          <a href="menu.html" class="btn btn-outline-chili w-100" data-bs-dismiss="offcanvas">
+          <a href="menu.html" class="btn btn-outline-chili w-100">
             Explore Dishes
           </a>
         `;
@@ -779,6 +817,42 @@
 
       // Global click handler for cart actions
       document.addEventListener('click', (e) => {
+        // 0. Cart Drawer Navigation Links (Explore Dishes, Browse Kitchen Menu, Checkout)
+        const drawerNavLink = e.target.closest('#cartOffcanvas a[href]');
+        if (drawerNavLink) {
+          const href = drawerNavLink.getAttribute('href');
+          if (href && href !== '#' && !href.startsWith('javascript:')) {
+            this.closeDrawer();
+
+            const currentPath = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+            const targetBase = href.split('#')[0].split('?')[0].toLowerCase();
+
+            if (currentPath === targetBase) {
+              // Already on the destination page: close drawer and smoothly scroll to content
+              e.preventDefault();
+              const targetHash = href.includes('#') ? href.split('#')[1] : null;
+              const targetElement = targetHash 
+                ? document.getElementById(targetHash) 
+                : (document.getElementById('menuFilterBar') || document.getElementById('menuGridContainer') || document.getElementById('cartTableBody'));
+              
+              if (targetElement) {
+                setTimeout(() => {
+                  if (window.DBKLenis && typeof window.DBKLenis.scrollTo === 'function') {
+                    window.DBKLenis.scrollTo(targetElement, { offset: -90 });
+                  } else {
+                    const y = targetElement.getBoundingClientRect().top + window.pageYOffset - 90;
+                    window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+                  }
+                }, 100);
+              }
+            } else {
+              // Different page: navigate directly to destination
+              window.location.href = href;
+            }
+            return;
+          }
+        }
+
         // A. Add to Cart Button (Card or Modal)
         const addBtn = e.target.closest('.btn-add-to-cart');
         if (addBtn) {

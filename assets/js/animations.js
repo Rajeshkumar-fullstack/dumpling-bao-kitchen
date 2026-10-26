@@ -24,20 +24,8 @@
     // Dynamic Header Height Synchronizer for Stacking Sticky Elements
     const updateHeaderHeight = () => {
       if (header) {
-        const brand = header.querySelector('.navbar-brand-custom');
-        const actions = header.querySelector('.navbar-actions');
-        let height = 64;
-        
-        if (brand && actions) {
-          const topRowHeight = Math.max(brand.offsetHeight, actions.offsetHeight);
-          const computedPad = parseFloat(window.getComputedStyle(navbar || header).paddingTop || 0) + 
-                              parseFloat(window.getComputedStyle(navbar || header).paddingBottom || 0);
-          height = topRowHeight + computedPad;
-        } else {
-          height = header.offsetHeight;
-        }
-        
-        const finalHeight = Math.round(Math.min(Math.max(height, 50), 80));
+        const height = header.getBoundingClientRect().height || header.offsetHeight || 64;
+        const finalHeight = Math.round(Math.min(Math.max(height, 50), 90));
         document.documentElement.style.setProperty('--header-height', finalHeight + 'px');
       }
     };
@@ -204,8 +192,9 @@
     // 5. Professional 3D Card Tilt Interactions (Mouse / Fine Pointer Only)
     const canHoverFine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
     if (canHoverFine && !prefersReducedMotion) {
+      // Exclude food-card to eliminate vertical jumping/jittering when hovering or selecting
       const tiltCards = document.querySelectorAll(
-        '.food-card, .craft-step-card, .value-card, .cooking-card, .team-card, .testimonial-card'
+        '.craft-step-card, .value-card, .cooking-card, .team-card, .testimonial-card'
       );
 
       tiltCards.forEach((card) => {
@@ -221,6 +210,8 @@
 
         const onMouseMove = (e) => {
           if (!isHovered) return;
+          if (e.target.closest('.btn, a, button, input')) return;
+          if (window.getSelection && window.getSelection().toString().length > 0) return;
           if (!cardRect) cardRect = card.getBoundingClientRect();
 
           const x = e.clientX - cardRect.left;

@@ -13,6 +13,8 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-height, 70px) + 1.25rem);
   -webkit-text-size-adjust: 100%;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 [id] {
@@ -30,11 +32,104 @@ body {
   flex-direction: column;
   margin: 0;
   padding: 0;
+  max-width: 100%;
   overflow-x: clip;
 }
 
 main {
   flex: 1 0 auto;
+}
+
+/* ==========================================================================
+   Global Layout Containers & Page Spacing System
+   Provides unified window boundary, balanced margins & gutters across all pages
+   ========================================================================== */
+:root {
+  --site-max-width: 1280px;
+  --site-window-boundary: 1280px;
+  --container-gutter: clamp(1rem, 2.5vw, 1.75rem);
+}
+
+.container,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl,
+.container-xxl,
+.navbar-custom .navbar-container,
+.footer-container {
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--container-gutter) !important;
+  padding-right: var(--container-gutter) !important;
+  box-sizing: border-box !important;
+}
+
+@media (min-width: 576px) {
+  .container, .container-sm {
+    max-width: 540px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .container, .container-sm, .container-md {
+    max-width: 720px !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .container, .container-sm, .container-md, .container-lg {
+    max-width: 960px !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container, .container-sm, .container-md, .container-lg, .container-xl {
+    max-width: 1140px !important;
+  }
+}
+
+/* Strict Desktop Window Boundary (1280px and above)
+   Constrains all pages (Home to Contact) within a centered window boundary
+   preventing edge-to-edge full screen stretching on widescreen monitors */
+@media (min-width: 1280px) {
+  html {
+    background-color: var(--bg-surface);
+  }
+
+  [data-bs-theme="dark"] html {
+    background-color: #0e0b09;
+  }
+
+  body:not(.antigravity-body) {
+    max-width: var(--site-window-boundary, 1280px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.08);
+    position: relative;
+    border-left: 1px solid var(--border-light);
+    border-right: 1px solid var(--border-light);
+  }
+
+  .site-header.sticky-top {
+    max-width: var(--site-window-boundary, 1280px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+  }
+
+  .container, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl,
+  .navbar-custom .navbar-container,
+  .footer-container {
+    max-width: 100% !important;
+  }
+
+  .cart-offcanvas {
+    right: max(0px, calc((100vw - var(--site-window-boundary, 1280px)) / 2)) !important;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -61,6 +156,14 @@ h1, h2, h3, h4, h5, h6,
   font-weight: 700;
   position: relative;
   color: var(--accent-navy, var(--text-primary));
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  clear: both;
+  line-height: 1.25;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  text-wrap: balance;
 }
 
 .section-subtitle {
@@ -69,8 +172,37 @@ h1, h2, h3, h4, h5, h6,
   letter-spacing: 0.14em;
   font-weight: 700;
   color: var(--accent-chili);
-  margin-bottom: 0.4rem;
-  display: inline-block;
+  margin-bottom: 0.5rem;
+  display: block !important;
+  width: 100% !important;
+  clear: both !important;
+}
+
+
+.text-center .section-subtitle {
+  display: block !important;
+  text-align: center !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.text-center .section-title {
+  display: inline-block !important;
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.text-center .section-title::after {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+.hero-home .section-subtitle,
+.hero-section .section-subtitle {
+  display: inline-flex !important;
+  width: auto !important;
 }
 
 .text-primary-custom {
@@ -102,6 +234,17 @@ h1, h2, h3, h4, h5, h6,
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 4px 14px rgba(207, 141, 105, 0.28);
   text-decoration: none;
+}
+
+.btn i,
+.btn-chili i,
+.btn-outline-chili i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  vertical-align: middle;
+  font-size: 1rem;
 }
 
 .btn-chili:hover,
@@ -586,8 +729,8 @@ header {
    -------------------------------------------------------------------------- */
 .hero-section {
   padding: 4rem 0 5rem;
-  position: relative;
-  overflow: hidden;
+  position: relative !important;
+  overflow: hidden !important;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -729,8 +872,9 @@ header {
   height: 100%;
 }
 
-.food-card:hover {
-  transform: translateY(-6px);
+.food-card:hover,
+.food-card:focus-within {
+  transform: none !important;
   box-shadow: var(--shadow-hover);
   border-color: var(--border-medium);
 }
@@ -899,16 +1043,59 @@ header {
   margin-top: auto;
 }
 
+/* In-Card Action Button Stability (Prevents button jittering / jumping up & down on hover/selection) */
+.food-card,
+.food-card:hover,
+.food-card:active,
+.food-card:focus-within {
+  transform: none !important;
+}
+
+.food-card .btn,
+.food-card .btn-outline-chili,
+.food-card .btn-chili,
+.favorites-item .btn {
+  transform: none !important;
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.food-card .btn:hover,
+.food-card .btn:focus-visible,
+.food-card .btn:active,
+.food-card .btn-outline-chili:hover,
+.food-card .btn-outline-chili:focus-visible,
+.food-card .btn-outline-chili:active,
+.favorites-item .btn:hover,
+.favorites-item .btn:focus-visible,
+.favorites-item .btn:active {
+  transform: none !important;
+  box-shadow: 0 4px 12px rgba(153, 115, 91, 0.25) !important;
+}
+
 .food-badge {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.04em;
-  padding: 0.3rem 0.7rem;
+  padding: 0.32rem 0.75rem;
   border-radius: 9999px;
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
+  gap: 0.35rem;
   text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.food-badge i {
+  font-size: 0.82rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: -1px; /* Optical vertical center with capital typography */
 }
 
 .badge-veg {
@@ -986,6 +1173,9 @@ header {
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--accent-chili);
+  white-space: nowrap;
+  flex-shrink: 0;
+  line-height: 1;
 }
 
 [data-bs-theme="dark"] .food-price {
@@ -1128,25 +1318,35 @@ header {
    Menu Category Filters (menu.html)
    -------------------------------------------------------------------------- */
 .menu-filter-bar {
-  position: -webkit-sticky !important;
   position: sticky !important;
-  top: var(--header-height, 68px) !important;
-  z-index: 1025 !important;
-  background-color: var(--nav-bg-scrolled, var(--bg-primary)) !important;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 4px 18px rgba(52, 37, 31, 0.07);
-  transition: top 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, box-shadow 0.25s ease;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
+  top: var(--header-height, 70px) !important;
+  z-index: 1020 !important;
+  background-color: var(--bg-surface) !important;
+  border-top: 1px solid var(--border-medium);
+  border-bottom: 1px solid var(--border-medium);
+  padding: 0.95rem 0 !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+  transform: none !important;
 }
 
 [data-bs-theme="dark"] .menu-filter-bar {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+  background-color: rgba(35, 30, 27, 0.95) !important;
+  border-top-color: var(--border-medium);
+  border-bottom-color: var(--border-medium);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45) !important;
+}
+
+.menu-filter-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .menu-filter-pill {
-  background-color: var(--bg-surface);
+  background-color: var(--bg-card);
   border: 1px solid var(--border-medium);
   color: var(--text-primary);
   font-weight: 600;
@@ -1154,10 +1354,23 @@ header {
   padding: 0.55rem 1.25rem;
   border-radius: 9999px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  justify-content: center;
+  gap: 0.45rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.menu-filter-pill i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  line-height: 1;
+  vertical-align: middle;
 }
 
 .menu-filter-pill:hover {
@@ -1173,6 +1386,104 @@ header {
   box-shadow: 0 4px 12px rgba(207, 141, 105, 0.28);
 }
 
+.menu-filter-count-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 1rem;
+  border-radius: 9999px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+}
+
+/* --------------------------------------------------------------------------
+   Menu Pagination Controls (menu.html)
+   -------------------------------------------------------------------------- */
+.pagination-custom {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pagination-custom .page-item {
+  display: inline-block;
+}
+
+.pagination-custom .page-link {
+  min-width: 44px;
+  height: 44px;
+  padding: 0.5rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px !important;
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-medium);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.pagination-custom .page-link:hover:not(.disabled) {
+  background-color: var(--bg-tag);
+  border-color: var(--accent-chili);
+  color: var(--accent-chili);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(207, 141, 105, 0.2);
+}
+
+.pagination-custom .page-item.active .page-link {
+  background-color: var(--accent-chili) !important;
+  border-color: var(--accent-chili) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(207, 141, 105, 0.35);
+  cursor: default;
+  transform: none;
+}
+
+.pagination-custom .page-item.disabled .page-link {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+  background-color: var(--bg-surface);
+  border-color: var(--border-subtle);
+  color: var(--text-muted);
+  box-shadow: none;
+}
+
+.pagination-custom .page-link-prev,
+.pagination-custom .page-link-next {
+  padding: 0.5rem 1.15rem;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+}
+
+[data-bs-theme="dark"] .pagination-custom .page-link {
+  background-color: var(--bg-surface);
+  border-color: var(--border-medium);
+  color: var(--text-primary);
+}
+
+[data-bs-theme="dark"] .pagination-custom .page-item.active .page-link {
+  background-color: var(--accent-chili) !important;
+  border-color: var(--accent-chili) !important;
+  color: #FFFFFF !important;
+}
+
+[data-bs-theme="dark"] .pagination-custom .page-item.disabled .page-link {
+  background-color: transparent;
+  border-color: var(--border-subtle);
+  opacity: 0.35;
+}
+
 /* --------------------------------------------------------------------------
    Cooking Guide Steps (frozen-packs.html)
    -------------------------------------------------------------------------- */
@@ -1180,28 +1491,21 @@ header {
   background-color: var(--bg-card);
   border-radius: 1.25rem;
   border: 1px solid var(--border-light);
-  padding: 1.5rem;
+  padding: 1.75rem 1.5rem 1.5rem;
   text-align: center;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-shadow: var(--shadow-sm);
-  transition: all 0.3s ease;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
 }
 
-.cooking-card p {
-  flex-grow: 1;
-}
-
-.cooking-card .badge,
-.cooking-card img {
-  margin-top: auto;
-}
-
-.cooking-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
+.cooking-card:hover,
+.cooking-card:focus-within {
+  transform: none !important;
+  box-shadow: 0 14px 32px -6px rgba(52, 37, 31, 0.12);
   border-color: var(--accent-chili);
 }
 
@@ -1214,16 +1518,83 @@ header {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.8rem;
-  margin-bottom: 1.2rem;
+  font-size: 1.75rem;
+  margin-bottom: 1.25rem;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
+.cooking-card:hover .cooking-icon-circle {
+  transform: scale(1.08);
+  background-color: rgba(207, 141, 105, 0.22);
+}
+
+.cooking-step-title {
+  height: 3rem;
+  min-height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  width: 100%;
+}
+
+.cooking-time-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.35rem 1rem;
+  border-radius: 9999px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+  height: 34px;
+  min-height: 34px;
+  flex-shrink: 0;
+}
+
+.cooking-time-badge i {
+  color: var(--accent-chili);
+  font-size: 0.9rem;
+}
+
+.cooking-card p {
+  flex-grow: 1;
+  margin-bottom: 1.25rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  width: 100%;
+}
+
+.cooking-step-desc {
+  min-height: 7.2rem;
+  display: block;
+  text-align: start;
+  text-wrap: pretty;
+  padding: 0 0.25rem;
+}
+
+.cooking-step-img,
 .cooking-card img {
   border-radius: 0.85rem;
   width: 100%;
-  height: 180px;
+  height: 190px;
   object-fit: cover;
-  margin-top: 1rem;
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+.cooking-card > .badge:last-child {
+  margin-top: auto;
 }
 
 /* --------------------------------------------------------------------------
@@ -1364,19 +1735,19 @@ header {
 }
 
 .footer-container {
-  width: 100%;
-  max-width: 1240px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: clamp(1rem, 3.5vw, 2.25rem);
-  padding-right: clamp(1rem, 3.5vw, 2.25rem);
-  box-sizing: border-box;
+  width: 100% !important;
+  max-width: var(--site-max-width, 1280px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--container-gutter, clamp(1rem, 2.5vw, 1.75rem)) !important;
+  padding-right: var(--container-gutter, clamp(1rem, 2.5vw, 1.75rem)) !important;
+  box-sizing: border-box !important;
 }
 
 /* 4-Column Balanced Desktop CSS Grid (1.5fr 0.8fr 1.1fr 1fr) */
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 0.8fr 1.1fr 1fr;
+  grid-template-columns: 1.3fr 0.75fr 1.2fr 1.15fr;
   gap: 2.75rem 2.25rem;
   width: 100%;
   max-width: 100%;
@@ -1569,12 +1940,69 @@ header {
   transform: translateX(-2px);
 }
 
+/* Footer Contact Info & Interactive Links */
+.footer-contact-list {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--footer-muted);
+}
+
+.footer-contact-list li {
+  margin-bottom: 0.65rem;
+}
+
+.footer-contact-link {
+  color: var(--footer-muted) !important;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.footer-contact-link:hover,
+.footer-contact-link:focus-visible {
+  color: var(--accent-chili) !important;
+  text-decoration: underline !important;
+}
+
+/* Align Social Media Column & Icons to the Right on Desktop */
+@media (min-width: 992px) {
+  .footer-col-follow {
+    text-align: right;
+  }
+  .footer-col-follow .footer-col-title {
+    display: inline-block;
+  }
+  .footer-col-follow .footer-col-title::after {
+    left: auto;
+    right: 0;
+  }
+  .footer-col-follow .footer-social-row {
+    justify-content: flex-end;
+  }
+  .footer-col-follow .footer-follow-desc {
+    margin-left: auto;
+    max-width: 280px;
+  }
+}
+
+/* RTL Support for Right-Aligned Footer Column */
+[dir="rtl"] .footer-col-follow {
+  text-align: left !important;
+}
+
+[dir="rtl"] .footer-col-follow .footer-col-title::after {
+  left: 0 !important;
+  right: auto !important;
+}
+
+[dir="rtl"] .footer-col-follow .footer-social-row {
+  justify-content: flex-start !important;
+}
+
 /* Touch-Friendly 44px Social Media Pill Buttons with 3D Tilt & Glow */
 .footer-social-row {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
+  gap: 0.65rem;
+  flex-wrap: nowrap;
   perspective: 600px;
 }
 
@@ -2412,6 +2840,17 @@ header {
   text-decoration: none;
 }
 
+.btn i,
+.btn-chili i,
+.btn-outline-chili i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  vertical-align: middle;
+  font-size: 1rem;
+}
+
 .btn-ocean:hover,
 .btn-ocean:focus-visible {
   background-color: var(--brand-chili-hover);
@@ -2529,7 +2968,9 @@ header {
   box-shadow: 0 2px 10px rgba(52, 37, 31, 0.05);
 }
 
-.food-card:hover {
+.food-card:hover,
+.food-card:focus-within {
+  transform: none !important;
   border-color: var(--border-medium);
   box-shadow: 0 12px 30px rgba(52, 37, 31, 0.12);
 }
@@ -2836,22 +3277,70 @@ header {
   border-radius: 1.5rem;
   overflow: hidden;
   box-shadow: var(--shadow-lg);
-  aspect-ratio: 21 / 9;
-  min-height: 300px;
+  min-height: 380px;
+  height: clamp(380px, 42vw, 460px);
+  width: 100%;
 }
 
 @media (max-width: 767px) {
   .philosophy-banner-wrap {
-    aspect-ratio: 16 / 10;
-    min-height: 240px;
+    min-height: 360px;
+    height: auto;
   }
 }
 
-.philosophy-banner-wrap img {
+.philosophy-banner-wrap img,
+.philosophy-banner-wrap .philosophy-banner-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 42%;
   display: block;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.philosophy-banner-wrap:hover img,
+.philosophy-banner-wrap:hover .philosophy-banner-img {
+  transform: scale(1.03);
+}
+
+.philosophy-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(25, 20, 18, 0.15) 0%,
+    rgba(25, 20, 18, 0.6) 45%,
+    rgba(20, 16, 14, 0.92) 100%
+  );
+  z-index: 2;
+}
+
+[data-bs-theme="dark"] .philosophy-banner-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(15, 12, 10, 0.25) 0%,
+    rgba(15, 12, 10, 0.72) 45%,
+    rgba(10, 8, 7, 0.96) 100%
+  );
+}
+
+@media (max-width: 575.98px) {
+  .philosophy-banner-wrap {
+    min-height: 330px;
+    border-radius: 1.15rem;
+  }
+  .philosophy-banner-overlay {
+    padding: 1.25rem !important;
+  }
+  .philosophy-banner-overlay h3 {
+    font-size: 1.35rem !important;
+    line-height: 1.25 !important;
+  }
+  .philosophy-banner-overlay p {
+    font-size: 0.85rem !important;
+    margin-bottom: 1rem !important;
+  }
 }
 
 .philosophy-pill-badge {
@@ -2883,7 +3372,19 @@ header {
   border-color: var(--border-medium);
 }
 
+.philosophy-card-media {
+  width: 100%;
+  height: clamp(190px, 24vw, 230px);
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+}
+
 .philosophy-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -2915,6 +3416,9 @@ header {
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
+  max-width: var(--site-max-width, 1280px) !important;
+  padding-left: var(--container-gutter, clamp(1rem, 2.5vw, 1.75rem)) !important;
+  padding-right: var(--container-gutter, clamp(1rem, 2.5vw, 1.75rem)) !important;
 }
 
 @media (max-width: 991.98px) {

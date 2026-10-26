@@ -16,11 +16,15 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-  <!-- Tailwind CSS Configuration (Disables conflicting collapse utility) -->
+  <!-- Tailwind CSS Configuration -->
   <script>
     tailwind = {
       corePlugins: {
         visibility: false,
+        container: false,
+      },
+      theme: {
+        container: false,
       }
     };
   </script>
@@ -92,25 +96,15 @@
               <ul class="dropdown-menu dropdown-menu-custom shadow-lg" aria-labelledby="homeDropdown">
                 <li>
                   <a class="dropdown-item" href="index.html">
-                    <div class="d-flex align-items-center gap-2">
-                      <i class="bi bi-shop text-chili fs-5"></i>
-                      <div>
-                        <div class="fw-semibold">Kitchen &amp; Our Story</div>
-                        <div class="small text-muted-custom">Artisan craft &amp; heritage</div>
-                      </div>
-                    </div>
+                    <div class="fw-semibold">Kitchen &amp; Our Story</div>
+                    <div class="small text-muted-custom">Artisan craft &amp; heritage</div>
                   </a>
                 </li>
                 <li><hr class="dropdown-divider my-1"></li>
                 <li>
                   <a class="dropdown-item active" href="dumpling-experience.html">
-                    <div class="d-flex align-items-center gap-2">
-                      <i class="bi bi-stars text-chili fs-5"></i>
-                      <div>
-                        <div class="fw-semibold">Dumpling Experience</div>
-                        <div class="small text-muted-custom">Tasting flights &amp; workshops</div>
-                      </div>
-                    </div>
+                    <div class="fw-semibold">Dumpling Experience</div>
+                    <div class="small text-muted-custom">Tasting flights &amp; workshops</div>
                   </a>
                 </li>
               </ul>
@@ -241,8 +235,8 @@
     <section class="py-5" id="tasting-flights" style="background-color: var(--bg-secondary);" aria-labelledby="flights-heading">
       <div class="container py-3">
         <div class="text-center max-w-2xl mx-auto mb-5 animate-on-scroll">
-          <span class="section-subtitle">Multi-Course Tasting</span>
-          <h2 id="flights-heading" class="section-title mb-2">Curated Dumpling Journeys</h2>
+          <span class="section-subtitle d-block mb-2">Multi-Course Tasting</span>
+          <h2 id="flights-heading" class="section-title mb-3">Curated Dumpling Journeys</h2>
           <p class="text-secondary-custom">
             Designed for curious foodies and dim sum aficionados. Each flight includes 4 sequential courses paired with artisanal loose-leaf teas and specialty dipping accompaniments.
           </p>
@@ -376,8 +370,8 @@
       <div class="container py-3">
         <div class="row align-items-center g-5">
           <div class="col-lg-6 animate-on-scroll">
-            <span class="section-subtitle">Theater of Steam</span>
-            <h2 id="live-station-heading" class="section-title mb-3">From Steamer to Table in 12 Seconds</h2>
+            <div class="section-subtitle mb-2" style="display: block !important; width: 100% !important; clear: both !important;">Theater of Steam</div>
+            <h2 id="live-station-heading" class="section-title mb-3" style="display: block !important; width: fit-content !important; clear: both !important;">From Steamer to Table in 12 Seconds</h2>
             <p class="fs-5 text-secondary-custom mb-4 leading-relaxed">
               Dim sum at its zenith is all about temperature. When a bamboo basket is lifted from our roaring steam bank, it arrives at your table while the skins are shimmering and the savory broth inside is at peak aromatic bloom.
             </p>
@@ -437,7 +431,7 @@
         <div class="p-4 p-lg-5 rounded-4 border border-light-subtle shadow-sm" style="background-color: var(--bg-surface);">
           <div class="row align-items-center g-5">
             <div class="col-lg-6 animate-on-scroll">
-              <span class="section-subtitle">Artisan Workshops</span>
+              <div class="section-subtitle mb-2" style="display: block !important; width: 100% !important; clear: both !important;">Artisan Workshops</div>
               <h2 id="masterclass-heading" class="fs-2 fw-bold mb-3">Fold With The Masters: Weekend Masterclass</h2>
               <p class="text-secondary-custom mb-4 leading-relaxed">
                 Ever wanted to create tender, pleated dumplings from scratch in your own kitchen? Join our Master Chef for a 2-hour interactive weekend workshop where you'll knead, roll, pleat, and steam your own delicious feast.
@@ -494,8 +488,8 @@
     <section class="py-5" aria-labelledby="dipping-bar-heading">
       <div class="container py-3">
         <div class="text-center max-w-2xl mx-auto mb-5 animate-on-scroll">
-          <span class="section-subtitle">Aromatic Harmony</span>
-          <h2 id="dipping-bar-heading" class="section-title mb-2">The Dipping Bar &amp; Tea Flights</h2>
+          <span class="section-subtitle d-block mb-2">Aromatic Harmony</span>
+          <h2 id="dipping-bar-heading" class="section-title mb-3">The Dipping Bar &amp; Tea Flights</h2>
           <p class="text-secondary-custom">Every dumpling deserves its soulmate sauce. Create your own personalized condiment alchemy at our tableside dipping bar.</p>
         </div>
 
@@ -556,13 +550,11 @@
          ======================================================================= -->
     <section class="py-5" style="background-color: var(--bg-secondary);" aria-labelledby="moments-heading">
       <div class="container py-3">
-        <div class="row justify-content-between align-items-end mb-4">
-          <div class="col-lg-7 animate-on-scroll">
-            <span class="section-subtitle">Moments from the Table</span>
-            <h2 id="moments-heading" class="section-title mb-1">The Dining Room Atmosphere</h2>
-            <p class="text-secondary-custom mb-0">Where laughter mingles with rising steam and every bite is celebrated.</p>
-          </div>
-          <div class="col-lg-4 text-lg-end mt-3 mt-lg-0 animate-on-scroll delay-100">
+        <div class="text-center max-w-2xl mx-auto mb-5 animate-on-scroll">
+          <span class="section-subtitle d-block mb-2">Moments from the Table</span>
+          <h2 id="moments-heading" class="section-title mb-3">The Dining Room Atmosphere</h2>
+          <p class="text-secondary-custom mb-3">Where laughter mingles with rising steam and every bite is celebrated.</p>
+          <div>
             <a href="contact.html?enquiry=general" class="btn btn-outline-chili">
               <i class="bi bi-chat-heart"></i>
               <span>Plan Your Event</span>
@@ -642,7 +634,7 @@
   <footer class="footer-custom" role="contentinfo">
     <div class="container footer-container">
       <div class="footer-grid">
-        <!-- Col 1: Brand -->
+        <!-- Col 1: Brand & Overview -->
         <div class="footer-col footer-col-brand">
           <a href="index.html" class="footer-brand-title mb-3 text-decoration-none">
             <span class="brand-logo-mark" aria-hidden="true">
@@ -650,16 +642,26 @@
             </span>
             <span>Dumpling &amp; Bao <span class="brand-name-kitchen">Kitchen</span></span>
           </a>
-          <p class="footer-desc mb-4 pe-lg-3">
+          <p class="footer-desc mb-3 pe-lg-3">
             Handmade street dumplings, fluffy steamed bao buns, and authentic Asian culinary delights prepared fresh each day with care and love.
           </p>
+          <div class="footer-brand-contact mb-3">
+            <div class="d-flex align-items-center gap-2 mb-1.5 small text-secondary-custom">
+              <i class="bi bi-geo-alt-fill text-chili flex-shrink-0"></i>
+              <span>88 Lotus Blossom Lane, Chinatown</span>
+            </div>
+            <div class="d-flex align-items-center gap-2 small text-secondary-custom">
+              <i class="bi bi-envelope-fill text-chili flex-shrink-0"></i>
+              <a href="mailto:hello@dumplingbaokitchen.demo" class="footer-contact-link text-decoration-none">hello@dumplingbaokitchen.demo</a>
+            </div>
+          </div>
           <div class="d-flex align-items-center gap-2 footer-signature">
             <img src="assets/icons/dumpling.svg" alt="Dumpling logo mark" width="28" height="28" style="opacity: 0.85;">
             <span class="small fw-semibold footer-signature-text">Hand-Folded with Passion</span>
           </div>
         </div>
 
-        <!-- Col 2: Explore -->
+        <!-- Col 2: Explore Links -->
         <div class="footer-col footer-col-explore">
           <h3 class="footer-col-title">Explore</h3>
           <ul class="footer-links">
@@ -672,29 +674,41 @@
           </ul>
         </div>
 
-        <!-- Col 3: Customer Information -->
-        <div class="footer-col footer-col-info">
-          <h3 class="footer-col-title">Information</h3>
-          <ul class="footer-links">
-            <li><a href="contact.html#opening-hours"><i class="bi bi-clock small"></i> Opening Hours</a></li>
-            <li><a href="contact.html?enquiry=catering#contact-form"><i class="bi bi-people small"></i> Catering Enquiries</a></li>
-            <li><a href="frozen-packs.html#cooking-guide"><i class="bi bi-snow small"></i> Frozen Pack Guide</a></li>
-            <li><a href="contact.html#location-map"><i class="bi bi-geo-alt small"></i> Location &amp; Map</a></li>
+        <!-- Col 3: Address & Contact Details -->
+        <div class="footer-col footer-col-contact">
+          <h3 class="footer-col-title">Address &amp; Contact</h3>
+          <ul class="footer-contact-list list-unstyled mb-0">
+            <li class="d-flex align-items-start gap-2 mb-2.5">
+              <i class="bi bi-geo-alt-fill text-chili mt-1 flex-shrink-0" aria-hidden="true"></i>
+              <span><a href="contact.html#location-map" class="footer-contact-link text-decoration-none">88 Lotus Blossom Lane, Chinatown, Melbourne VIC 3000</a></span>
+            </li>
+            <li class="d-flex align-items-center gap-2 mb-2.5">
+              <i class="bi bi-envelope-fill text-chili flex-shrink-0" aria-hidden="true"></i>
+              <a href="mailto:hello@dumplingbaokitchen.demo" class="footer-contact-link text-decoration-none">hello@dumplingbaokitchen.demo</a>
+            </li>
+            <li class="d-flex align-items-center gap-2 mb-2.5">
+              <i class="bi bi-telephone-fill text-chili flex-shrink-0" aria-hidden="true"></i>
+              <a href="tel:+610395550188" class="footer-contact-link text-decoration-none">+61 (03) 9555-0188</a>
+            </li>
+            <li class="d-flex align-items-center gap-2">
+              <i class="bi bi-clock-fill text-chili flex-shrink-0" aria-hidden="true"></i>
+              <span class="small" style="color: var(--footer-muted);">Mon–Sun: 11:30 AM – 10:00 PM</span>
+            </li>
           </ul>
         </div>
 
-        <!-- Col 4: Follow Us -->
-        <div class="footer-col footer-col-follow">
+        <!-- Col 4: Follow Us (Right-aligned on Desktop) -->
+        <div class="footer-col footer-col-follow text-lg-end">
           <h3 class="footer-col-title">Follow Our Kitchen</h3>
           <p class="footer-follow-desc mb-3">Join our community for seasonal specials and secret dumpling recipes.</p>
-          <div class="footer-social-row">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn" aria-label="Visit our Instagram page">
+          <div class="footer-social-row justify-content-lg-end">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn" aria-label="Visit our Instagram page" title="Instagram">
               <i class="bi bi-instagram"></i>
             </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn" aria-label="Visit our Facebook page">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn" aria-label="Visit our Facebook page" title="Facebook">
               <i class="bi bi-facebook"></i>
             </a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn" aria-label="Visit our YouTube channel">
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn" aria-label="Visit our YouTube channel" title="YouTube">
               <i class="bi bi-youtube"></i>
             </a>
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn" aria-label="Visit our Twitter / X profile" title="Twitter / X">

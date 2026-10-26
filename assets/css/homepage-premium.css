@@ -41,8 +41,8 @@ html.lenis body {
    2. ATMOSPHERIC HERO LIGHTING & NEBULA ORBS
    ========================================================================== */
 .hero-section {
-  position: relative;
-  overflow: hidden;
+  position: relative !important;
+  overflow: hidden !important;
 }
 
 .hero-atmosphere-glow {
@@ -50,7 +50,7 @@ html.lenis body {
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  overflow: hidden;
+  overflow: hidden !important;
 }
 
 .hero-glow-orb {
@@ -451,14 +451,17 @@ html.lenis body {
   z-index: 3;
 }
 
-.food-card:hover {
-  transform: translateY(-8px) scale(1.015);
-  box-shadow: 0 20px 42px -10px rgba(52, 37, 31, 0.16);
+.food-card:hover,
+.food-card:focus-within {
+  transform: none !important;
+  box-shadow: 0 16px 36px -8px rgba(52, 37, 31, 0.14);
   border-color: var(--accent-gold);
 }
 
-[data-bs-theme="dark"] .food-card:hover {
-  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.6);
+[data-bs-theme="dark"] .food-card:hover,
+[data-bs-theme="dark"] .food-card:focus-within {
+  transform: none !important;
+  box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.6);
   border-color: rgba(217, 164, 65, 0.45);
 }
 
@@ -558,16 +561,54 @@ body:hover .ambient-cursor-glow {
 /* ==========================================================================
    8. ENHANCED SECTION HEADINGS & REVEALS
    ========================================================================== */
+.text-center .section-subtitle {
+  display: block !important;
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: 0.5rem;
+}
+
 .section-title {
   position: relative;
-  display: inline-block;
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  clear: both;
+  line-height: 1.25;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  text-wrap: balance;
+}
+
+#location-map .section-subtitle {
+  display: block !important;
+  width: 100% !important;
+  clear: both !important;
+  margin-bottom: 0.5rem !important;
+}
+
+#location-map .section-title {
+  display: block !important;
+  width: fit-content !important;
+  clear: both !important;
+  margin-top: 0 !important;
+  margin-bottom: 1rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+.text-center .section-title {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .section-title::after {
   content: '';
   position: absolute;
   left: 0;
-  bottom: -6px;
+  bottom: 0;
   width: 45px;
   height: 3px;
   background: var(--accent-chili);
